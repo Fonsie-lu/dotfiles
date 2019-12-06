@@ -1,0 +1,241 @@
+set $mod Mod1
+font pango:DejaVu Sans Mono 14
+new_window pixel 1
+new_float normal
+floating_modifier $mod
+hide_edge_borders none
+
+###########################################################
+#############         Bindings           ##################
+###########################################################
+
+# kill focused window
+bindsym Mod1+q kill
+
+# core
+bindsym $Mod+w          exec --no-startup-id chromium
+bindsym $Mod+f          exec --no-startup-id Thunar
+bindsym $Mod+Return     exec --no-startup-id urxvt
+
+# Rofi
+bindsym $Mod+e exec --no-startup-id rofi -show run
+bindsym $Mod+d exec --no-startup-id rofi -show window
+
+
+################################################################
+###########          Workspace Bindings          ###############
+################################################################
+
+set $ws1 1:
+set $ws2 2:
+set $ws3 3:
+set $ws4 4:
+set $ws5 5:
+
+#Alt       = Switch Workspace
+#Super     = Switch Focus
+#Alt Shift = Switch Focus to next Workspace
+
+# switch workspace
+bindsym $Mod+1 workspace $WS1
+bindsym $Mod+2 workspace $WS2
+bindsym $Mod+3 workspace $WS3
+bindsym $Mod+4 workspace $WS4
+bindsym $Mod+5 workspace $WS5
+
+bindsym Mod1+Left workspace prev
+bindsym Mod1+Right workspace next
+bindsym Mod1+Tab workspace back_and_forth
+
+# switch Focus
+bindsym Mod4+Left  focus left
+bindsym Mod4+Down  focus down
+bindsym Mod4+Up    focus up
+bindsym Mod4+Right focus right
+
+# move focused container to workspace
+bindsym $Mod+Shift+1 move container to workspace $WS1; workspace $WS1
+bindsym $Mod+Shift+2 move container to workspace $WS2; workspace $WS2
+bindsym $Mod+Shift+3 move container to workspace $WS3; workspace $WS3
+bindsym $Mod+Shift+4 move container to workspace $WS4; workspace $WS4
+bindsym $Mod+Shift+5 move container to workspace $WS5; workspace $WS5
+
+############################################################
+##############     Focus Manipulation       ################
+############################################################
+
+# Resize
+bindsym $Mod+Shift+Up    move up    10px
+bindsym $Mod+Shift+Down  move down  10px
+bindsym $Mod+Shift+Left  move left  10px
+bindsym $Mod+Shift+Right move right 10px
+
+# Size
+bindsym Mod1+Up    resize shrink height 10 px or 1 ppt
+bindsym Mod1+Down  resize grow   height 10 px or 1 ppt
+
+# container layout
+bindsym $Mod+h split h
+bindsym $Mod+v split v
+default_orientation horizontal
+
+
+
+
+############################################################
+##############     Floating Settings        ################
+############################################################
+
+# Open specific applications in floating mode
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+############################################################
+##############     Autostart & Polybar      ################
+############################################################
+
+# Autostart applications
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nm-apple
+# exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id pamac-tray
+# exec --no-startup-id clipit
+# exec_always --no-startup-id ff-theme-util
+# exec_always --no-startup-id fix_xcursor
+
+
+exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
+# Theme colors
+client.focused #b0b287 #1d1e26 #b0b287 #789073 #789073
+client.focused_inactive #b0b287 #1d1e26 #b0b287 #789073 #789073
+client.unfocused #b0b287 #1d1e26 #b0b287 #789073 #789073
+client.urgent #b0b287 #1d1e26 #b0b287 #789073 #789073
+client.placeholder #b0b287 #1d1e26 #b0b287 #789073 #789073
+
+client.background #1d1e26
+
+############################################################
+##############     Reload @ Restart        ################
+############################################################
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Set shut down, restart and locking features
+bindsym $mod+X mode "$mode_system"
+set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+############################################################
+##############     GAPS                     ################
+############################################################
+
+gaps inner 10
+gaps outer -4
+
+smart_gaps on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+############################################################
+##############     Sound & Touchbad         ################
+############################################################
+
+# set power-manager and volume control
+exec --no-startup-id mate-power-manager
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 -q set Master 2db- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+
+# touchpad on and off controller on laptop with Fn+<touchpad control functional key>
+bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
+bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
