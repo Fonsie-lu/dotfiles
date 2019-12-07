@@ -11,6 +11,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'scrooloose/nerdcommenter'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'tpope/vim-surround'
+Plug 'bling/vim-airline'
+Plug 'jiangmiao/auto-pairs'
+Plug 'calviken/vim-gdscript3'
 
 Plug 'christoomey/vim-tmux-navigator'
 

@@ -27,7 +27,7 @@
 *color7:  #a89984
 *color15: #ebdbb2
 
-URxvt.font:                       xft:Source Code Pro:size=12
+URxvt.font:                       xft:Source Code Pro:size=14
 URxvt*termName:                   rxvt-unicode-256color
 URxvt.depth:                      32
 URxvt*scrollBar:                  false
@@ -61,15 +61,15 @@ URxvt*underlineURLs:        true
 URxvt*urlButton:            1
 
 rofi.color-enabled: true
-rofi.color-window: #34343e, #afd7d7, #afd7d7
-rofi.color-normal: #34343e, #F5F1E8, #34343e, #34343e, #afd7d7
-rofi.color-active: #34343e, #F5F1E8, #34343e, #34343e, #afd7d7
-rofi.color-urgent: #34343e, #F5F1E8, #34343e, #34343e, #afd7d7
+rofi.color-window: #282828, #e89d6a, #e89d6a
+rofi.color-normal: #282828, #458588, #282828, #282828, #e89d6a
+rofi.color-active: #282828, #458588, #282828, #282828, #e89d6a
+rofi.color-urgent: #282828, #458588, #282828, #282828, #e89d6a
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false
 rofi.lines: 5
-rofi.font: Source Code Pro Semibold 18
+rofi.font: Source Code Pro Semibold 16
 rofi.bw: 1
 rofi.columns: 2
 rofi.padding: 5

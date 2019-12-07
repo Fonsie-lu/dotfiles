@@ -1,14 +1,25 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+# ### Instand Prompt disabled
+POWERLEVEL9K_INSTANT_PROMPT=off
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/fonsie/.oh-my-zsh"
+export ZSH="/usr/share/oh-my-zsh"
+export EDITOR="/usr/share/nvim"
+export VISUAL="/usr/share/nvim"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="gruvbox"
+ZSH_THEME="powerlevel10k"
 SOLARIZED_THEME="dark"
 
 # Set list of themes to pick from when loading at random
@@ -69,9 +80,9 @@ SOLARIZED_THEME="dark"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+source /usr/share/oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
 
@@ -100,9 +111,16 @@ alias yays="yay -S"
 alias yayss="yay -Ss"
 alias pacr="sudo pacman -Rns"
 alias bashrc="nvim ~/.bashrc"
+alias zconf="nvim ~/.zshrc"
 alias i3conf="nvim /home/fonsie/.config/i3/config"
 alias xres="nvim ~/.Xresources"
 alias pconf="nvim ./.config/polybar/config"
+alias cd..="cd .."
+alias boom="sh ~/scripts/boom.sh"
+alias youtube="google-chrome-stable www.youtube.com"
 
 # Greeting
 pfetch
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
