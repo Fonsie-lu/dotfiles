@@ -1,6 +1,13 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
 # ### Instand Prompt disabled
 POWERLEVEL9K_INSTANT_PROMPT=off
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -113,6 +120,7 @@ alias pacr="sudo pacman -Rns"
 alias bashrc="nvim ~/.bashrc"
 alias zconf="nvim ~/.zshrc"
 alias i3conf="nvim /home/fonsie/.config/i3/config"
+alias nconf="nvim /home/fonsie/.config/nvim/init.vim"
 alias xres="nvim ~/.Xresources"
 alias pconf="nvim ./.config/polybar/config"
 alias cd..="cd .."

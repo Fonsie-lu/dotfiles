@@ -27,7 +27,7 @@
 *color7:  #a89984
 *color15: #ebdbb2
 
-URxvt.font:                       xft:Source Code Pro:size=14
+URxvt.font:                       xft:MesloLGS Nerd Font Mono:size=16:minispace=False, xft:DejaVu Sans Cod:size=16:minispace=0, xft:devicons:size=16
 URxvt*termName:                   rxvt-unicode-256color
 URxvt.depth:                      32
 URxvt*scrollBar:                  false
@@ -40,7 +40,7 @@ URxvt*depth:                      32
 URxvt*transparent:                true
 URxvt*shading:                    15
 URxvt*background:                 [95]#1d1e26
-
+URxvt.letterSpace:                0 
 
 ! perl extensions
 URxvt*perl-ext-common:  default,clipboard,url-select,keyboard-select,resize-font
