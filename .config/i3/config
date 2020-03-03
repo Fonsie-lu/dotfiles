@@ -32,7 +32,6 @@ set $ws3 3:
 set $ws4 4:
 set $ws5 5:
 
-#Alt       = Switch Workspace
 #Super     = Switch Focus
 #Alt Shift = Switch Focus to next Workspace
 
@@ -52,6 +51,8 @@ bindsym $Mod+Left  focus left
 bindsym $Mod+Down  focus down
 bindsym $Mod+Up    focus up
 bindsym $Mod+Right focus right
+bindsym $Mod+j     focus right
+bindsym $Mod+k     focus left
 
 # move focused container to workspace
 bindsym $Mod+Shift+1 move container to workspace $WS1; workspace $WS1

@@ -162,16 +162,19 @@ type = internal/battery
 format-full-foreground = ${colors.foreground}
 format-full-background = ${colors.background}
 format-full-suffix = "  "
+format-full-prefix = " "
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
 format-charging-suffix = "  "
+format-charging-prefix = " "
 format-discharging-foreground = ${colors.foreground}
 format-discharging-background = ${colors.background}
 format-discharging-suffix = " "
+format-discharging-prefix = " "
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-full-at = 99
+full-at = 97
 battery = BAT0
 adapter = ADP1
 poll-interval = 5
@@ -179,7 +182,8 @@ poll-interval = 5
 [module/cpu-temp]
 type = custom/script
 exec = ~/.config/polybar/scripts/cpu-temp.sh
-interval = 6 
+interval = 6
+format-prefix = "  "
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
@@ -199,6 +203,7 @@ ramp-coreload-4 = ▅
 ramp-coreload-5 = ▆
 ramp-coreload-6 = ▇
 ramp-coreload-7 = █
+format-prefix = " "
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 

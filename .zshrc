@@ -26,6 +26,7 @@ export VISUAL="/usr/share/nvim"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="gruvbox"
 ZSH_THEME="powerlevel10k"
 SOLARIZED_THEME="dark"
 
@@ -122,10 +123,19 @@ alias zconf="nvim ~/.zshrc"
 alias i3conf="nvim /home/fonsie/.config/i3/config"
 alias nconf="nvim /home/fonsie/.config/nvim/init.vim"
 alias xres="nvim ~/.Xresources"
-alias pconf="nvim ./.config/polybar/config"
+alias pconf="nvim ~/.config/polybar/config"
 alias cd..="cd .."
+alias cd...="cd ..."
+alias cd....="cd ...."
 alias boom="sh ~/scripts/boom.sh"
-alias youtube="google-chrome-stable www.youtube.com"
+alias cdrec="cd ~/Downloads/Recordurbate/recordurbate/"
+alias recrest="./Recordurbate.py restart"
+alias reclist="./Recordurbate.py list"
+alias recadd="./Recordurbate.py add "
+alias recdel="./Recordurbate.py del "
+alias aconf="sudo nvim /etc/httpd/conf/httpd.conf"
+alias httpdst="sudo systemctl start httpd"
+alias httpdsp="sudo systemctl stop httpd"
 
 # Greeting
 pfetch

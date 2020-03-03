@@ -7,17 +7,22 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'scrooloose/nerdcommenter'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
 Plug 'jiangmiao/auto-pairs'
-Plug 'calviken/vim-gdscript3'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
-Plug 'vim-syntastic/syntastic' " TS Syntax
+Plug 'brooth/far.vim'
+Plug 'jceb/vim-orgmode'
+Plug 'sotte/presenting.vim'
+Plug 'w0rp/ale'
+Plug 'ap/vim-css-color'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', {'do' : './install --bin'}
+Plug 'brooth/far.vim'
+Plug 'metakirby5/codi.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -63,6 +68,7 @@ let g:airline_symbols.linenr = ''
 
 inoremap jk <ESC>
 inoremap jl <ESC>$a;<ESC>
+inoremap jö <ESC>$a{<RETURN>
 nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
@@ -74,7 +80,7 @@ nmap ++ <plug>NERDCommenterToggle
 		nnoremap <leader>s :w<cr>
 
 	" space-sq to save and quit
-		nnoremap <leader>sq :wq<cr>
+		nnoremap <leader>b :wq<cr>
 
 	" space-q to quit (doesn't save, watch out!)
 		nnoremap <leader>q :q!<cr>
@@ -110,6 +116,7 @@ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 set relativenumber
+set number
 
 set smarttab
 set cindent
@@ -260,7 +267,7 @@ nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent> <space>sy  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>y  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
