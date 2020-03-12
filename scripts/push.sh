@@ -3,6 +3,7 @@ cp -f ~/.Xresources ~/Downloads/dotfiles/
 cp -f -r ~/.config/i3/* ~/Downloads/dotfiles/.config/i3/ 
 cp -f -r ~/.config/polybar/* ~/Downloads/dotfiles/.config/polybar/
 cp -f -r ~/.config/nvim/* ~/Downloads/dotfiles/.config/nvim/
+cp -f -r ~/.config/ranger/* ~/Downloads/dotfiles/.config/ranger/
 cp -f -r ~/Pictures/* ~/Downloads/dotfiles/Pictures/
 cp -f -r ~/scripts/* ~/Documents/dotfiles/scripts/
 
