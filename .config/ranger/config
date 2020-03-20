@@ -1,0 +1,209 @@
+[bar/i3wmthemer_bar]
+width = 100%
+height = 25
+radius = 0
+fixed-center = false
+
+background = #282828
+foreground = #F5F1E8
+
+line-size = 3
+line-color =
+
+border-size = 0
+border-color =
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Source Code Pro Semibold:size=14;1"
+font-1 = "Font Awesome 5 Free:style=Solid:size=12;1"
+font-2 = "Font Awesome 5 Brands:size=12;1"
+
+modules-left = i3 
+modules-center = date
+modules-right = wlan battery cpu-temp cpu 
+
+tray-detached = false
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 2
+tray-maxsize = 200
+tray-scale = 1.0
+tray-position = right
+tray-background = ${colors.background}
+tray-foreground = ${colors.foreground}
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[colors]
+foreground = #282828
+background = #458588
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #282828
+label-mode-background = #458588
+
+label-focused = %index%
+label-focused-background = #458588
+label-focused-foreground = #282828
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-background = #282828
+label-unfocused-foreground = #F5F1E8
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = #458588
+label-visible-foreground = #282828
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-background = #BA2922
+label-urgent-padding = 2
+
+[module/wlan]
+type = internal/network
+interface = wlp1s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = #282828
+format-connected-background = #458588
+format-connected-padding = 2
+label-connected-foreground =#282828
+label-connected = %essid%
+
+format-disconnected =
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #282828
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-foreground = #282828
+format-background = #458588
+format-padding = 2
+
+label = %date% %time%
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+format-spacing = 1
+
+label-open = "  "
+label-open-foreground = #282828
+label-close =  cancel
+label-close-foreground = #282828
+label-separator = |
+label-separator-foreground = #282828
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = log off
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = log off
+menu-3-0-exec = pkill -KILL -u $USER
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+
+
+;################## MODULE
+
+[module/battery]
+type = internal/battery
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.background}
+format-full-suffix = "  "
+format-full-prefix = " "
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.background}
+format-charging-suffix = "  "
+format-charging-prefix = " "
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.background}
+format-discharging-suffix = " "
+format-discharging-prefix = " "
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+full-at = 97
+battery = BAT0
+adapter = ADP1
+poll-interval = 5
+
+[module/cpu-temp]
+type = custom/script
+exec = ~/.config/polybar/scripts/cpu-temp.sh
+interval = 6
+format-prefix = "  "
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+[module/cpu]
+type = internal/cpu
+interval = 1 
+;format = %{u#282828}%{+u} <label> <ramp-coreload>%{-u}
+format = <label> <ramp-coreload>
+label = %percentage:3%%
+ramp-coreload-spacing = 0
+# ramp-coreload-0 =  
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+format-prefix = " "
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
