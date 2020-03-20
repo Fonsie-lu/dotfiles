@@ -2,10 +2,12 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -15,14 +17,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'brooth/far.vim'
-Plug 'jceb/vim-orgmode'
-Plug 'sotte/presenting.vim'
 Plug 'w0rp/ale'
 Plug 'ap/vim-css-color'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', {'do' : './install --bin'}
-Plug 'brooth/far.vim'
-Plug 'metakirby5/codi.vim'
+Plug 'kien/ctrlp.vim'
 
 " Initialize plugin system
 call plug#end()
