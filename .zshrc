@@ -123,6 +123,8 @@ alias yupdate="yay -Syyu"
 alias mnt="udisksctl mount -b /dev/sda1"
 alias umnt="udisksctl unmount -b /dev/sda1"
 alias systemctl="sudo systemctl"
+alias p10kc="p10k configure"
+alias xresload="xrdb -load ~/.Xresources"
 
 alias bashrc="nvim ~/.bashrc"
 alias zconf="nvim ~/.zshrc"
