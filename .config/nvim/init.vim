@@ -14,7 +14,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
 Plug 'jiangmiao/auto-pairs'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'brooth/far.vim'
 Plug 'w0rp/ale'
@@ -122,7 +123,8 @@ set shiftwidth=2
 " always uses spaces instead of tab characters
 set expandtab
 
-colorscheme gruvbox
+colorscheme nord
+set termguicolors
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active

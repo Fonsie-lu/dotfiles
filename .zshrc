@@ -103,7 +103,7 @@ source /usr/share/oh-my-zsh/oh-my-zsh.sh
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
-   export EDITOR='mvim'
+   export EDITOR='nvim'
  fi
 
 zstyle ':completion:*' completer _expand_alias _complete _ignored
@@ -115,34 +115,31 @@ alias update="sudo pacman -Syyu"
 alias pacman="sudo pacman"
 alias pacs="sudo pacman -S"
 alias pacss="sudo pacman -Ss"
+alias pacr="sudo pacman -Rns"
 alias yays="yay -S"
 alias yayss="yay -Ss"
-alias pacr="sudo pacman -Rns"
+alias yupdate="yay -Syyu"
+
+alias mnt="udisksctl mount -b /dev/sda1"
+alias umnt="udisksctl unmount -b /dev/sda1"
+alias systemctl="sudo systemctl"
+
 alias bashrc="nvim ~/.bashrc"
 alias zconf="nvim ~/.zshrc"
-alias i3conf="nvim /home/fonsie/.config/i3/config"
+alias iconf="nvim /home/fonsie/.config/i3/config"
 alias nconf="nvim /home/fonsie/.config/nvim/init.vim"
 alias xres="nvim ~/.Xresources"
 alias pconf="nvim ~/.config/polybar/config"
 alias rconf="nvim ~/.config/ranger/rc.conf"
+alias aconf="nvim ~/.config/alacritty/alacritty.yml"
+
 alias cd..="cd .."
 alias cd...="cd ..."
 alias cd....="cd ...."
 alias cdd="cd ~/Downloads/"
-alias boom="sh ~/scripts/boom.sh"
-alias cdrec="cd ~/Downloads/Recordurbate/recordurbate/"
-alias recrest="./Recordurbate.py restart"
-alias recstart="./Recordurbate.py start"
-alias recstop="./Recordurbate.py stop"
-alias reclist="./Recordurbate.py list"
-alias recadd="./Recordurbate.py add "
-alias recdel="./Recordurbate.py del "
-alias aconf="sudo nvim /etc/httpd/conf/httpd.conf"
-alias httpdst="sudo systemctl start httpd"
-alias httpdsp="sudo systemctl stop httpd"
 
 # Greeting
-pfetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+pfetch
