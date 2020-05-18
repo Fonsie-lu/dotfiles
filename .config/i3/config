@@ -102,6 +102,7 @@ for_window [urgent=latest] focus
 exec --no-startup-id setxkbmap -layout ch
 exec --no-startup-id feh --bg-scale ~/Pictures/09.jpg
 exec --no-startup-id picom -CGb
+exec_always --no-startup-id autotiling
 # exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id pamac-tray

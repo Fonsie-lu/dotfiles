@@ -91,6 +91,8 @@ SOLARIZED_THEME="dark"
 plugins=(git )
 
 source /usr/share/oh-my-zsh/oh-my-zsh.sh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 # User configuration
 
@@ -135,10 +137,19 @@ alias pconf="nvim ~/.config/polybar/config"
 alias rconf="nvim ~/.config/ranger/rc.conf"
 alias aconf="nvim ~/.config/alacritty/alacritty.yml"
 
+alias sshgen="ssh-keygen -t rsa -b 4096 -C "beat.weber.86@gmail.com""
+alias sshstart="eval "$(ssh-agent -s)""
+alias sshadd="ssh-add ~/.ssh/id_rsa"
+
 alias cd..="cd .."
 alias cd...="cd ..."
 alias cd....="cd ...."
 alias cdd="cd ~/Downloads/"
+alias ekmstart="~/Downloads/ekm/ekm.py start"
+alias ekmstop="~/Downloads/ekm/ekm.py stop"
+alias ekmrest="~/Downloads/ekm/ekm.py restart"
+alias ekmadd="~/Downloads/ekm/ekm.py add"
+alias ekmlist="~/Downloads/ekm/ekm.py list"
 
 # Greeting
 
