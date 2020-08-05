@@ -8,6 +8,7 @@ sudo pacman -S python-pip
 yay -S polybar neovim-plug zsh-syntax-highlighting zsh-theme-powerlevel10k-git pfetch-git oh-my-zsh-git
 yay -S vim-devicons google-chrome youtube-dl tp_smapi pango-perl ntfs-3g-fuse blkmenu nerd-fonts-meslo
 yay -S aur/nordic-theme-git aur/papirus-folders-nordic chili-sddm-theme sddm-config-editor-git latex-mk
+yay -S alacritty checkupdates neofetch
 
 #Setup Environement
 sudo cp backlight.rules /etc/udev/rules.d/

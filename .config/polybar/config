@@ -1,6 +1,6 @@
-[bar/i3wmthemer_bar]
+[bar/main]
 width = 100%
-height = 25
+height = 27
 radius = 0
 fixed-center = false
 
@@ -8,24 +8,20 @@ background = #2E3440
 foreground = #D8DEE9
 
 line-size = 3
-line-color =
-
 border-size = 0
-border-color =
-
 padding-left = 0
 padding-right = 0
-
+margin-top = 2
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "MesloLGS Nerd Font Mono:size=13;1"
-font-1 = "DejaVu Sans Condensed:size=13;1"
-font-2 = "devicons:size=13;1"
+font-0 = "JetBrainsMono Nerd Font Mono:size=13;1"
+font-1 = "MesloLGS Nerd Font Mono:size=13;1"
+font-3 = "devicons:size=13;1"
 
 modules-left = i3 
 modules-center = date
-modules-right = wlan battery cpu-temp cpu 
+modules-right = updates home volume mem wlan battery cpu-temp cpu 
 
 tray-detached = false
 tray-offset-x = 0
@@ -72,27 +68,6 @@ label-visible-padding = 2
 label-urgent = %index%
 label-urgent-background = #BA2922
 label-urgent-padding = 2
-
-[module/wlan]
-type = internal/network
-interface = wlp1s0
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = #2E3440
-format-connected-background = #81A1C1
-format-connected-padding = 2
-label-connected-foreground =#2E3440
-label-connected = %essid%
-
-format-disconnected =
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = #2E3440
 
 [module/date]
 type = internal/date
@@ -150,12 +125,63 @@ menu-3-1-exec = menu-open-0
 screenchange-reload = true
 
 [global/wm]
-margin-top = 0
-margin-bottom = 0
+margin-top = 2 
+margin-bottom = 2
 
+[module/cpu-temp]
+type = custom/script
+exec = ~/.config/polybar/scripts/cpu-temp.sh
+interval = 6
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
+[module/mem]
+type = custom/script
+exec = ~/.config/polybar/scripts/mem.sh
+interval = 6
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
-;################## MODULE
+[module/home]
+type = custom/script
+exec = ~/.config/polybar/scripts/home.sh
+interval = 3601
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+[module/updates]
+type = custom/script
+exec = "~/.config/polybar/scripts/packages.sh"
+format = <label>
+interval = 3600
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+[module/volume]
+type = custom/script
+exec = "~/.config/polybar/scripts/volume.sh"
+format = <label>
+interval = 1
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+[module/cpu]
+type = internal/cpu 
+interval = 1 
+format = <label> <ramp-coreload>
+label = %percentage:3%%
+format-prefix = " 龍"
+ramp-coreload-spacing = 0
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
 [module/battery]
 type = internal/battery
@@ -179,31 +205,23 @@ battery = BAT0
 adapter = ADP1
 poll-interval = 5
 
-[module/cpu-temp]
-type = custom/script
-exec = ~/.config/polybar/scripts/cpu-temp.sh
-interval = 6
-format-prefix = "  "
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+[module/wlan]
+type = internal/network
+interface = wlp1s0
+interval = 3.0
 
-[module/cpu]
-type = internal/cpu
-interval = 1 
-;format = %{u#2E3440}%{+u} <label> <ramp-coreload>%{-u}
-format = <label> <ramp-coreload>
-label = %percentage:3%%
-ramp-coreload-spacing = 0
-# ramp-coreload-0 =  
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
-format-prefix = " "
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = #2E3440
+format-connected-background = #81A1C1
+format-connected-padding = 2
+label-connected-foreground =#2E3440
+label-connected = %essid%
 
+format-disconnected =
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #2E3440
