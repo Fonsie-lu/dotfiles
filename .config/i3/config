@@ -13,7 +13,7 @@ hide_edge_borders none
 bindsym  $Mod+q		kill
 
 # core
-bindsym $Mod+w          exec --no-startup-id google-chrome-stable
+bindsym $Mod+w          exec --no-startup-id google-chrome-unstable
 bindsym $Mod+f          exec alacritty -e ranger
 bindsym $Mod+s          exec alacritty -e nvim
 bindsym $Mod+Return     exec --no-startup-id alacritty
@@ -100,9 +100,9 @@ for_window [urgent=latest] focus
 
 # Autostart applications
 exec --no-startup-id setxkbmap -layout ch
-exec --no-startup-id feh --bg-scale ~/Pictures/09.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/13.jpg
 exec --no-startup-id picom -CGb
-exec_always --no-startup-id autotiling
+exec --no-startup-id autotiling
 # exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id pamac-tray
@@ -111,7 +111,7 @@ exec_always --no-startup-id autotiling
 # exec_always --no-startup-id fix_xcursor
 
 
-exec_always --no-startup-id /$HOME/.config/polybar/i3wmthemer_bar_launch.sh
+exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
 # Theme colors
 client.focused #81A1C1 #2E3440 #81A1C1 #81A1C1 #81A1C1
 client.focused_inactive #81A1C1 #2E3440 #81A1C1 #4C566A #4C566A
@@ -168,16 +168,16 @@ mode "Brightness" {
 
 bindsym $mod+l mode "Loudness"
 mode "Loudness" {
-    bindsym 1 exec pactl set-sink-volume 0 11%; mode "default" 
-    bindsym 2 exec pactl set-sink-volume 0 22%; mode "default" 
-    bindsym 3 exec pactl set-sink-volume 0 33%; mode "default" 
-    bindsym 4 exec pactl set-sink-volume 0 44%; mode "default" 
-    bindsym 5 exec pactl set-sink-volume 0 55%; mode "default" 
-    bindsym 6 exec pactl set-sink-volume 0 66%; mode "default" 
-    bindsym 7 exec pactl set-sink-volume 0 77%; mode "default" 
-    bindsym 8 exec pactl set-sink-volume 0 88%; mode "default" 
-    bindsym 9 exec pactl set-sink-volume 0 99%; mode "default" 
-    bindsym 0 exec pactl set-sink-volume 0 0%; mode "default" 
+    bindsym 1 exec pactl set-sink-volume 2 11%; mode "default" 
+    bindsym 2 exec pactl set-sink-volume 2 22%; mode "default" 
+    bindsym 3 exec pactl set-sink-volume 2 33%; mode "default" 
+    bindsym 4 exec pactl set-sink-volume 2 44%; mode "default" 
+    bindsym 5 exec pactl set-sink-volume 2 55%; mode "default" 
+    bindsym 6 exec pactl set-sink-volume 2 66%; mode "default" 
+    bindsym 7 exec pactl set-sink-volume 2 77%; mode "default" 
+    bindsym 8 exec pactl set-sink-volume 2 88%; mode "default" 
+    bindsym 9 exec pactl set-sink-volume 2 100%; mode "default" 
+    bindsym 0 exec pactl set-sink-volume 2 0%; mode "default" 
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
