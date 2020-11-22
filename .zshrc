@@ -111,7 +111,6 @@ source /usr/share/fzf/key-bindings.zsh
 zstyle ':completion:*' completer _expand_alias _complete _ignored
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Example aliases
 alias update="sudo pacman -Syyu"
@@ -123,10 +122,10 @@ alias yays="yay -S"
 alias yayss="yay -Ss"
 alias yupdate="yay -Syyu"
 
-alias mntu="udisksctl mount -b /dev/sdc1"
-alias umntu="udisksctl unmount -b /dev/sdc1"
 alias mnt="udisksctl mount -b /dev/sdb2"
 alias umnt="udisksctl unmount -b /dev/sdb2"
+alias mntu="udisksctl mount -b /dev/sdc1"
+alias umntu="udisksctl unmount -b /dev/sdc1"
 alias systemctl="sudo systemctl"
 alias p10kc="p10k configure"
 alias xresload="xrdb -load ~/.Xresources"
@@ -148,14 +147,7 @@ alias cd..="cd .."
 alias cd...="cd ..."
 alias cd....="cd ...."
 alias cdd="cd ~/Downloads/"
-alias cdm="cd /run/media/fonsie/Storage/Movies"
 alias cdr="cd ~/Downloads/Recordurbate/recordurbate"
-alias ekmstart="~/Downloads/ekm/ekm.py start"
-alias ekmstop="~/Downloads/ekm/ekm.py stop"
-alias ekmrest="~/Downloads/ekm/ekm.py restart"
-alias ekmadd="~/Downloads/ekm/ekm.py add"
-alias ekmlist="~/Downloads/ekm/ekm.py list"
-alias pwlist="nvim ~/Projects/ServiceNow/pwlist.txt"
 
 # Greeting
 

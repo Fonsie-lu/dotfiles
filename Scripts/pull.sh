@@ -1,5 +1,5 @@
 cd ~/Downloads/dotfiles/
-git pull
+##git pull
 
 cp -f ~/Downloads/dotfiles/.zshrc ~/.zshrc 
 cp -f ~/Downloads/dotfiles/.Xresources ~/.Xresources 
