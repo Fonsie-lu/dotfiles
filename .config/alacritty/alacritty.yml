@@ -24,15 +24,13 @@ colors:
     cyan: '0x8FBCBB'
     white: '0xECEFF4'
 font:
+  size: 13
   normal:
     family: JetBrainsMono Nerd Font Mono
     style: Regular
-    size: 13
   bold:
     family: JetBrainsMono Nerd Font Mono
     style: Bold
-    size: 13
   italic:
     family: JetBrainsMono Nerd Font Mono
     style: Italic
-    size: 13
