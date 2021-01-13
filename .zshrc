@@ -143,16 +143,13 @@ alias pwlist="nvim ~/Documents/pwlist.txt"
 alias sshgen="ssh-keygen -t rsa -b 4096 -C "beat.weber.86@gmail.com""
 alias sshstart="eval "$(ssh-agent -s)""
 alias sshadd="ssh-add ~/.ssh/id_rsa"
-alias rdp="rdesktop -g 1440x900 -P -z -x l -r sound:off -u testrdp 107.23.117.22"
 
 alias cd..="cd .."
 alias cd...="cd ..."
 alias cd....="cd ...."
 alias cdd="cd ~/Downloads/"
-alias cdr="cd ~/Downloads/Recordurbate/recordurbate"
 
 # Greeting
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 neofetch
