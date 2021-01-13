@@ -1,4 +1,8 @@
 #!/bin/sh
 
 packages=`checkupdates | wc -l` 
-echo "  "$packages" " 
+
+aur=`checkupdates-aur | wc -l` 
+
+echo "  "$packages"|"$aur" " 
+

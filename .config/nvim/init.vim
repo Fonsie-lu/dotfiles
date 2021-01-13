@@ -24,6 +24,8 @@ set hlsearch
 set showcmd         " Show command in Status Line
 set autoread        " Reloads externally changed files
 colorscheme nord
+nnoremap <leader>y "+y
+set clipboard+=unnamedplus
 
 " Key Bindings
 let mapleader = "\<Space>"

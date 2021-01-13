@@ -21,6 +21,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'brooth/far.vim'
 Plug 'airblade/vim-rooter'
+Plug 'PotatoesMaster/i3-vim-syntax'
 
 " Initialize plugin system
 call plug#end()

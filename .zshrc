@@ -138,10 +138,12 @@ alias xres="nvim ~/.Xresources"
 alias pconf="nvim ~/.config/polybar/config"
 alias rconf="nvim ~/.config/ranger/rc.conf"
 alias aconf="nvim ~/.config/alacritty/alacritty.yml"
+alias pwlist="nvim ~/Documents/pwlist.txt"
 
 alias sshgen="ssh-keygen -t rsa -b 4096 -C "beat.weber.86@gmail.com""
 alias sshstart="eval "$(ssh-agent -s)""
 alias sshadd="ssh-add ~/.ssh/id_rsa"
+alias rdp="rdesktop -g 1440x900 -P -z -x l -r sound:off -u testrdp 107.23.117.22"
 
 alias cd..="cd .."
 alias cd...="cd ..."

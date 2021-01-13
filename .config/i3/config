@@ -15,6 +15,8 @@ bindsym  $Mod+q		kill
 # core
 bindsym $Mod+w          exec --no-startup-id google-chrome-stable
 bindsym $Mod+Shift+w    exec --no-startup-id google-chrome-stable --incognito
+bindsym $Mod+Shift+m    exec --no-startup-id google-chrome-stable https://afiprod.service-now.com/now/workspace/agent/new_record/interaction/-1/params/query/u_inboundnumber%3D%2B41%2058%20226%2007%2035
+bindsym $Mod+Shift+n    exec --no-startup-id google-chrome-stable https://afiprod.service-now.com/nav_to.do?uri=%2Finteraction.do?sys_inboundnumber%3D%2B41%2058%20226%2007%2035&sys_id=-1
 bindsym $Mod+f          exec alacritty -e ranger
 bindsym $Mod+s          exec alacritty -e nvim
 bindsym $Mod+Return     exec --no-startup-id alacritty
@@ -102,7 +104,7 @@ for_window [urgent=latest] focus
 # Autostart applications
 exec --no-startup-id setxkbmap -layout ch
 exec --no-startup-id feh --bg-fill ~/Pictures/17.jpg
-exec --no-startup-id picom -CGb
+exec --no-startup-id picom --experimental-backend
 # exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id pamac-tray
@@ -213,8 +215,8 @@ mode "resize" {
 ##############     GAPS                     ################
 ############################################################
 
-gaps inner 10
-gaps outer -4
+gaps inner 7
+gaps outer -1
 
 smart_gaps on
 
