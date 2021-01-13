@@ -39,5 +39,4 @@ sudo cp -r /usr/share/zsh-theme-powerlevel10k/* /usr/share/oh-my-zsh/themes
 sh ~/Downloads/dotfiles/Scripts/pull.sh
 
 #Run configs
-p10k configure
 sudo sensors-detect

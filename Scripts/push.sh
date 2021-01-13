@@ -3,6 +3,8 @@
 #Base
 cp -f ~/.zshrc ~/Downloads/dotfiles/
 cp -f ~/.Xresources ~/Downloads/dotfiles/
+cp -f ~/.gtkrc-2.0 ~/Downloads/dotfiles/
+cp -f ~/.p10k.zsh ~/Downloads/dotfiles/
 
 #Specific
 cp -f -r ~/.config/i3/* ~/Downloads/dotfiles/.config/i3/ 
