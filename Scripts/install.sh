@@ -1,5 +1,14 @@
 #!/bin/sh
 
+#Install yay
+sudo pacman -S base-devel git go
+cd ~/Downloads
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+rm -r -f ~/Downloads/yay
+cd ~/Downloads
+
 #Packages
 sudo pacman -S ranger zip unzip rofi feh bluez bluez-utils git code wget qt5ct yay ctags
 sudo pacman -S pavucontrol lxrandr vlc i3-gaps zsh nemo python-pynvim nodejs yarn npm xsel gtk-engines w3m openssh
@@ -11,32 +20,33 @@ yay -S nordic-theme-git papirus-folders-nordic latex-mk nerd-fonts-jetbrains-mon
 
 #Setup Environement
 sudo cp backlight.rules /etc/udev/rules.d/
-sudo npm install -g eslint vue @vue/cli create-react-app nodemon core-js neovim
-pip3 install neovim-remote
+sudo npm install -g eslint core-js neovim
+pip install neovim-remote
 
 #Create Directories
 mkdir ~/.config
-
-mkdir ~/.config/nvim
-mkdir ~/.config/ranger
-mkdir ~/.config/alacritty
-mkdir ~/.config/picom
-mkdir ~/.config/zsh
-mkdir ~/.config/i3
-mkdir ~/.config/polybar
-
-mkdir ~/.conig/gtk-3.0
-mkdir ~/.config/Kvantum
-mkdir ~/.config/qt5ct
-
-mkdir ~/Scripts
 mkdir ~/Pictures
 
-#Copy themes
-sudo cp -r /usr/share/zsh-theme-powerlevel10k/* /usr/share/oh-my-zsh/themes
+#Copy configs
+cp -f -r ~/Downloads/dotflies/.p10k.zsh ~/
+cp -f -r ~/Downloads/dotfiles/.zshrc ~/
+cp -f -r ~/Downloads/dotfiles/.xinitrc ~/
+cp -f -r ~/Downloads/dotfiles/.Xresources ~/
+cp -f -r ~/Downloads/dotfiles/.gtkrc-2.0 ~/
 
-#Distribute configs
-sh ~/Downloads/dotfiles/Scripts/pull.sh
+cp -f -r ~/Downloads/dotfiles/.config/* ~/.config/
+cp -f -r ~/Downloads/dotfiles/Pictures/* ~/Pictures/
 
-#Run configs
+sudo cp -r /usr/share/zsh-theme-powerlevel10k/* /usr/share/oh-my-zsh/themes/
+sudo cp -r ~/Downloads/dotfiles/Scripts/override.conf /etc/systemd/system/getty@tty1.service.d/
+
+#Autologin
+sudo systemctl enable getty@tty1
+
+#Run Stuff
 sudo sensors-detect
+nvim -c PlugInstall 
+nvim -c UpdateRemotePlugins
+clear
+
+echo "Ye Dun, Brah"

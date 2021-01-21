@@ -21,6 +21,7 @@ POWERLEVEL9K_INSTANT_PROMPT=off
 export ZSH="/usr/share/oh-my-zsh"
 export EDITOR="/usr/share/nvim"
 export VISUAL="/usr/share/nvim"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -148,6 +149,8 @@ alias cd..="cd .."
 alias cd...="cd ..."
 alias cd....="cd ...."
 alias cdd="cd ~/Downloads/"
+
+if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then startx; fi
 
 # Greeting
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

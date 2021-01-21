@@ -3,7 +3,7 @@
 
 include "/home/fonsie/.gtkrc-2.0.mine"
 gtk-theme-name="Nordic"
-gtk-icon-theme-name="ePapirus-nordic-blue-folders"
+gtk-icon-theme-name="Papirus-nordic-folders"
 gtk-font-name="Ubuntu 12"
 gtk-cursor-theme-name="Adwaita"
 gtk-cursor-theme-size=0
