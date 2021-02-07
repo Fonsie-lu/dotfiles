@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:DejaVu Sans Mono 12
+font pango:JetBrains Mono Nerd Font Mono 12
 new_window pixel 3
 new_float normal
 floating_modifier $mod
@@ -13,8 +13,8 @@ hide_edge_borders none
 bindsym  $Mod+q		kill
 
 # core
-bindsym $Mod+w          exec --no-startup-id google-chrome-unstable
-bindsym $Mod+Shift+w    exec --no-startup-id google-chrome-unstable --incognito
+bindsym $Mod+w          exec --no-startup-id google-chrome-stable
+bindsym $Mod+Shift+w    exec --no-startup-id google-chrome-stable --incognito
 bindsym $Mod+f          exec alacritty -e ranger
 bindsym $Mod+s          exec alacritty -e nvim
 bindsym $Mod+Return     exec --no-startup-id alacritty
@@ -100,9 +100,9 @@ for_window [urgent=latest] focus
 ############################################################
 
 # Autostart applications
-exec --no-startup-id setxkbmap -layout ch
+# exec --no-startup-id setxkbmap -layout ch
 exec --no-startup-id feh --bg-fill ~/Pictures/17.jpg
-exec --no-startup-id picom --experimental-backend --xrender-sync-fence
+# exec --no-startup-id picom --experimental-backend --xrender-sync-fence
 # exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id pamac-tray
@@ -113,13 +113,13 @@ exec --no-startup-id picom --experimental-backend --xrender-sync-fence
 
 exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
 # Theme colors
-client.focused #81A1C1 #2E3440 #81A1C1 #81A1C1 #81A1C1
-client.focused_inactive #81A1C1 #2E3440 #81A1C1 #4C566A #4C566A
-client.unfocused #81A1C1 #2E3440 #81A1C1 #4C566A #4C566A
-client.urgent #81A1C1 #2E3440 #81A1C1 #4C566A #4C566A
-client.placeholder #81A1C1 #2E3440 #81A1C1 #4C566A #4C566A
+client.focused #84a0c6 #161821 #84a0c6 #84a0c6 #84a0c6
+client.focused_inactive #84a0c6 #161821 #84a0c6 #6b7089 #6b7089
+client.unfocused #84a0c6 #161821 #84a0c6 #6b7089 #6b7089
+client.urgent #84a0c6 #161821 #84a0c6 #6b7089 #6b7089
+client.placeholder #84a0c6 #161821 #84a0c6 #6b7089 #6b7089
 
-client.background #2E3440
+client.background #161821
 
 ############################################################
 ##############     Reload @ Restart        ################

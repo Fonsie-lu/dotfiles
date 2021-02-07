@@ -4,8 +4,8 @@ height = 27
 radius = 0
 fixed-center = false
 
-background = #2E3440
-foreground = #D8DEE9
+background = #161821
+foreground = #d2d4de
 
 line-size = 3
 border-size = 0
@@ -16,11 +16,11 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = "JetBrainsMono Nerd Font Mono:size=13;1"
-font-1 = "MesloLGS Nerd Font Mono:size=13;1"
-font-3 = "devicons:size=13;1"
+font-1 = "Ubuntu:size=13;1"
+font-2 = "devicons:size=13;1"
 
-modules-left = i3 
-modules-center = date
+modules-left = date 
+modules-center = i3
 modules-right = updates home volume mem wlan battery cpu-temp cpu 
 
 tray-detached = false
@@ -37,8 +37,8 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [colors]
-foreground = #2E3440
-background = #81A1C1
+foreground = #d2d4de
+background = #2E3440
 
 [module/i3]
 type = internal/i3
@@ -47,26 +47,26 @@ index-sort = true
 wrapping-scroll = false
 
 label-mode-padding = 2
-label-mode-foreground = #2E3440
-label-mode-background = #81A1C1
+label-mode-foreground = #161821
+label-mode-background = #84a8c6
 
 label-focused = %index%
-label-focused-background = #81A1C1
-label-focused-foreground = #2E3440
+label-focused-background = #84a8c6
+label-focused-foreground = #161821
 label-focused-padding = 2
 
 label-unfocused = %index%
 label-unfocused-background = #2E3440
-label-unfocused-foreground = #D8DEE9
+label-unfocused-foreground = #d2d4de
 label-unfocused-padding = 2
 
 label-visible = %index%
-label-visible-background = #81A1C1
+label-visible-background = #84a8c6
 label-visible-foreground = #2E3440
 label-visible-padding = 2
 
 label-urgent = %index%
-label-urgent-background = #BA2922
+label-urgent-background = #e27878
 label-urgent-padding = 2
 
 [module/date]
@@ -80,8 +80,8 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-foreground = #2E3440
-format-background = #81A1C1
+format-foreground = #d2d4de
+format-background = #2E3440
 format-padding = 2
 
 label = %date% %time%
@@ -93,11 +93,11 @@ expand-right = true
 format-spacing = 1
 
 label-open = "  "
-label-open-foreground = #2E3440
+label-open-foreground = #d2d4de
 label-close =  cancel
-label-close-foreground = #2E3440
+label-close-foreground = #d2d4de
 label-separator = |
-label-separator-foreground = #2E3440
+label-separator-foreground = #d2d4de
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -211,10 +211,10 @@ interface = wlp1s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = #2E3440
-format-connected-background = #81A1C1
+format-connected-foreground = #d2d4de
+format-connected-background = #2E3440
 format-connected-padding = 2
-label-connected-foreground =#2E3440
+label-connected-foreground =#d2d4de
 label-connected = %essid%
 
 format-disconnected =
@@ -224,4 +224,4 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = #2E3440
+ramp-signal-foreground = #d2d4de

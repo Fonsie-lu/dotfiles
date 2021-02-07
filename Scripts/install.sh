@@ -38,7 +38,12 @@ cp -f -r ~/Downloads/dotfiles/.config/* ~/.config/
 cp -f -r ~/Downloads/dotfiles/Pictures/* ~/Pictures/
 
 sudo cp -r /usr/share/zsh-theme-powerlevel10k/* /usr/share/oh-my-zsh/themes/
+sudo mkdir /etc/systemd/system/getty@tty1.service.d/
 sudo cp -r ~/Downloads/dotfiles/Scripts/override.conf /etc/systemd/system/getty@tty1.service.d/
+
+#Set git config
+git config --global user.email "beat.weber.86@gmail.com"
+git config --global user.name "Beat Weber WS"
 
 #Autologin
 sudo systemctl enable getty@tty1

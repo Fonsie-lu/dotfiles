@@ -1,4 +1,4 @@
 #!/bin/sh
 
-mem=`df -m | awk '/sda3/ {print $5}'` 
+mem=`df -m | awk '/sda2/ {print $5}'` 
 echo "  "$mem" " 

@@ -23,7 +23,7 @@ set mouse=a
 set hlsearch
 set showcmd         " Show command in Status Line
 set autoread        " Reloads externally changed files
-colorscheme nord
+colorscheme iceberg
 nnoremap <leader>y "+y
 set clipboard+=unnamedplus
 
