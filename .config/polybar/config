@@ -38,7 +38,7 @@ cursor-scroll = ns-resize
 
 [colors]
 foreground = #D8DEE9
-background = #3B4252
+background = #343245
 
 [module/i3]
 type = internal/i3
@@ -56,13 +56,13 @@ label-focused-foreground = #1E1C31
 label-focused-padding = 2
 
 label-unfocused = %index%
-label-unfocused-background = #3B4252
+label-unfocused-background = #343245
 label-unfocused-foreground = #D8DEE9
 label-unfocused-padding = 2
 
 label-visible = %index%
 label-visible-background = #81A1C1
-label-visible-foreground = #3B4252
+label-visible-foreground = #343245
 label-visible-padding = 2
 
 label-urgent = %index%
@@ -81,7 +81,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-foreground = #D8DEE9
-format-background = #3B4252
+format-background = #343245
 format-padding = 2
 
 label = %date% %time%
@@ -212,7 +212,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = #D8DEE9
-format-connected-background = #3B4252
+format-connected-background = #343245
 format-connected-padding = 2
 label-connected-foreground =#D8DEE9
 label-connected = %essid%

@@ -131,8 +131,6 @@ alias umnt="udisksctl unmount -b /dev/sdb1"
 alias mntu="udisksctl mount -b /dev/sdc1"
 alias umntu="udisksctl unmount -b /dev/sdc1"
 alias systemctl="doas systemctl"
-alias p10kc="p10k configure"
-alias xresload="xrdb -load ~/.Xresources"
 
 alias bashrc="nvim ~/.bashrc"
 alias zconf="nvim ~/.zshrc"
@@ -143,15 +141,12 @@ alias rconf="nvim ~/.config/ranger/rc.conf"
 alias aconf="nvim ~/.config/alacritty/alacritty.yml"
 alias pwlist="nvim ~/Documents/pwlist.txt"
 
-alias sshgen="ssh-keygen -t rsa -b 4096 -C "beat.weber.86@gmail.com""
-alias sshstart="eval "$(ssh-agent -s)""
-alias sshadd="ssh-add ~/.ssh/id_rsa"
-
-alias cd..="cd .."
-alias cd...="cd ..."
-alias cd....="cd ...."
+alias cd..=" .."
+alias cd...=" ..."
+alias cd....=" ...."
 alias cdd="cd ~/Downloads/"
 alias cdr="cd ~/Downloads/ekm/"
+alias gp="git add --all && git commit -m update && git push origin master"
 
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then startx; fi
 

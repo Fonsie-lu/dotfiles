@@ -1,7 +1,11 @@
 #!/bin/sh
 
-#Install yay
-sudo pacman -S base-devel git go
+echo "install graphics"
+sudo pacman -S nvidia-dkms xorg xorg-xinit i3-gaps xterm nvidia-settings
+#Install paru
+echo "install paru"
+read
+sudo pacman -S base-devel git rust
 cd ~/Downloads
 git clone https://aur.archlinux.org/paru.git
 cd paru
@@ -10,21 +14,42 @@ rm -r -f ~/Downloads/paru
 cd ~/Downloads
 
 #Packages
-sudo pacman -S ranger zip unzip rofi feh bluez bluez-utils git wget qt5ct ctags opendoas
+echo "install packages"
+read answer
+sudo pacman -S ranger zip unzip rofi feh bluez bluez-utils git wget qt5ct ctags opendoas neofetch fzf
+echo "install packages"
+read answer
 sudo pacman -S pavucontrol lxrandr vlc i3-gaps zsh nemo python-pynvim nodejs yarn npm xsel gtk-engines w3m openssh
-sudo pacman -S pulsemixer blueberry alacritty python-pynvim python-requests xorg-xrdb
-sudo pacman -S python-pip kvantum-qt5 ttf-ubuntu-font-family ksnip pacman-contrib archlinux-contrib 
-paru -S polybar neovim-plug zsh-syntax-highlighting zsh-theme-powerlevel10k-git oh-my-zsh-git 
-paru -S vim-devicons google-chrome youtube-dl perl ntfs-3g blkmenu checkupdates-aur
-paru -S nerd-fonts-jetbrains-mono neovim-nightly-git castnow teams vscodium-git vscodium-bin-marketplace 
+echo "install packages"
+read answer
+sudo pacman -S pulsemixer blueberry alacritty python-pynvim python-requests xorg-xrdb qbittorrent
+echo "install packages"
+read answer
+sudo pacman -S python-pip ttf-ubuntu-font-family pacman-contrib archlinux-contrib alsa-utils arch-install-scripts kdenlive
+echo "install packages"
+read answer
+paru -S polybar neovim-plug zsh-syntax-highlighting zsh-theme-powerlevel10k-git oh-my-zsh-git picom-ibhagwan-git 
+echo "install packages"
+read answer
+paru -S vim-devicons google-chrome youtube-dl perl ntfs-3g blkmenu checkupdates-aur ksnip
+echo "install packages"
+read answer
+paru -S nerd-fonts-jetbrains-mono neovim castnow-git teams vscodium-git ttf-ms-fonts onlyoffice-bin
+echo "install packages"
+read answer
 paru -S mtpfs jmtpfs gvfs-mtp firewalld ipset ebtables palenight-gtk-theme mps-youtube-git pulseaudio-equalizer-ladspa-git
 
 #Setup Environement
+echo "Setup Environment"
+read answer
 sudo cp backlight.rules /etc/udev/rules.d/
 sudo npm install -g eslint core-js neovim
 pip install neovim-remote
+sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
 
 #Create Directories
+echo "Setup Directories"
+read answer
 mkdir ~/.config
 mkdir ~/Pictures
 
@@ -32,7 +57,6 @@ mkdir ~/Pictures
 cp -f -r ~/Downloads/dotflies/.p10k.zsh ~/
 cp -f -r ~/Downloads/dotfiles/.zshrc ~/
 cp -f -r ~/Downloads/dotfiles/.xinitrc ~/
-cp -f -r ~/Downloads/dotfiles/.Xresources ~/
 cp -f -r ~/Downloads/dotfiles/.gtkrc-2.0 ~/
 
 cp -f -r ~/Downloads/dotfiles/.config/* ~/.config/
@@ -50,10 +74,11 @@ git config --global user.name "Beat Weber WS"
 sudo systemctl enable getty@tty1
 sudo systemctl enable firewalld
 
-sudo echo "permint persist :wheel" > /etc/doas.conf
 mpsyt set api_key AIzaSyDxah4CCB3PF08E1TzH0NgAer0rraNodn8
 
 #Run Stuff
+echo "Setup stuff"
+read
 sudo sensors-detect
 nvim -c PlugInstall 
 nvim -c UpdateRemotePlugins
