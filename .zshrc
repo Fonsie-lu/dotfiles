@@ -27,7 +27,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="gruvbox"
+# ZSH_THEME="palenight"
 ZSH_THEME="powerlevel10k"
 SOLARIZED_THEME="dark"
 
@@ -114,20 +114,23 @@ zstyle ':completion:*' completer _expand_alias _complete _ignored
 # export ARCHFLAGS="-arch x86_64"
 
 # Example aliases
-alias update="sudo pacman -Syyu"
-alias pacman="sudo pacman"
-alias pacs="sudo pacman -S"
-alias pacss="sudo pacman -Ss"
-alias pacr="sudo pacman -Rns"
-alias yays="yay -S"
-alias yayss="yay -Ss"
-alias yupdate="yay -Syyu"
+alias sudo="doas"
+alias update="doas pacman -Syyu"
+alias pacman="doas pacman"
+alias pacs="doas pacman -S"
+alias pacss="doas pacman -Ss"
+alias pacr="doas pacman -Rns"
+alias parus="paru -S"
+alias paruss="paru -Ss"
+alias yupdate="paru -Syyu"
+alias paruc="paru -c"
+alias parur="paru -R"
 
-alias mnt="udisksctl mount -b /dev/sdb2"
-alias umnt="udisksctl unmount -b /dev/sdb2"
+alias mnt="udisksctl mount -b /dev/sdb1"
+alias umnt="udisksctl unmount -b /dev/sdb1"
 alias mntu="udisksctl mount -b /dev/sdc1"
 alias umntu="udisksctl unmount -b /dev/sdc1"
-alias systemctl="sudo systemctl"
+alias systemctl="doas systemctl"
 alias p10kc="p10k configure"
 alias xresload="xrdb -load ~/.Xresources"
 
@@ -135,7 +138,6 @@ alias bashrc="nvim ~/.bashrc"
 alias zconf="nvim ~/.zshrc"
 alias iconf="nvim /home/fonsie/.config/i3/config"
 alias nconf="nvim /home/fonsie/.config/nvim/init.vim"
-alias xres="nvim ~/.Xresources"
 alias pconf="nvim ~/.config/polybar/config"
 alias rconf="nvim ~/.config/ranger/rc.conf"
 alias aconf="nvim ~/.config/alacritty/alacritty.yml"
@@ -149,6 +151,7 @@ alias cd..="cd .."
 alias cd...="cd ..."
 alias cd....="cd ...."
 alias cdd="cd ~/Downloads/"
+alias cdr="cd ~/Downloads/ekm/"
 
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then startx; fi
 

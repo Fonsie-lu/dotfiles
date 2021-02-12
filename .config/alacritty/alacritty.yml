@@ -1,36 +1,39 @@
-# Colors (Iceberg Dark)
+# Colors (Material Palenight)
 colors:
-  # Default colors
-  primary:
-    background: '#161821'
-    foreground: '#d2d4de'
+   # Default colors
+   primary:
+     background: '0x1E1C31'
+     foreground: '0xD8DEE9'
 
-  # Normal colors
-  normal:
-    black:   '#161821'
-    red:     '#e27878'
-    green:   '#b4be82'
-    yellow:  '#e2a478'
-    blue:    '#84a0c6'
-    magenta: '#a093c7'
-    cyan:    '#89b8c2'
-    white:   '#c6c8d1'
+   # Normal colors
+   normal:
+     black:   '0x3B4252'
+     red:     '0xff5370'
+     green:   '0xA3BE8C'
+     yellow:  '0xEBCB8B'
+     blue:    '0x81A1C1'
+     magenta: '0xB48EAD'
+     cyan:    '0x88C0D0'
+     white:   '0xE5E9F0'
+     orange:  '0xf78c6c'
 
-  # Bright colors
-  bright:
-    black:   '#6b7089'
-    red:     '#e98989'
-    green:   '#c0ca8e'
-    yellow:  '#e9b189'
-    blue:    '#91acd1'
-    magenta: '#ada0d3'
-    cyan:    '#95c4ce'
-    white:   '#d2d4de'
+   # Bright colors
+   bright:
+     black:   '0x3B4252'
+     red:     '0xff5370'
+     green:   '0xA3BE8C'
+     yellow:  '0xEBCB8B'
+     blue:    '0x81A1C1'
+     magenta: '0xB48EAD'
+     cyan:    '0x88C0D0'
+     white:   '0xE5E9F0'
+     orange:  '0xf78c6c'
 
 font:
   size: 13
   normal:
     family: JetBrainsMono Nerd Font Mono
+    # family: FuraCode Nerd Font Mono  
     style: Regular
   bold:
     family: JetBrainsMono Nerd Font Mono
@@ -44,7 +47,12 @@ font:
 
 window:
   padding:
-    x: 6
-    y: 6
+    x: 16
+    y: 16
+    decorations: buttonless
+
+scrolling:
+  multiplier: 6
+  history: 10000
 
 background_opacity: 1.0

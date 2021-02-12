@@ -23,7 +23,15 @@ set mouse=a
 set hlsearch
 set showcmd         " Show command in Status Line
 set autoread        " Reloads externally changed files
-colorscheme iceberg
+
+"Theme
+" colorscheme nord
+set background=dark
+colorscheme material
+let g:airline_theme='material'
+" let g:material_theme_style = 'palenight'
+
+" Clipboard
 nnoremap <leader>y "+y
 set clipboard+=unnamedplus
 

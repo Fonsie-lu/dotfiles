@@ -4,8 +4,8 @@ height = 27
 radius = 0
 fixed-center = false
 
-background = #161821
-foreground = #d2d4de
+background = #1E1C31
+foreground = #D8DEE9
 
 line-size = 3
 border-size = 0
@@ -37,8 +37,8 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [colors]
-foreground = #d2d4de
-background = #2E3440
+foreground = #D8DEE9
+background = #3B4252
 
 [module/i3]
 type = internal/i3
@@ -47,26 +47,26 @@ index-sort = true
 wrapping-scroll = false
 
 label-mode-padding = 2
-label-mode-foreground = #161821
-label-mode-background = #84a8c6
+label-mode-foreground = #1E1C31
+label-mode-background = #81A1C1
 
 label-focused = %index%
-label-focused-background = #84a8c6
-label-focused-foreground = #161821
+label-focused-background = #81A1C1
+label-focused-foreground = #1E1C31
 label-focused-padding = 2
 
 label-unfocused = %index%
-label-unfocused-background = #2E3440
-label-unfocused-foreground = #d2d4de
+label-unfocused-background = #3B4252
+label-unfocused-foreground = #D8DEE9
 label-unfocused-padding = 2
 
 label-visible = %index%
-label-visible-background = #84a8c6
-label-visible-foreground = #2E3440
+label-visible-background = #81A1C1
+label-visible-foreground = #3B4252
 label-visible-padding = 2
 
 label-urgent = %index%
-label-urgent-background = #e27878
+label-urgent-background = #BF616A
 label-urgent-padding = 2
 
 [module/date]
@@ -80,8 +80,8 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-foreground = #d2d4de
-format-background = #2E3440
+format-foreground = #D8DEE9
+format-background = #3B4252
 format-padding = 2
 
 label = %date% %time%
@@ -93,11 +93,11 @@ expand-right = true
 format-spacing = 1
 
 label-open = "  "
-label-open-foreground = #d2d4de
+label-open-foreground = #D8DEE9
 label-close =  cancel
-label-close-foreground = #d2d4de
+label-close-foreground = #D8DEE9
 label-separator = |
-label-separator-foreground = #d2d4de
+label-separator-foreground = #D8DEE9
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -211,10 +211,10 @@ interface = wlp1s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = #d2d4de
-format-connected-background = #2E3440
+format-connected-foreground = #D8DEE9
+format-connected-background = #3B4252
 format-connected-padding = 2
-label-connected-foreground =#d2d4de
+label-connected-foreground =#D8DEE9
 label-connected = %essid%
 
 format-disconnected =
@@ -224,4 +224,4 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = #d2d4de
+ramp-signal-foreground = #D8DEE9

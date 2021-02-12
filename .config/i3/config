@@ -20,8 +20,8 @@ bindsym $Mod+s          exec alacritty -e nvim
 bindsym $Mod+Return     exec --no-startup-id alacritty
 
 # Rofi
-bindsym $Mod+e exec --no-startup-id rofi -theme nord -show run
-bindsym $Mod+d exec --no-startup-id rofi -show window
+bindsym $Mod+e exec --no-startup-id rofi -theme palenight -show run
+bindsym $dod+d exec --no-startup-id rofi -theme palenight -show window
 
 ################################################################
 ###########          Workspace Bindings          ###############
@@ -102,7 +102,7 @@ for_window [urgent=latest] focus
 # Autostart applications
 # exec --no-startup-id setxkbmap -layout ch
 exec --no-startup-id feh --bg-fill ~/Pictures/17.jpg
-# exec --no-startup-id picom --experimental-backend --xrender-sync-fence
+exec --no-startup-id picom 
 # exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id pamac-tray
@@ -113,13 +113,13 @@ exec --no-startup-id feh --bg-fill ~/Pictures/17.jpg
 
 exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
 # Theme colors
-client.focused #84a0c6 #161821 #84a0c6 #84a0c6 #84a0c6
-client.focused_inactive #84a0c6 #161821 #84a0c6 #6b7089 #6b7089
-client.unfocused #84a0c6 #161821 #84a0c6 #6b7089 #6b7089
-client.urgent #84a0c6 #161821 #84a0c6 #6b7089 #6b7089
-client.placeholder #84a0c6 #161821 #84a0c6 #6b7089 #6b7089
+client.focused #81A1C1 #1E1C31 #81A1C1 #81A1C1 #81A1C1
+client.focused_inactive #81A1C1 #1E1C31 #81A1C1 #3B4252 #3B4252
+client.unfocused #81A1C1 #1E1C31 #81A1C1 #3B4252 #3B4252
+client.urgent #81A1C1 #1E1C31 #81A1C1 #3B4252 #3B4252
+client.placeholder #81A1C1 #1E1C31 #81A1C1 #3B4252 #3B4252
 
-client.background #161821
+client.background #1E1C31
 
 ############################################################
 ##############     Reload @ Restart        ################
@@ -217,6 +217,7 @@ gaps inner 10
 gaps outer 3
 
 # smart_gaps on
+smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner

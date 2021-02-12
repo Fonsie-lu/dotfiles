@@ -3,20 +3,21 @@
 #Install yay
 sudo pacman -S base-devel git go
 cd ~/Downloads
-git clone https://aur.archlinux.org/yay.git
-cd yay
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -si
-rm -r -f ~/Downloads/yay
+rm -r -f ~/Downloads/paru
 cd ~/Downloads
 
 #Packages
-sudo pacman -S ranger zip unzip rofi feh bluez bluez-utils git code wget qt5ct yay ctags
+sudo pacman -S ranger zip unzip rofi feh bluez bluez-utils git code wget qt5ct ctags opendoas
 sudo pacman -S pavucontrol lxrandr vlc i3-gaps zsh nemo python-pynvim nodejs yarn npm xsel gtk-engines w3m openssh
-sudo pacman -S pulsemixer blueberry alacritty python-pynvim python-requests neovim xorg-xrdb
-sudo pacman -S python-pip kvantum-qt5 ttf-ubuntu-font-family ksnip pacman-contrib archlinux-contrib pacman-contrib archlinux-contrib
-yay -S polybar neovim-plug zsh-syntax-highlighting zsh-theme-powerlevel10k-git pfetch-git oh-my-zsh-git 
-yay -S vim-devicons google-chrome youtube-dl perl ntfs-3g-fuse blkmenu kvantum-theme-nordic-git checkupdates-aur
-yay -S nordic-theme-git papirus-folders-nordic latex-mk nerd-fonts-jetbrains-mono picom-jonaburg-git
+sudo pacman -S pulsemixer blueberry alacritty python-pynvim python-requests xorg-xrdb
+sudo pacman -S python-pip kvantum-qt5 ttf-ubuntu-font-family ksnip pacman-contrib archlinux-contrib 
+paru -S polybar neovim-plug zsh-syntax-highlighting zsh-theme-powerlevel10k-git oh-my-zsh-git 
+paru -S vim-devicons google-chrome youtube-dl perl ntfs-3g blkmenu checkupdates-aur
+paru -S nerd-fonts-jetbrains-mono neovim-nightly-git castnow teams
+paru -S mtpfs jmtpfs gvfs-mtp firewalld ipset ebtables palenight-gtk-theme
 
 #Setup Environement
 sudo cp backlight.rules /etc/udev/rules.d/
@@ -47,6 +48,9 @@ git config --global user.name "Beat Weber WS"
 
 #Autologin
 sudo systemctl enable getty@tty1
+sudo systemctl enable firewalld
+
+sudo echo "permint persist :wheel" > /etc/doas.conf
 
 #Run Stuff
 sudo sensors-detect
