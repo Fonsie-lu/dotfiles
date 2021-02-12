@@ -10,14 +10,14 @@ rm -r -f ~/Downloads/paru
 cd ~/Downloads
 
 #Packages
-sudo pacman -S ranger zip unzip rofi feh bluez bluez-utils git code wget qt5ct ctags opendoas
+sudo pacman -S ranger zip unzip rofi feh bluez bluez-utils git wget qt5ct ctags opendoas
 sudo pacman -S pavucontrol lxrandr vlc i3-gaps zsh nemo python-pynvim nodejs yarn npm xsel gtk-engines w3m openssh
 sudo pacman -S pulsemixer blueberry alacritty python-pynvim python-requests xorg-xrdb
 sudo pacman -S python-pip kvantum-qt5 ttf-ubuntu-font-family ksnip pacman-contrib archlinux-contrib 
 paru -S polybar neovim-plug zsh-syntax-highlighting zsh-theme-powerlevel10k-git oh-my-zsh-git 
 paru -S vim-devicons google-chrome youtube-dl perl ntfs-3g blkmenu checkupdates-aur
-paru -S nerd-fonts-jetbrains-mono neovim-nightly-git castnow teams
-paru -S mtpfs jmtpfs gvfs-mtp firewalld ipset ebtables palenight-gtk-theme
+paru -S nerd-fonts-jetbrains-mono neovim-nightly-git castnow teams vscodium-git vscodium-bin-marketplace 
+paru -S mtpfs jmtpfs gvfs-mtp firewalld ipset ebtables palenight-gtk-theme mps-youtube-git pulseaudio-equalizer-ladspa-git
 
 #Setup Environement
 sudo cp backlight.rules /etc/udev/rules.d/
@@ -51,6 +51,7 @@ sudo systemctl enable getty@tty1
 sudo systemctl enable firewalld
 
 sudo echo "permint persist :wheel" > /etc/doas.conf
+mpsyt set api_key AIzaSyDxah4CCB3PF08E1TzH0NgAer0rraNodn8
 
 #Run Stuff
 sudo sensors-detect
