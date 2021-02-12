@@ -16,7 +16,7 @@ cd ~/Downloads
 #Packages
 echo "install packages"
 read answer
-sudo pacman -S ranger zip unzip rofi feh bluez bluez-utils git wget qt5ct ctags opendoas neofetch fzf
+sudo pacman -S ranger zip unzip rofi feh bluez bluez-utils git wget qt5ct ctags opendoas neofetch fzf discord
 echo "install packages"
 read answer
 sudo pacman -S pavucontrol lxrandr vlc i3-gaps zsh nemo python-pynvim nodejs yarn npm xsel gtk-engines w3m openssh
@@ -31,7 +31,7 @@ read answer
 paru -S polybar neovim-plug zsh-syntax-highlighting zsh-theme-powerlevel10k-git oh-my-zsh-git picom-ibhagwan-git 
 echo "install packages"
 read answer
-paru -S vim-devicons google-chrome youtube-dl perl ntfs-3g blkmenu checkupdates-aur ksnip
+paru -S vim-devicons google-chrome youtube-dl perl ntfs-3g blkmenu checkupdates-aur ksnip ttf-devicons
 echo "install packages"
 read answer
 paru -S nerd-fonts-jetbrains-mono neovim castnow-git teams vscodium-git ttf-ms-fonts onlyoffice-bin
