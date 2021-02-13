@@ -22,7 +22,7 @@ read answer
 sudo pacman -S pavucontrol lxrandr vlc i3-gaps zsh nemo python-pynvim nodejs yarn npm xsel gtk-engines w3m openssh
 echo "install packages"
 read answer
-sudo pacman -S pulsemixer blueberry alacritty python-pynvim python-requests xorg-xrdb qbittorrent mpv vlc
+sudo pacman -S pulsemixer blueberry alacritty python-pynvim python-requests xorg-xrdb qbittorrent mpv vlc htop
 echo "install packages"
 read answer
 sudo pacman -S python-pip ttf-ubuntu-font-family pacman-contrib archlinux-contrib alsa-utils arch-install-scripts kdenlive
