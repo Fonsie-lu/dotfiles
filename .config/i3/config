@@ -101,14 +101,12 @@ for_window [urgent=latest] focus
 
 # Autostart applications
 exec --no-startup-id setxkbmap -layout ch
-exec --no-startup-id feh --bg-fill ~/Pictures/17.jpg
-exec --no-startup-id picom 
+exec --no-startup-id feh --bg-fill ~/Pictures/07.jpg
+# exec --no-startup-id picom 
+exec --no-startup-id autotiling 
 # exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id pamac-tray
 # exec --no-startup-id clipit
-# exec_always --no-startup-id ff-theme-util
-# exec_always --no-startup-id fix_xcursor
 
 
 exec_always --no-startup-id /$HOME/.config/polybar/launch.sh

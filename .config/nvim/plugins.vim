@@ -21,6 +21,7 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
 Plug 'ap/vim-css-color'
 Plug 'simonsmith/material.vim'
+Plug 'iamcco/markdown-preview.nvim'
 
 " Plug 'kaicataldo/material.vim'
 " Plug 'rafi/awesome-vim-colorschemes'

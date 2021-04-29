@@ -23,6 +23,12 @@ export EDITOR="/usr/share/nvim"
 export VISUAL="/usr/share/nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
+# Addons and themes
+source /usr/share/oh-my-zsh/oh-my-zsh.sh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -90,10 +96,6 @@ SOLARIZED_THEME="dark"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git )
-
-source /usr/share/oh-my-zsh/oh-my-zsh.sh
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
 
 # User configuration
 

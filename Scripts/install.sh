@@ -28,10 +28,10 @@ read answer
 sudo pacman -S python-pip ttf-ubuntu-font-family pacman-contrib archlinux-contrib alsa-utils arch-install-scripts kdenlive
 echo "install packages"
 read answer
-paru -S polybar neovim-plug zsh-syntax-highlighting zsh-theme-powerlevel10k-git oh-my-zsh-git picom-ibhagwan-git 
+paru -S polybar neovim-plug zsh-syntax-highlighting zsh-theme-powerlevel10k oh-my-zsh-git picom-ibhagwan-git python-pyqt5
 echo "install packages"
 read answer
-paru -S vim-devicons google-chrome youtube-dl perl ntfs-3g blkmenu checkupdates-aur ksnip ttf-devicons
+paru -S vim-devicons google-chrome youtube-dl perl ntfs-3g blkmenu checkupdates-aur ksnip ttf-devicons qt5-styleplugins
 echo "install packages"
 read answer
 paru -S nerd-fonts-jetbrains-mono neovim castnow-git teams vscodium-git ttf-ms-fonts onlyoffice-bin
@@ -54,7 +54,7 @@ mkdir ~/.config
 mkdir ~/Pictures
 
 #Copy configs
-cp -f -r ~/Downloads/dotflies/.p10k.zsh ~/
+cp -f -r ~/Downloads/dotfiles/.p10k.zsh ~/
 cp -f -r ~/Downloads/dotfiles/.zshrc ~/
 cp -f -r ~/Downloads/dotfiles/.xinitrc ~/
 cp -f -r ~/Downloads/dotfiles/.gtkrc-2.0 ~/
@@ -73,6 +73,7 @@ git config --global user.name "Beat Weber WS"
 #Autologin
 sudo systemctl enable getty@tty1
 sudo systemctl enable firewalld
+sudo systemctl enable paccache.timer
 
 mpsyt set api_key AIzaSyDxah4CCB3PF08E1TzH0NgAer0rraNodn8
 
