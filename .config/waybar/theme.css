@@ -1,0 +1,6 @@
+@define-color background_color rgba(46, 52, 64, 0.9);
+@define-color box_color #4C566A;
+@define-color text_color #D8DEE9;
+@define-color warning_color #D08770;
+@define-color error_color #BF616A;
+@define-color accent_color #5E81AC;

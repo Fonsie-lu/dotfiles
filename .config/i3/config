@@ -1,0 +1,275 @@
+set $mod Mod4
+font pango:JetBrains Mono Nerd Font Mono 12
+new_window pixel 2
+new_float normal
+floating_modifier $mod
+hide_edge_borders none
+
+###########################################################
+#############         Bindings           ##################
+###########################################################
+
+# kill focused window
+bindsym  $Mod+q		kill
+
+# core
+bindsym $Mod+w          exec --no-startup-id google-chrome-stable
+bindsym $Mod+Shift+w    exec --no-startup-id google-chrome-stable --incognito
+bindsym $Mod+p          exec --no-startup-id picom --experimental-backends --backend glx --xrender-sync-fence
+bindsym $Mod+Shift+p    exec --no-startup-id pkill picom
+bindsym $Mod+f          exec alacritty -e ranger
+bindsym $Mod+s          exec alacritty -e nvim
+bindsym $Mod+Return     exec --no-startup-id alacritty
+
+# Rofi
+bindsym $Mod+e exec --no-startup-id rofi -theme palenight -show run
+bindsym $dod+d exec --no-startup-id rofi -theme palenight -show window
+
+################################################################
+###########          Workspace Bindings          ###############
+################################################################
+
+set $ws1 1:
+set $ws2 2:
+set $ws3 3:
+set $ws4 4:
+set $ws5 5:
+
+#Super     = Switch Focus
+#Alt Shift = Switch Focus to next Workspace
+
+# switch workspace
+bindsym $Mod+1 workspace $WS1
+bindsym $Mod+2 workspace $WS2
+bindsym $Mod+3 workspace $WS3
+bindsym $Mod+4 workspace $WS4
+bindsym $Mod+5 workspace $WS5
+
+bindsym Mod1+Left workspace prev
+bindsym Mod1+Right workspace next
+bindsym Mod1+Tab workspace back_and_forth
+
+# switch Focus
+bindsym $Mod+Left  focus left
+bindsym $Mod+Down  focus down
+bindsym $Mod+Up    focus up
+bindsym $Mod+Right focus right
+bindsym $Mod+j     focus right
+bindsym $Mod+k     focus left
+bindsym $Mod+a     fullscreen toggle
+
+# move focused container to workspace
+bindsym $Mod+Shift+1 move container to workspace $WS1; workspace $WS1
+bindsym $Mod+Shift+2 move container to workspace $WS2; workspace $WS2
+bindsym $Mod+Shift+3 move container to workspace $WS3; workspace $WS3
+bindsym $Mod+Shift+4 move container to workspace $WS4; workspace $WS4
+bindsym $Mod+Shift+5 move container to workspace $WS5; workspace $WS5
+
+############################################################
+##############     Focus Manipulation       ################
+############################################################
+
+# Resize
+bindsym $Mod+Shift+Up    move up    10px
+bindsym $Mod+Shift+Down  move down  10px
+bindsym $Mod+Shift+Left  move left  10px
+bindsym $Mod+Shift+Right move right 10px
+
+# Size
+bindsym Mod1+Up    resize shrink height 10 px or 1 ppt
+bindsym Mod1+Down  resize grow   height 10 px or 1 ppt
+
+# container layout
+bindsym $Mod+h split h
+bindsym $Mod+v split v
+default_orientation horizontal
+
+############################################################
+##############     Floating Settings        ################
+############################################################
+
+# Open specific applications in floating mode
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Steam"] floating enable border normal
+assign [class="easyeffects"] $ws5
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+############################################################
+##############     Autostart & Polybar      ################
+############################################################
+
+# Autostart applications
+exec --no-startup-id setxkbmap -layout ch
+exec --no-startup-id autotiling
+exec --no-startup-id feh --bg-fill ~/pic/12.jpg
+exec --no-startup-id picom --experimental-backends --backend glx --xrender-sync-fence
+# exec --no-startup-id nm-applet
+# exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id clipit
+
+
+
+exec_always --no-startup-id /$HOME/.config/polybar/launch.sh
+# Theme colors
+client.focused #81A1C1 #1E1C31 #81A1C1 #81A1C1 #81A1C1
+client.focused_inactive #81A1C1 #1E1C31 #81A1C1 #3B4252 #3B4252
+client.unfocused #81A1C1 #1E1C31 #81A1C1 #3B4252 #3B4252
+client.urgent #81A1C1 #1E1C31 #81A1C1 #3B4252 #3B4252
+client.placeholder #81A1C1 #1E1C31 #81A1C1 #3B4252 #3B4252
+
+client.background #1E1C31
+
+############################################################
+##############     Reload @ Restart        ################
+############################################################
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Set shut down, restart and locking features
+bindsym $mod+X mode "$mode_system"
+set $mode_system (l) logout   (s) shutdown   (r) reboot   (h) hibernate
+mode "$mode_system" {
+    bindsym l exec --no-startup-id pkill -KILL -u fonsie
+    bindsym s exec --no-startup-id systemctl poweroff
+    bindsym r exec --no-startup-id reboot
+    bindsym h exec --no-startup-id systemctl hibernate
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+B mode "Brightness"
+mode "Brightness" {
+    bindsym 1 exec light -S 11; mode "default"
+    bindsym 2 exec light -S 22; mode "default"
+    bindsym 3 exec light -S 33; mode "default"
+    bindsym 4 exec light -S 44; mode "default"
+    bindsym 5 exec light -S 55; mode "default"
+    bindsym 6 exec light -S 66; mode "default"
+    bindsym 7 exec light -S 77; mode "default"
+    bindsym 8 exec light -S 88; mode "default"
+    bindsym 9 exec light -S 99; mode "default"
+    bindsym 0 exec light -S 3; mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+l mode "Loudness"
+mode "Loudness" {
+    bindsym 1 exec pamixer --set-volume 11; mode "default" 
+    bindsym 2 exec pamixer --set-volume 22; mode "default" 
+    bindsym 3 exec pamixer --set-volume 33; mode "default" 
+    bindsym 4 exec pamixer --set-volume 44; mode "default" 
+    bindsym 5 exec pamixer --set-volume 55; mode "default" 
+    bindsym 6 exec pamixer --set-volume 66; mode "default" 
+    bindsym 7 exec pamixer --set-volume 77; mode "default" 
+    bindsym 8 exec pamixer --set-volume 88; mode "default" 
+    bindsym 9 exec pamixer --set-volume 100; mode "default" 
+    bindsym 0 exec pamixer --set-volume 0; mode "default" 
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym h resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+############################################################
+##############     GAPS                     ################
+############################################################
+
+gaps inner 10
+gaps outer 3
+
+# smart_gaps on
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+############################################################
+##############     Sound & Touchbad         ################
+############################################################
+
+# set power-manager and volume control
+# exec --no-startup-id mate-power-manager
+
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 -q set Master 2dB+ unmute
+# bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 -q set Master 2db- unmute
+# bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+
+# touchpad on and off controller on laptop with Fn+<touchpad control functional key>
+# bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
+# bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1

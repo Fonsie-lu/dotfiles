@@ -1,0 +1,81 @@
+* {
+  background: #100f11;
+  foreground: #d2d2d2;
+  selected: #100f11;
+
+  spacing: 0;
+  background-color: transparent;
+
+  font: "Ubuntu 20";
+  text-color: @foreground;
+}
+
+window {
+  transparency: "real";
+  fullscreen: true;
+  background-color: #100f11ee;
+}
+
+mainbox {
+  padding: 30% 30%;
+}
+
+inputbar {
+  margin: 0px 0px 20px 0px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  enabled: true;
+  text-color: @foreground;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  text-color: @foreground;
+}
+
+entry {
+  margin: 0px 10px;
+}
+
+listview {
+  spacing: 5px;
+  dynamic: true;
+  scrollbar: false;
+}
+
+element {
+  padding: 5px;
+  text-color: @foreground;
+  highlight: bold #b4be82; /* green */
+  border-radius: 3px;
+}
+
+element selected {
+  text-color: @background;
+  background-color: @background;
+}
+
+element urgent, element selected urgent {
+  text-color: @foreground;
+}
+
+element active, element selected active {
+  text-color: @foreground;
+}
+
+message {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @background;
+  border: 1px;
+  border-color: @foreground;
+}
+
+button selected {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @background;
+}
