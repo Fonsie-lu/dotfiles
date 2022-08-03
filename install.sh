@@ -16,13 +16,13 @@ read answer
 paru -S ranger zip unzip rofi feh qt5ct opendoas fzf discord reflector p7zip
 paru -S zsh nemo python-pynvim nodejs yarn npm xsel
 paru -S alacritty python-requests mpv htop lsd ueberzug
-paru -S python-pip pacman-contrib archlinux-contrib kdenlive pipewire wireplumber
+paru -S python-pip pacman-contrib archlinux-contrib pipewire wireplumber
 paru -S polybar neovim-plug picom python-pyqt5 starship pamixer pavucontrol 
 paru -S vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ksnip ttf-devicons qt5-styleplugins
-paru -S neovim teams vscode ttf-ms-fonts onlyoffice-bin droidcam easyeffects
+paru -S neovim teams vscode ttf-ms-fonts onlyoffice-bin droidcam 
 paru -S mtpfs zathura android-file-transfer
 paru -S kvantum-qt5 ly android-tools ufw fail2ban
-paru -S pfetch postman-bin lxappearance
+paru -S pfetch postman-bin lxappearance lxrandr
 
 paru -S #Create Directories
 echo "Setup Directories"
