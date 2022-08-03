@@ -70,8 +70,6 @@ ln -s ~/dl/dotfiles/.config/rofi/palenight.rasi ~/.config/rofi/palenight.rasi
 rm -r -f ~/.config/user-dirs.dirs
 ln -s ~/dl/dotfiles/.config/user-dirs.dirs ~/.config/user-dirs.dirs
 ln -s ~/dl/dotfiles/.prettierrc ~/doc/sn-sync/.prettierrc
-sudo rm /etc/environment
-sudo ln -s ~/dl/dotfiles/environment /etc/environment
 sudo rm /etc/xdg/reflector/reflector.conf
 sudo ln -s ~/dl/dotfiles/reflector.conf /etc/xdg/reflector/reflector.conf
 sudo rm /etc/pacman.conf
