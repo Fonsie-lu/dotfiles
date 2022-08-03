@@ -13,16 +13,16 @@ cd ~/dl
 #Packages
 echo "install packages"
 read answer
-paru -S ranger zip unzip rofi feh qt5ct opendoas fzf discord reflector p7zip
-paru -S zsh nemo python-pynvim nodejs yarn npm xsel
-paru -S alacritty python-requests mpv htop lsd ueberzug
-paru -S python-pip pacman-contrib archlinux-contrib pipewire wireplumber
-paru -S polybar neovim-plug picom python-pyqt5 starship pamixer pavucontrol 
-paru -S vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ksnip ttf-devicons qt5-styleplugins
-paru -S neovim teams vscode ttf-ms-fonts onlyoffice-bin droidcam 
-paru -S mtpfs zathura android-file-transfer
-paru -S kvantum-qt5 ly android-tools ufw fail2ban
-paru -S pfetch postman-bin lxappearance lxrandr
+paru -S --noconfirm ranger zip unzip rofi feh qt5ct opendoas fzf discord reflector p7zip
+paru -S --noconfirm zsh nemo python-pynvim nodejs yarn npm xsel
+paru -S --noconfirm alacritty python-requests mpv htop lsd ueberzug
+paru -S --noconfirm python-pip pacman-contrib archlinux-contrib pipewire wireplumber
+paru -S --noconfirm polybar neovim-plug picom python-pyqt5 starship pamixer pavucontrol 
+paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ksnip ttf-devicons qt5-styleplugins
+paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin droidcam 
+paru -S --noconfirm mtpfs zathura android-file-transfer xclip
+paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban
+paru -S --noconfirm pfetch postman-bin lxappearance lxrandr
 
 paru -S #Create Directories
 echo "Setup Directories"
@@ -93,6 +93,14 @@ read answer
 sudo npm install -g eslint core-js neovim
 pip install neovim-remote
 sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
+
+#Firewall
+sudo ufw limit 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw enable
 
 #Font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
