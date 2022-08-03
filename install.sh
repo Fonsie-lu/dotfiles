@@ -96,6 +96,13 @@ sudo npm install -g eslint core-js neovim
 pip install neovim-remote
 sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
 
+#Font
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+sudo mkdir /usr/share/fonts/JetBrainsMono
+sudo unzip JetBrainsMono.zip -d /usr/share/fonts/JetBrainsMono/
+sudo fc-cache -r
+rm JetBrainsMono.zip
+
 #Startups
 sudo systemctl enable paccache.timer
 sudo systemctl enable reflector.timer
@@ -104,8 +111,7 @@ sudo systemctl enable NetworkManager
 sudo systemctl enable ntpd
 sudo systemctl enable ly
 sudo systemctl enable fail2ban
-
-# mpsyt set api_key 
+sudo systemctl enable ufw
 
 #Run Stuff
 echo "Setup stuff"
