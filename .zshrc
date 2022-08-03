@@ -42,7 +42,7 @@ alias updatepac="reflector --country Switzerland,France,Germany --age 12 --proto
 
 alias iconf="nvim ~/.config/i3/config"
 alias nconf="nvim ~/.config/nvim/init.vim"
-alias pconf="nvim ~/.config/polybar/config"
+alias pconf="nvim ~/.config/polybar/config.ini"
 alias rconf="nvim ~/.config/ranger/rc.conf"
 alias aconf="nvim ~/.config/alacritty/alacritty.yml"
 

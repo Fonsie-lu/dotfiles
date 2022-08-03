@@ -55,7 +55,7 @@ element {
 
 element selected {
   text-color: @background;
-  background-color: @background;
+  background-color: #000000;
 }
 
 element urgent, element selected urgent {

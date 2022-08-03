@@ -1,7 +1,4 @@
 #!/bin/sh
-
-echo "uncomment multilib, add color, paralell downloads"
-sudo nvim /etc/pacman.conf
 sudo pacman -Syy
 
 #Install paru
@@ -13,12 +10,6 @@ cd paru-bin
 makepkg -si
 rm -r -f ~/dl/paru-bin
 cd ~/dl
-#Change Result Order
-sudo nvim /etc/paru.conf
-echo "install nvidia"
-read
-sudo pacman -S nvidia-dkms nvidia-settings nvidia-utils
-
 #Packages
 echo "install packages"
 read answer
@@ -30,8 +21,8 @@ paru -S polybar neovim-plug picom python-pyqt5 starship pamixer pavucontrol
 paru -S vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ksnip ttf-devicons qt5-styleplugins
 paru -S neovim teams vscode ttf-ms-fonts onlyoffice-bin droidcam easyeffects
 paru -S mtpfs zathura android-file-transfer
-paru -S layan-kde-git kvantum-theme-layan layan-gtk-theme layan-cursor-theme-git kvantum-qt5 ly android-tools
-paru -S pfetch postman-bin f2fs-tools lxappearance steam lib32-pipewire 
+paru -S kvantum-qt5 ly android-tools ufw fail2ban
+paru -S pfetch postman-bin lxappearance
 
 paru -S #Create Directories
 echo "Setup Directories"
@@ -83,6 +74,10 @@ sudo rm /etc/environment
 sudo ln -s ~/dl/dotfiles/environment /etc/environment
 sudo rm /etc/xdg/reflector/reflector.conf
 sudo ln -s ~/dl/dotfiles/reflector.conf /etc/xdg/reflector/reflector.conf
+sudo rm /etc/pacman.conf
+sudo rm /etc/paru.conf
+sudo cp -f ~/dl/dotfiles/.config/pacman.conf /etc/pacman.conf
+sudo cp -f ~/dl/dotfiles/.config/paru.conf /etc/paru.conf
 rm -r -f ~/Templates
 rm -r -f ~/Music
 rm -r -f ~/Public
@@ -91,7 +86,7 @@ cp -f -r ~/dl/dotfiles/pic/* ~/pic/
 
 #Set git config
 git config --global user.email "beat.weber.86@gmail.com"
-git config --global user.name "Beat Weber WS"
+git config --global user.name "Beat Weber Notebook"
 git config --global credential.helper store
 
 #Setup Environement
@@ -108,6 +103,7 @@ sudo systemctl enable fstrim.timer
 sudo systemctl enable NetworkManager
 sudo systemctl enable ntpd
 sudo systemctl enable ly
+sudo systemctl enable fail2ban
 
 # mpsyt set api_key 
 
@@ -115,13 +111,12 @@ sudo systemctl enable ly
 echo "Setup stuff"
 read
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 sudo sensors-detect --auto
 nvim -c PlugInstall 
 nvim -c UpdateRemotePlugins
 clear
 chsh -s /bin/zsh
-sudo useradd -G video fonsie
+sudo gpasswd -a fonsie video
 
 # Light with no sudo
 # sudo chmod +s /usr/bin/light
