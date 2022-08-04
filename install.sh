@@ -22,7 +22,7 @@ paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdat
 paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin nordzy-cursors 
 paru -S --noconfirm mtpfs zathura android-file-transfer xclip adw-gtk-theme kvantum-theme-libadwaita-git
 paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban grub-btrfs snapper mkinitcpio-btrfs
-paru -S --noconfirm pfetch postman-bin lxappearance lxrandr
+paru -S --noconfirm pfetch postman-bin lxappearance lxrandr gvfs-mtp
 
 paru -S #Create Directories
 echo "Setup Directories"
