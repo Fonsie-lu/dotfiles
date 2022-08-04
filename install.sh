@@ -14,13 +14,13 @@ cd ~/dl
 echo "install packages"
 read answer
 paru -S --noconfirm ranger zip unzip rofi feh qt5ct opendoas fzf discord reflector p7zip
-paru -S --noconfirm zsh nemo python-pynvim nodejs yarn npm xsel
+paru -S --noconfirm zsh nemo python-pynvim nodejs yarn npm xsel wget
 paru -S --noconfirm alacritty python-requests mpv htop lsd ueberzug
 paru -S --noconfirm python-pip pacman-contrib archlinux-contrib pipewire wireplumber
 paru -S --noconfirm polybar neovim-plug picom python-pyqt5 starship pamixer pavucontrol 
 paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ksnip ttf-devicons qt5-styleplugins
 paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin droidcam 
-paru -S --noconfirm mtpfs zathura android-file-transfer xclip
+paru -S --noconfirm mtpfs zathura android-file-transfer xclip adw-gtk-theme kvantum-theme-libadwaita-git
 paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban
 paru -S --noconfirm pfetch postman-bin lxappearance lxrandr
 
@@ -32,6 +32,7 @@ mkdir ~/.config/alacritty
 mkdir ~/.config/easyeffects
 mkdir ~/.config/easyeffects/output
 mkdir ~/.config/i3
+mkdir ~/.config/gtk-3.0
 mkdir ~/.config/nvim
 mkdir ~/.config/nvim/plugins
 mkdir ~/.config/picom
@@ -52,13 +53,14 @@ ln -s ~/dl/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dl/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 ln -s ~/dl/dotfiles/.config/easyeffects/output/T1.json ~/.config/easyeffects/output/T1.json
 ln -s ~/dl/dotfiles/.config/i3/config ~/.config/i3/config
+ln -s ~/dl/dotfiles/.config/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini
 ln -s ~/dl/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
 ln -s ~/dl/dotfiles/.config/nvim/plugins/plugins.vim ~/.config/nvim/plugins/plugins.vim
 ln -s ~/dl/dotfiles/.config/nvim/plugins/coc.vim ~/.config/nvim/plugins/coc.vim
 ln -s ~/dl/dotfiles/.config/nvim/plugins/airline.vim ~/.config/nvim/plugins/airline.vim
 ln -s ~/dl/dotfiles/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s ~/dl/dotfiles/.config/picom/picom.conf ~/.config/picom/picom.conf
-ln -s ~/dl/dotfiles/.config/polybar/config ~/.config/polybar/config
+ln -s ~/dl/dotfiles/.config/polybar/config.ini ~/.config/polybar/config.ini
 ln -s ~/dl/dotfiles/.config/polybar/launch.sh ~/.config/polybar/launch.sh
 ln -s ~/dl/dotfiles/.config/polybar/scripts/mem.sh ~/.config/polybar/scripts/mem.sh
 ln -s ~/dl/dotfiles/.config/polybar/scripts/cpu-temp.sh ~/.config/polybar/scripts/cpu-temp.sh
