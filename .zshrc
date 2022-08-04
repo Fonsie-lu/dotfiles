@@ -65,12 +65,6 @@ alias gp="git add --all && git commit -m update && git push"
 export EDITOR="/usr/share/nvim"
 export VISUAL="/usr/share/nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export GTK_THEME="Layan-dark"
-export XDG_DOCUMENTS_DIR="~/doc"
-export XDG_DOWNLOAD_DIR="~/dl"
-export XDG_VIDEOS_DIR="~/vid"
-export XDG_PICTURES_DIR="~/pic"
-export XDG_CONFIG_DIR="~/.config"
 
 # Rebind Home Del 
 bindkey  "^[[H"   beginning-of-line
