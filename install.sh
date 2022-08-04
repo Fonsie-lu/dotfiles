@@ -19,10 +19,12 @@ paru -S --noconfirm alacritty python-requests mpv htop lsd ueberzug linux-zen-he
 paru -S --noconfirm python-pip pipewire wireplumber ksnip
 paru -S --noconfirm polybar neovim-plug picom python-pyqt5 starship pamixer pavucontrol 
 paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ttf-devicons qt5-styleplugins
-paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin nordzy-cursors 
-paru -S --noconfirm mtpfs zathura android-file-transfer xclip adw-gtk-theme kvantum-theme-libadwaita-git
-paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban grub-btrfs snapper mkinitcpio-btrfs
+paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin 
+paru -S --noconfirm mtpfs zathura android-file-transfer xclip 
+paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban 
 paru -S --noconfirm pfetch postman-bin lxappearance lxrandr gvfs-mtp
+paru -S --noconfirm mkinitcpio-btrfs snap-pac snapper grub-btrfs
+paru -S --noconfirm layan-kde-git kvantum-theme-layan-git layan-gtk-theme-git layan-cursor-theme-git
 
 paru -S #Create Directories
 echo "Setup Directories"
@@ -78,6 +80,7 @@ sudo rm /etc/pacman.conf
 sudo rm /etc/paru.conf
 sudo cp -f ~/dl/dotfiles/.config/pacman.conf /etc/pacman.conf
 sudo cp -f ~/dl/dotfiles/.config/paru.conf /etc/paru.conf
+sudo cp -f ~/dl/dotfiles/.config/environment /etc/environment
 rm -r -f ~/Templates
 rm -r -f ~/Music
 rm -r -f ~/Public
