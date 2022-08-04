@@ -14,14 +14,14 @@ cd ~/dl
 echo "install packages"
 read answer
 paru -S --noconfirm ranger zip unzip rofi feh qt5ct opendoas fzf discord reflector p7zip
-paru -S --noconfirm zsh nemo python-pynvim nodejs yarn npm xsel wget
-paru -S --noconfirm alacritty python-requests mpv htop lsd ueberzug
+paru -S --noconfirm zsh nemo python-pynvim nodejs yarn npm xsel wget tldr
+paru -S --noconfirm alacritty python-requests mpv htop lsd ueberzug linux-zen-headers
 paru -S --noconfirm python-pip pacman-contrib archlinux-contrib pipewire wireplumber
 paru -S --noconfirm polybar neovim-plug picom python-pyqt5 starship pamixer pavucontrol 
 paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ksnip ttf-devicons qt5-styleplugins
-paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin droidcam 
+paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin 
 paru -S --noconfirm mtpfs zathura android-file-transfer xclip adw-gtk-theme kvantum-theme-libadwaita-git
-paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban
+paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban grub-btrfs snapper mkinitcpio-btrfs
 paru -S --noconfirm pfetch postman-bin lxappearance lxrandr
 
 paru -S #Create Directories
