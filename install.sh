@@ -23,7 +23,7 @@ paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin
 paru -S --noconfirm mtpfs zathura android-file-transfer xclip 
 paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban 
 paru -S --noconfirm pfetch postman-bin lxappearance lxrandr gvfs-mtp
-paru -S --noconfirm mkinitcpio-btrfs snap-pac snapper grub-btrfs
+paru -S --noconfirm snap-pac snapper grub-btrfs
 paru -S --noconfirm layan-kde-git kvantum-theme-layan-git layan-gtk-theme-git layan-cursor-theme-git
 
 paru -S #Create Directories
