@@ -16,7 +16,7 @@ read answer
 paru -S --noconfirm ranger zip unzip rofi feh qt5ct opendoas fzf discord reflector p7zip
 paru -S --noconfirm zsh nemo python-pynvim nodejs yarn npm xsel wget tldr i3lock
 paru -S --noconfirm alacritty python-requests mpv htop lsd ueberzug linux-zen-headers
-paru -S --noconfirm python-pip pipewire wireplumber ksnip
+paru -S --noconfirm python-pip pipewire wireplumber ksnip autotiling
 paru -S --noconfirm polybar neovim-plug picom python-pyqt5 starship pamixer pavucontrol 
 paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ttf-devicons qt5-styleplugins
 paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin 
