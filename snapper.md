@@ -4,7 +4,7 @@ snapper -c root create-config /
 btrfs subvolume delete /.snapshots
 mkdir /.snapshots
 mount -a
-chmod 750 /.snapshots
+chmod u+rw /.snapshots
 nvim /etc/snapper/configs/root
 systemctl enable --now snapper-timeline.timer
 systemctl enable --now snapper-cleanup.timer
