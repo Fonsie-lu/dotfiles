@@ -82,4 +82,4 @@ SAVEHIST=1000
 # Misc
 CASE_SENSITIVE="false"
 
-pfetch
+neofetch

@@ -61,6 +61,7 @@ rm -rf ~/.config/ranger/rc.conf
 rm -rf ~/.config/rofi/config.rasi
 rm -rf ~/.config/waybar/config.jsonc
 rm -rf ~/.config/waybar/style.css
+rm -rf ~/.zshrc
 
 ln -s ~/dl/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dl/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf 
@@ -127,4 +128,3 @@ sudo gpasswd -a fonsie video
 
 echo "Ye Dun, Brah"
 read answer
-reboot
