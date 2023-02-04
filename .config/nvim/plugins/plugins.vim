@@ -18,6 +18,7 @@ Plug 'sharkdp/fd'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'kqito/vim-easy-replace'
+Plug 'xiyaowong/nvim-transparent'
 
 " Floaterm
 let g:floaterm_keymap_toggle = '<F1>'

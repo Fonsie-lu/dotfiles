@@ -6,6 +6,7 @@ window:
   dimensions:
     columns: 60
     lines: 15
+  opacity: 0.9
 
 font:
   normal:
@@ -17,7 +18,7 @@ font:
   italic:
     family: JetBrainsMono Nerd Font
     style: Italic
-  size: 10
+  size: 14
   offset:
     x: 0
     y: 2

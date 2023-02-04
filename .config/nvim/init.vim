@@ -120,6 +120,7 @@ source ~/.config/nvim/plugins/plugins.vim
 call plug#end()
 doautocmd User PlugLoaded
 colorscheme palenight
+let g:transparent_enabled = v:true
 
 "--------------------------------------------------------------------------
 " Miscellaneous
