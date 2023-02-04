@@ -29,19 +29,6 @@ paru -S --noconfirm layan-kde-git kvantum-theme-layan-git layan-gtk-theme-git la
 paru -S #Create Directories
 echo "Setup Directories"
 read answer
-mkdir ~/.config
-mkdir ~/.config/alacritty
-mkdir ~/.config/easyeffects
-mkdir ~/.config/easyeffects/output
-mkdir ~/.config/i3
-mkdir ~/.config/gtk-3.0
-mkdir ~/.config/nvim
-mkdir ~/.config/nvim/plugins
-mkdir ~/.config/picom
-mkdir ~/.config/polybar
-mkdir ~/.config/polybar/scripts
-mkdir ~/.config/rofi
-mkdir ~/.config/ranger
 
 mkdir ~/pic
 mkdir ~/dl/torrent
@@ -49,43 +36,43 @@ mkdir ~/vid
 mkdir ~/vid/rec
 mkdir ~/doc
 mkdir ~/doc/sn-sync
+mkdir ~/.config
 
 #Copy configs
-ln -s ~/dl/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dl/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-ln -s ~/dl/dotfiles/.config/easyeffects/output/T1.json ~/.config/easyeffects/output/T1.json
-ln -s ~/dl/dotfiles/.config/i3/config ~/.config/i3/config
-ln -s ~/dl/dotfiles/.config/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini
-ln -s ~/dl/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
-ln -s ~/dl/dotfiles/.config/nvim/plugins/plugins.vim ~/.config/nvim/plugins/plugins.vim
-ln -s ~/dl/dotfiles/.config/nvim/plugins/coc.vim ~/.config/nvim/plugins/coc.vim
-ln -s ~/dl/dotfiles/.config/nvim/plugins/airline.vim ~/.config/nvim/plugins/airline.vim
-ln -s ~/dl/dotfiles/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-ln -s ~/dl/dotfiles/.config/picom/picom.conf ~/.config/picom/picom.conf
-ln -s ~/dl/dotfiles/.config/polybar/config.ini ~/.config/polybar/config.ini
-ln -s ~/dl/dotfiles/.config/polybar/launch.sh ~/.config/polybar/launch.sh
-ln -s ~/dl/dotfiles/.config/polybar/scripts/mem.sh ~/.config/polybar/scripts/mem.sh
-ln -s ~/dl/dotfiles/.config/polybar/scripts/cpu-temp.sh ~/.config/polybar/scripts/cpu-temp.sh
-ln -s ~/dl/dotfiles/.config/polybar/scripts/home.sh ~/.config/polybar/scripts/home.sh
-ln -s ~/dl/dotfiles/.config/polybar/scripts/packages.sh ~/.config/polybar/scripts/packages.sh
-ln -s ~/dl/dotfiles/.config/polybar/scripts/volume.sh ~/.config/polybar/scripts/volume.sh
-ln -s ~/dl/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
-ln -s ~/dl/dotfiles/.config/rofi/palenight.rasi ~/.config/rofi/palenight.rasi
-rm -r -f ~/.config/user-dirs.dirs
-ln -s ~/dl/dotfiles/.config/user-dirs.dirs ~/.config/user-dirs.dirs
-ln -s ~/dl/dotfiles/.prettierrc ~/doc/sn-sync/.prettierrc
-sudo rm /etc/xdg/reflector/reflector.conf
-sudo ln -s ~/dl/dotfiles/reflector.conf /etc/xdg/reflector/reflector.conf
-sudo rm /etc/pacman.conf
-sudo rm /etc/paru.conf
 sudo cp -f ~/dl/dotfiles/.config/pacman.conf /etc/pacman.conf
 sudo cp -f ~/dl/dotfiles/.config/paru.conf /etc/paru.conf
 sudo cp -f ~/dl/dotfiles/.config/environment /etc/environment
-rm -r -f ~/Templates
-rm -r -f ~/Music
-rm -r -f ~/Public
-rm -r -f ~/Desktop
-cp -f -r ~/dl/dotfiles/pic/* ~/pic/
+rm -rf ~/Templates
+rm -rf ~/Music
+rm -rf ~/Public
+rm -rf ~/Desktop
+
+cp -rf ~/dl/dotfiles/pic/* ~/pic/
+cp -rf ~/dl/.config/* ~/.config/
+
+#Links
+rm -rf ~/.config/hypr/hyprland.conf 
+rm -rf ~/.config/alacritty/alacritty.yml
+rm -rf ~/.config/nvim/init.vim
+rm -rf ~/.config/nvim/plugins/plugins.vim
+rm -rf ~/.config/picom/picom.con
+rm -rf ~/.config/polybar/config.ini
+rm -rf ~/.config/ranger/rc.conf
+rm -rf ~/.config/rofi/config.rasi
+rm -rf ~/.config/waybar/config.jsonc
+rm -rf ~/.config/waybar/style.css
+
+ln -s ~/dl/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dl/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf 
+ln -s ~/dl/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -s ~/dl/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dl/dotfiles/.config/nvim/plugins/plugins.vim ~/.config/nvim/plugins/plugins.vim
+ln -s ~/dl/dotfiles/.config/picom/picom.conf ~/.config/picom/picom.con
+ln -s ~/dl/dotfiles/.config/polybar/config.ini ~/.config/polybar/config.ini
+ln -s ~/dl/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
+ln -s ~/dl/dotfiles/.config/rofi/config.rasi ~/.config/rofi/config.rasi
+ln -s ~/dl/dotfiles/.config/waybar/config.jsonc ~/.config/waybar/config.jsonc
+ln -s ~/dl/dotfiles/.config/waybar/style.css ~/.config/waybar/style.css
 
 #Set git config
 git config --global user.email "beat.weber.86@gmail.com"

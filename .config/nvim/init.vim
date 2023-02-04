@@ -119,7 +119,7 @@ source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/plugins.vim
 call plug#end()
 doautocmd User PlugLoaded
-colorscheme palenight
+colorscheme catppuccin-mocha
 let g:transparent_enabled = v:true
 
 "--------------------------------------------------------------------------

@@ -7,7 +7,7 @@
  * =========================================================================== */
 
 /* import css definitions for current theme */
-@import url("theme.css");
+@import url("mocha.css");
 
 /* -----------------------------------------------------------------------------
  * Keyframes
@@ -15,23 +15,23 @@
 
 @keyframes blink-warning {
   70% {
-    color: @text_color;
+    color: @text;
   }
 
   to {
-    color: @text_color;
-    background-color: @warning_color;
+    color: @text;
+    background-color: @base;
   }
 }
 
 @keyframes blink-critical {
   70% {
-    color: @text_color;
+    color: @red;
   }
 
   to {
-    color: @text_color;
-    background-color: @error_color;
+    color: @text;
+    background-color: @red;
   }
 }
 
@@ -51,17 +51,18 @@
 
 /* The whole bar */
 #waybar {
-  background: @background_color;
-  color: @text_color;
+  background: @crust;
+  color: @text;
   font-size: 16px;
 }
 
 .modules-left > widget > label,
 .modules-right > widget > label {
-  color: @text_color;
-  background: @box_color;
+  color: @text;
+  background: @base;
   margin: 0px 0px 2px 0px;
   padding: 0px 6px;
+  
 }
 .modules-right > widget:nth-child(2) > label {
   border-bottom-left-radius: 3px;
@@ -74,8 +75,9 @@
 }
 
 /* Each module */
-#custom-pacman,
+#custom-updates,
 #custom-menu,
+#custom-home,
 #bluetooth,
 #battery,
 #clock,
@@ -84,12 +86,15 @@
 #mode,
 #network,
 #pulseaudio,
+#pulseaudio.microphone,
 #temperature,
 #idle_inhibitor,
 #backlight,
 #tray {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding:  2px 10px;
+  margin: 2px 10px;
+  border-radius: 10px;
+  background: @base
 }
 
 /* -----------------------------------------------------------------------------
@@ -103,11 +108,11 @@
 }
 
 #battery.warning {
-  color: @warning_color;
+  color: @maroon;
 }
 
 #battery.critical {
-  color: @error_color;
+  color: @red;
 }
 
 #battery.warning.discharging {
@@ -122,59 +127,73 @@
 
 #clock {
   font-weight: bold;
+  color: @sky;
 }
 
 #cpu {
-  /* No styles */
+  color: @peach;
 }
 
 #cpu.warning {
-  color: @warning_color;
+  color: @maroon;
 }
 
 #cpu.critical {
-  color: @error_color;
+  color: @red;
 }
 
 #custom-menu {
-  background-color: @accent_color;
+  background: @base;
 }
 
 #memory {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  color: @mauve;
 }
 
 #memory.warning {
-  color: @warning_color;
+  color: @maroon;
 }
 
 #memory.critical {
-  color: @error_color;
+  color: @red;
   animation-name: blink-critical;
   animation-duration: 2s;
 }
 
 #mode {
-  background: @background_color;
+  background: @base;
 }
 
 #network {
-  /* No styles */
+   color: @sapphire;
 }
 
 #network.disconnected {
-  color: @warning_color;
+  color: @red;
+}
+
+#custom-updates {
+    color: @green;
 }
 
 #pulseaudio {
-  /* No styles */
+  color: @green;
+}
+
+#pulseaudio.microphone {
+  color: @pink;
 }
 
 #pulseaudio.muted {
   /* No styles */
-  color: @warning_color;
+  color: @maroon;
+}
+
+#custom-home {
+  color: @rosewater;
 }
 
 #temperature {
@@ -182,45 +201,46 @@
 }
 
 #temperature.critical {
-  color: @error_color;
+  color: @red;
 }
 
 #tray {
   /* No styles */
 }
 
-#window {
+window#waybar {
   font-weight: bold;
   margin-right: 25px;
-  color: @accent_color;
+  color: @text;
 }
 
 #workspaces button {
-  border-top: 2px solid transparent;
-  /* To compensate for the top border and still have vertical centering */
-  padding-bottom: 2px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: @accent_color;
-  font-weight: bold;
+  border-radius: 10px;
+  padding: 2px 10px;
+  color: @text;
+  background: @mantle;
+}
+
+#workspaces button.active {
+    color: @green;
+    background: @base;
 }
 
 #workspaces button.focused {
-  border-color: @accent_color;
-  color: @text_color;
-  background-color: @accent_color;
+  color: @treen;
+  background: @base;
   font-weight: bold;
 }
 
 #workspaces button.urgent {
-  border-color: @error_color;
-  color: @error_color;
+  border-color: @red;
+  color: @red;
 }
 
-#custom-pacman {
-  color: @warning_color;
+#custom-updates {
+  color: @maroon;
 }
 
 #bluetooth.disabled {
-  color: @warning_color;
+  color: @maroon;
 }
