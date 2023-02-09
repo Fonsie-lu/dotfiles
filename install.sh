@@ -14,14 +14,14 @@ cd ~/dl
 echo "install packages"
 read answer
 paru -S --noconfirm ranger zip unzip feh qt5ct opendoas fzf discord reflector p7zip
-paru -S --noconfirm zsh nemo python-pynvim nodejs yarn npm xsel wget tldr i3lock
+paru -S --noconfirm zsh nemo python-pynvim nodejs yarn npm xsel wget tldr
 paru -S --noconfirm alacritty python-requests mpv htop lsd ueberzug linux-zen-headers
-paru -S --noconfirm python-pip pipewire wireplumber ksnip 
-paru -S --noconfirm polybar neovim-plug picom python-pyqt5 starship pamixer pavucontrol 
-paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ttf-devicons qt5-styleplugins
-paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin 
-paru -S --noconfirm mtpfs zathura android-file-transfer xclip 
-paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban 
+paru -S --noconfirm python-pip pipewire wireplumber qbittorrent-qt5
+paru -S --noconfirm polybar picom python-pyqt5 starship pamixer pavucontrol
+paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ttf-devicons
+paru -S --noconfirm neovim-git teams vscode ttf-ms-fonts onlyoffice-bin
+paru -S --noconfirm mtpfs zathura android-file-transfer xclip
+paru -S --noconfirm ly android-tools ufw fail2ban
 paru -S --noconfirm neofetch postman-bin lxappearance lxrandr gvfs-mtp
 paru -S --noconfirm snapper grub-btrfs snap-pac snap-pac-grub
 
@@ -30,6 +30,7 @@ echo "Setup Directories"
 read answer
 
 mkdir ~/pic
+mkdir ~/pic/wallpaper
 mkdir ~/dl/torrent
 mkdir ~/vid
 mkdir ~/vid/rec
@@ -48,7 +49,7 @@ rm -rf ~/Music
 rm -rf ~/Public
 rm -rf ~/Desktop
 
-cp -rf ~/dl/dotfiles/pic/* ~/pic/
+cp -rf ~/dl/dotfiles/pic/wallpaper ~/pic/wallpaper
 cp -rf ~/dl/.config/* ~/.config/
 
 #Links
@@ -82,8 +83,6 @@ git config --global credential.helper store
 #Setup Environement
 echo "Setup Environment"
 read answer
-sudo npm install -g eslint core-js neovim
-pip install neovim-remote
 sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
 
 #Firewall
