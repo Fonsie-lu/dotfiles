@@ -23,7 +23,7 @@ paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin
 paru -S --noconfirm mtpfs zathura android-file-transfer xclip 
 paru -S --noconfirm kvantum-qt5 ly android-tools ufw fail2ban 
 paru -S --noconfirm neofetch postman-bin lxappearance lxrandr gvfs-mtp
-paru -S --noconfirm snapper grub-btrfs
+paru -S --noconfirm snapper grub-btrfs snap-pac snap-pac-grub
 
 paru -S #Create Directories
 echo "Setup Directories"
