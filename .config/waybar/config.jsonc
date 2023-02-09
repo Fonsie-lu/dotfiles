@@ -130,7 +130,7 @@
   "custom/home": {
       "exec": "df -h /dev/sda2 | awk 'NR == 2{print $5+0}'",
       "interval": 7200,
-      "format": "⌂ {}"
+      "format": "⌂ {}%"
   },
   "tray": {
     "icon-size": 21,

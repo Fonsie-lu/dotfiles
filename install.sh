@@ -61,6 +61,7 @@ rm -rf ~/.config/ranger/rc.conf
 rm -rf ~/.config/rofi/config.rasi
 rm -rf ~/.config/waybar/config.jsonc
 rm -rf ~/.config/waybar/style.css
+rm -rf ~/.config/kitty/mocha.conf
 rm -rf ~/.zshrc
 
 ln -s ~/dl/dotfiles/.zshrc ~/.zshrc
@@ -74,6 +75,7 @@ ln -s ~/dl/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
 ln -s ~/dl/dotfiles/.config/rofi/config.rasi ~/.config/rofi/config.rasi
 ln -s ~/dl/dotfiles/.config/waybar/config.jsonc ~/.config/waybar/config.jsonc
 ln -s ~/dl/dotfiles/.config/waybar/style.css ~/.config/waybar/style.css
+ln -s ~/dl/dotfiles/.config/kitty/mocha.conf ~/.config/kitty/mocha.conf
 
 #Set git config
 git config --global user.email "beat.weber.86@gmail.com"

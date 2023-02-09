@@ -37,6 +37,7 @@ alias umntu="udisksctl unmount -b /dev/sdc1"
 alias systemctl="doas systemctl"
 alias bashrc="nvim ~/.bashrc"
 alias zconf="nvim ~/.zshrc"
+alias hconf="nvim ~/.config/hypr/hyprland.conf"
 alias lconf="sudo nvim /etc/ly/config.ini"
 alias updatepac="reflector --country Switzerland,France,Germany --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
