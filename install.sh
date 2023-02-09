@@ -42,6 +42,8 @@ mkdir ~/.config
 sudo cp -f ~/dl/dotfiles/.config/pacman.conf /etc/pacman.conf
 sudo cp -f ~/dl/dotfiles/.config/paru.conf /etc/paru.conf
 sudo cp -f ~/dl/dotfiles/.config/environment /etc/environment
+sudo cp -f ~/dl/dotfiles/.config/mkinitcpio.conf /etc/mkinitcpio.conf
+sudo cp -f ~/dl/dotfiles/.config/nvidia.conf /etc/modprobe.d/nvidia.conf
 rm -rf ~/Templates
 rm -rf ~/Music
 rm -rf ~/Public
@@ -53,8 +55,6 @@ cp -rf ~/dl/.config/* ~/.config/
 #Links
 rm -rf ~/.config/hypr/hyprland.conf 
 rm -rf ~/.config/alacritty/alacritty.yml
-rm -rf ~/.config/nvim/init.vim
-rm -rf ~/.config/nvim/plugins/plugins.vim
 rm -rf ~/.config/picom/picom.con
 rm -rf ~/.config/polybar/config.ini
 rm -rf ~/.config/ranger/rc.conf
@@ -67,8 +67,6 @@ rm -rf ~/.zshrc
 ln -s ~/dl/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dl/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf 
 ln -s ~/dl/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-ln -s ~/dl/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
-ln -s ~/dl/dotfiles/.config/nvim/plugins/plugins.vim ~/.config/nvim/plugins/plugins.vim
 ln -s ~/dl/dotfiles/.config/picom/picom.conf ~/.config/picom/picom.con
 ln -s ~/dl/dotfiles/.config/polybar/config.ini ~/.config/polybar/config.ini
 ln -s ~/dl/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
@@ -119,11 +117,10 @@ echo "Setup stuff"
 read
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 sudo sensors-detect --auto
-nvim -c PlugInstall 
-nvim -c UpdateRemotePlugins
 clear
 chsh -s /bin/zsh
 sudo gpasswd -a fonsie video
+sudo mkinitcpio -P
 
 # Light with no sudo
 # sudo chmod +s /usr/bin/light
