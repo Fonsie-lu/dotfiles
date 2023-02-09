@@ -124,12 +124,12 @@
   },
   "custom/updates": {
       "exec": "(pacman -Qu ; paru -Qua) | wc -l",
-      "interval": 7200,
+      "interval": 61,
       "format": " {}"
   },
   "custom/home": {
       "exec": "df -h /dev/sda2 | awk 'NR == 2{print $5+0}'",
-      "interval": 7200,
+      "interval": 62,
       "format": "⌂ {}%"
   },
   "tray": {
