@@ -66,6 +66,7 @@ rm -rf ~/.zshrc
 
 ln -s ~/dl/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dl/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
+ln -s ~/dl/dotfiles/.config/i3/config ~/.config/i3/config
 ln -s ~/dl/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 ln -s ~/dl/dotfiles/.config/picom/picom.conf ~/.config/picom/picom.con
 ln -s ~/dl/dotfiles/.config/polybar/config.ini ~/.config/polybar/config.ini
@@ -73,7 +74,6 @@ ln -s ~/dl/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
 ln -s ~/dl/dotfiles/.config/rofi/config.rasi ~/.config/rofi/config.rasi
 ln -s ~/dl/dotfiles/.config/waybar/config.jsonc ~/.config/waybar/config.jsonc
 ln -s ~/dl/dotfiles/.config/waybar/style.css ~/.config/waybar/style.css
-ln -s ~/dl/dotfiles/.config/kitty/mocha.conf ~/.config/kitty/mocha.conf
 
 #Set git config
 git config --global user.email "beat.weber.86@gmail.com"

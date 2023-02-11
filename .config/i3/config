@@ -105,7 +105,7 @@ for_window [urgent=latest] focus
 # Autostart applications
 exec --no-startup-id setxkbmap -layout ch
 exec --no-startup-id autotiling
-exec --no-startup-id feh --bg-fill ~/pic/alena.png
+exec --no-startup-id feh --bg-fill ~/pic/wallpaper/alena.png
 exec --no-startup-id picom --experimental-backends --backend glx --xrender-sync-fence
 # exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
