@@ -20,9 +20,9 @@ paru -S --noconfirm python-pip pipewire wireplumber qbittorrent-qt5
 paru -S --noconfirm polybar picom python-pyqt5 starship pamixer pavucontrol
 paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ttf-devicons
 paru -S --noconfirm neovim-git teams vscode ttf-ms-fonts onlyoffice-bin
-paru -S --noconfirm mtpfs zathura android-file-transfer xclip
-paru -S --noconfirm ly android-tools ufw fail2ban
-paru -S --noconfirm neofetch postman-bin lxappearance lxrandr gvfs-mtp
+paru -S --noconfirm mtpfs zathura android-file-transfer xclip xdg-user-dirs
+paru -S --noconfirm ly android-tools ufw fail2ban gtk-engines gtk-engine-murrine
+paru -S --noconfirm neofetch lxappearance lxrandr gvfs-mtp
 paru -S --noconfirm snapper grub-btrfs snap-pac snap-pac-grub
 
 paru -S #Create Directories
@@ -49,11 +49,11 @@ rm -rf ~/Music
 rm -rf ~/Public
 rm -rf ~/Desktop
 
-cp -rf ~/dl/dotfiles/pic/wallpaper ~/pic/wallpaper
+cp -rf ~/dl/dotfiles/pic/wallpaper/* ~/pic/wallpaper/
 cp -rf ~/dl/.config/* ~/.config/
 
 #Links
-rm -rf ~/.config/hypr/hyprland.conf 
+rm -rf ~/.config/hypr/hyprland.conf
 rm -rf ~/.config/alacritty/alacritty.yml
 rm -rf ~/.config/picom/picom.con
 rm -rf ~/.config/polybar/config.ini
@@ -65,7 +65,7 @@ rm -rf ~/.config/kitty/mocha.conf
 rm -rf ~/.zshrc
 
 ln -s ~/dl/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dl/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf 
+ln -s ~/dl/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
 ln -s ~/dl/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 ln -s ~/dl/dotfiles/.config/picom/picom.conf ~/.config/picom/picom.con
 ln -s ~/dl/dotfiles/.config/polybar/config.ini ~/.config/polybar/config.ini
@@ -105,7 +105,6 @@ sudo systemctl enable paccache.timer
 sudo systemctl enable reflector.timer
 sudo systemctl enable fstrim.timer
 sudo systemctl enable NetworkManager
-sudo systemctl enable ntpd
 sudo systemctl enable ly
 sudo systemctl enable fail2ban
 sudo systemctl enable ufw
