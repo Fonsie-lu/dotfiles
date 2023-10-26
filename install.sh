@@ -13,16 +13,16 @@ cd ~/dl
 #Packages
 echo "install packages"
 read answer
-paru -S --noconfirm ranger zip unzip feh qt5ct opendoas fzf discord reflector p7zip
-paru -S --noconfirm zsh nemo python-pynvim nodejs yarn npm xsel wget tldr
-paru -S --noconfirm alacritty python-requests mpv htop lsd ueberzug linux-zen-headers
-paru -S --noconfirm python-pip pipewire wireplumber pipewire-pulse qbittorrent-qt5
-paru -S --noconfirm polybar picom python-pyqt5 starship pamixer pavucontrol
-paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu checkupdates+aur ttf-devicons
-paru -S --noconfirm neovim teams vscode ttf-ms-fonts onlyoffice-bin
-paru -S --noconfirm mtpfs zathura android-file-transfer xclip xdg-user-dirs
-paru -S --noconfirm ly android-tools ufw fail2ban gtk-engines gtk-engine-murrine
-paru -S --noconfirm neofetch lxappearance lxrandr gvfs-mtp
+paru -S --noconfirm ranger zip unzip qt5ct opendoas fzf discord reflector p7zip
+paru -S --noconfirm zsh nemo python-pynvim nodejs npm wget tldr nwg-look
+paru -S --noconfirm alacritty python-requests mpv htop lsd
+paru -S --noconfirm python-pip qbittorrent checkupdates-with-aur
+paru -S --noconfirm polybar python-pyqt5 starship pamixer pavucontrol
+paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu ttf-devicons
+paru -S --noconfirm vscode ttf-ms-fonts onlyoffice-bin
+paru -S --noconfirm mtpfs zathura android-file-transfer xdg-user-dirs
+paru -S --noconfirm android-tools ufw fail2ban gtk-engines gtk-engine-murrine
+paru -S --noconfirm neofetch gvfs-mtp
 paru -S --noconfirm snapper grub-btrfs snap-pac snap-pac-grub
 
 paru -S #Create Directories
@@ -41,9 +41,7 @@ mkdir ~/.config
 #Copy configs
 sudo cp -f ~/dl/dotfiles/.config/pacman.conf /etc/pacman.conf
 sudo cp -f ~/dl/dotfiles/.config/paru.conf /etc/paru.conf
-sudo cp -f ~/dl/dotfiles/.config/environment /etc/environment
-sudo cp -f ~/dl/dotfiles/.config/mkinitcpio.conf /etc/mkinitcpio.conf
-sudo cp -f ~/dl/dotfiles/.config/nvidia.conf /etc/modprobe.d/nvidia.conf
+
 rm -rf ~/Templates
 rm -rf ~/Music
 rm -rf ~/Public
@@ -53,7 +51,6 @@ cp -rf ~/dl/dotfiles/pic/wallpaper/* ~/pic/wallpaper/
 cp -rf ~/dl/dotfiles/.config/* ~/.config/
 
 #Links
-rm -rf ~/.config/hypr/hyprland.conf
 rm -rf ~/.config/alacritty/alacritty.yml
 rm -rf ~/.config/picom/picom.con
 rm -rf ~/.config/polybar/config.ini
@@ -64,13 +61,10 @@ rm -rf ~/.config/waybar/style.css
 rm -rf ~/.config/kitty/mocha.conf
 rm -rf ~/.zshrc
 
-ln -s ~/dl/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dl/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
-ln -s ~/dl/dotfiles/.config/i3/config ~/.config/i3/config
+ln -s ~/dl/dotfiles/.config/.zshrc ~/.zshrc
 ln -s ~/dl/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-ln -s ~/dl/dotfiles/.config/picom/picom.conf ~/.config/picom/picom.con
-ln -s ~/dl/dotfiles/.config/polybar/config.ini ~/.config/polybar/config.ini
 ln -s ~/dl/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
+ln -s ~/dl/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
 ln -s ~/dl/dotfiles/.config/rofi/config.rasi ~/.config/rofi/config.rasi
 ln -s ~/dl/dotfiles/.config/waybar/config.jsonc ~/.config/waybar/config.jsonc
 ln -s ~/dl/dotfiles/.config/waybar/style.css ~/.config/waybar/style.css
