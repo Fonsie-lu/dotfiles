@@ -108,6 +108,8 @@ sudo systemctl enable ufw
 echo "Setup stuff"
 read
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+rm -f ~/.config/ranger/plugins/ranger_devicons/devicons.py
+ln -s ~/dl/dotfiles/.config/ranger/devicons.py ~/.config/ranger/plugins/ranger_devicons/devicons.py
 sudo sensors-detect --auto
 clear
 chsh -s /bin/zsh
