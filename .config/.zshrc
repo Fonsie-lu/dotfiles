@@ -1,1 +1,0 @@
-/home/fonsie/dl/dotfiles/.zshrc
