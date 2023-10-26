@@ -76,6 +76,7 @@
 
 /* Each module */
 #custom-updates,
+#custom-pacman,
 #custom-menu,
 #custom-home,
 #bluetooth,
@@ -88,6 +89,7 @@
 #pulseaudio,
 #pulseaudio.microphone,
 #temperature,
+#custom-cputemp,
 #idle_inhibitor,
 #backlight,
 #tray {

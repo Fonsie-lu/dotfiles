@@ -1,9 +1,6 @@
-#" sora6kq based
-# .zshrc
-
-# start i3
+# start hyprland
 if [ "$(tty)" = "/dev/tty1" ]; then
-	exec i3
+	exec hyprland
 fi
 if [[ $UID -ge 1000 && -d $HOME/bin && -z $(echo $PATH | grep -o $HOME/bin) ]]
 then
@@ -54,7 +51,7 @@ alias ls="lsd"
 alias cat='bat'
 alias v='nvim'
 alias r='ranger'
-alias cdd="cd ~/Downloads/"
+alias cdd="cd ~/dl/"
 alias cdc="cd ~/.config/"
 alias cdc="cd ~/.config/"
 alias gp="git add --all && git commit -m update && git push"
@@ -63,8 +60,8 @@ alias gp="git add --all && git commit -m update && git push"
 # export info='n user os sh wm up kern pkgs term n'
 
 #path
-export EDITOR="/usr/share/nvim"
-export VISUAL="/usr/share/nvim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Rebind Home Del 
@@ -82,5 +79,8 @@ SAVEHIST=1000
 
 # Misc
 CASE_SENSITIVE="false"
+
+# Chrome Flag:
+# chrome://flags/#enable-webrtc-pipewire-capturer
 
 neofetch

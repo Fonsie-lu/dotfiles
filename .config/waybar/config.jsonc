@@ -5,20 +5,20 @@
     "clock"
   ],
   "modules-center": [
-    "wlr/workspaces"
+    "hyprland/workspaces"
   ],
   "modules-right": [
-    "network",
+    "custom/pacman",
+//    "network",
     "custom/home",
     // "bluetooth",
-    "cpu",
     "memory",
-    "battery",
-    "temperature",
-    "backlight",
+    "cpu",
+ //   "battery",
+    "custom/cputemp",
+//    "backlight",
     "pulseaudio",
-    "pulseaudio#microphone",
-    "custom/updates",
+//    "pulseaudio#microphone",
     "tray"
   ],
   "battery": {
@@ -68,8 +68,8 @@
     "on-click": "swaymsg exec \\$term nmtui",
     "on-click-right": "nm-connection-editor"
   },
-  "hyprland/window": {
-    "format": "{}",
+  "hyprland/workspaces": {
+    "format": "{icon}",
     "max-length": 120
   },
   "hyprland/workspaces": {
@@ -123,25 +123,29 @@
     "on-click": "swaymsg exec \"\\$term_float 'watch sensors'\""
   },
   "custom/updates": {
-      "exec": "(pacman -Qu ; paru -Qua) | wc -l",
+      "exec": "checkupdates-with-aur | wc -l",
       "interval": 61,
       "format": " {}"
   },
   "custom/home": {
-      "exec": "df -h /dev/sda2 | awk 'NR == 2{print $5+0}'",
+      "exec": "df -h /dev/nvme0n1p2 | awk 'NR == 2{print $5}'",
       "interval": 62,
-      "format": "⌂ {}%"
+      "format": "⌂ {}"
   },
-  "tray": {
+   "custom/cputemp": {
+      "exec": "sensors | grep 'temp3:' | awk '{print $2}' | sed 's/+//g' | sed 's/.0//g'" ,
+      "interval": 10,
+      "format": " {}"
+  },
+ "tray": {
     "icon-size": 21,
     "spacing": 5
   },
   "custom/pacman": {
     "format": "  {}",
     "interval": 60,
-    "exec-if": "[ $(checkupdates | wc -l) -gt 0 ]",
-    "exec": "pamac checkupdates | wc -l",
-    "on-click": "alacritty -e paru -Syyu"
+    "exec": "checkupdates-with-aur | wc -l",
+    "on-click": "alacritty -e paru -Syu"
   },
   "bluetooth": {
     "format": "{icon}",
