@@ -15,7 +15,7 @@ echo "install packages"
 read answer
 paru -S --noconfirm ranger zip unzip qt5ct opendoas fzf discord reflector p7zip
 paru -S --noconfirm zsh nemo python-pynvim nodejs npm wget tldr nwg-look
-paru -S --noconfirm alacritty python-requests mpv htop lsd
+paru -S --noconfirm alacritty python-requests mpv htop lsd kvantum
 paru -S --noconfirm python-pip qbittorrent checkupdates-with-aur
 paru -S --noconfirm polybar python-pyqt5 starship pamixer pavucontrol
 paru -S --noconfirm vim-devicons google-chrome yt-dlp ntfs-3g blkmenu ttf-devicons
