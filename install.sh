@@ -68,6 +68,7 @@ ln -s ~/dl/dotfiles/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
 ln -s ~/dl/dotfiles/.config/rofi/config.rasi ~/.config/rofi/config.rasi
 ln -s ~/dl/dotfiles/.config/waybar/config.jsonc ~/.config/waybar/config.jsonc
 ln -s ~/dl/dotfiles/.config/waybar/style.css ~/.config/waybar/style.css
+ln -s ~/dl/dotfiles/.config/.gtkrc-2.0 ~/.gtkrc-2.0
 
 #Set git config
 git config --global user.email "beat.weber.86@gmail.com"
