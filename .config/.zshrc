@@ -43,17 +43,17 @@ alias nconf="nvim ~/.config/nvim/init.vim"
 alias pconf="nvim ~/.config/polybar/config.ini"
 alias rconf="nvim ~/.config/ranger/rc.conf"
 alias aconf="nvim ~/.config/alacritty/alacritty.yml"
+alias wconf="nvim ~/.config/waybar/config.jsonc"
 
 alias cd..=" .."
 alias cd...=" ..."
 alias cd....=" ...."
 alias ls="lsd"
 alias cat='bat'
-alias v='nvim'
-alias r='ranger'
 alias cdd="cd ~/dl/"
 alias cdc="cd ~/.config/"
-alias cdc="cd ~/.config/"
+alias pa="pamixer"
+alias bt="bluetuith"
 alias gp="git add --all && git commit -m update && git push"
 
 # fet.sh

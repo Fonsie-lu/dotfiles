@@ -16,10 +16,10 @@
     "cpu",
  //   "battery",
     "custom/cputemp",
-    "custom/notification",
 //    "backlight",
     "pulseaudio",
 //    "pulseaudio#microphone",
+    "custom/notification",
     "tray"
   ],
   "battery": {
