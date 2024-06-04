@@ -46,14 +46,14 @@
   min-height: 0;
   margin: 0;
   padding: 0;
-  font-family: "JetBrainsMono Nerd Font Mono", devicons, sans-serif;
+  font-family: "JetBrainsMono Nerd Font", devicons, sans-serif;
 }
 
 /* The whole bar */
 #waybar {
   background: @crust;
   color: @text;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .modules-left > widget > label,
@@ -76,9 +76,9 @@
 
 /* Each module */
 #custom-updates,
-#custom-pacman,
 #custom-menu,
 #custom-home,
+#custom-mem,
 #custom-notification,
 #bluetooth,
 #battery,
@@ -130,6 +130,7 @@
 
 #clock {
   font-weight: bold;
+  font-size: 12px;
   color: @sky;
 }
 

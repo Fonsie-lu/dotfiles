@@ -1,182 +1,116 @@
 {
-  "layer": "top",
-  "height": 30,
-  "modules-left": [
-    "clock"
-  ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
-  "modules-right": [
-    "custom/pacman",
-//    "network",
-    "custom/home",
-    // "bluetooth",
-    "memory",
-    "cpu",
- //   "battery",
-    "custom/cputemp",
-//    "backlight",
-    "pulseaudio",
-//    "pulseaudio#microphone",
-    "custom/notification",
-    "tray"
-  ],
-  "battery": {
-    "interval": 30,
-    "states": {
-      "warning": 15,
-      "critical": 5
-    },
-    "format": "{icon} {capacity}",
-    "format-charging": "{capacity} ",
-    "format-plugged": "{capacity} ",
-    "format-icons": ["", "", "", "", ""],
-    "tooltip": false,
-    "bat": "BAT0"
-  },
-  "clock": {
-    "interval": 60,
-    "format": "<span font='18'></span> {:%H:%M  <span font='10'>%e %b</span>}",
-    "tooltip": true,
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
-    "on-click": "swaymsg exec \\$term khal"
-  },
-  "cpu": {
-    "interval": 5,
-    "format": "龍 {usage}",
-    "states": {
-      "warning": 70,
-      "critical": 90
-    },
-    "on-click": "swaymsg exec \\$term htop"
-  },
-  "memory": {
-    "interval": 5,
-    "format": " {}",
-    "states": {
-      "warning": 70,
-      "critical": 90
-    },
-    "on-click": "swaymsg exec \\$term htop"
-  },
-  "network": {
-    "interval": 5,
-    "format-wifi": " {essid} <span font='10'>({signalStrength}%</span>)",
-    "format-ethernet": " {ifname}",
-    "format-disconnected": "",
-    "tooltip-format": "{ifname}: {ipaddr}",
-    "on-click": "swaymsg exec \\$term nmtui",
-    "on-click-right": "nm-connection-editor"
-  },
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "max-length": 120
-  },
-  "hyprland/workspaces": {
-    "all-outputs": false,
-    "disable-scroll": true,
-    "format": "<span font='16'>{name}</span>"
-  },
-  "backlight": {
-    "format": "{icon} {percent}",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
-    "on-scroll-down": "light -A 1",
-    "on-scroll-up": "light -U 1"
- },
-  "pulseaudio": {
-    "on-scroll-up": "pamixer --allow-boost -i 5",
-    "on-scroll-down": "pamixer --allow-boost -d 5",
-    "format": "{icon} {volume}%", 
-    "format-bluetooth": "{icon} {volume}% ",
-    "format-bluetooth-muted": "{icon} {volume}%  ",
-    "format-muted": "{volume}% ",
-    "format-source-muted": "{volume}% ",
-    "on-click": "pactl set-sink-mute 0 toggle",
-    "on-click-right": "pavucontrol",
-    "format-icons": {
-      "default": ["", "", "", "", ""]
-    }
-  },
- "pulseaudio#microphone": {
-      "format": "{format_source}",
-      "format-source": " {volume}%",
-      "format-source-muted": " Muted",
-      "on-click": "pamixer --default-source -t",
-      "on-scroll-up": "pamixer --default-source -i 5",
-      "on-scroll-down": "pamixer --default-source -d 5",
-      "scroll-step": 5
-  },
-  "temperature": {
-    "critical-threshold": 90,
-    "interval": 5,
-    "format": "<span font='10'>{icon}</span> {temperatureC}",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
-    "tooltip": true,
-    "on-click": "swaymsg exec \"\\$term_float 'watch sensors'\""
-  },
-  "custom/updates": {
-      "exec": "checkupdates-with-aur | wc -l",
-      "interval": 61,
-      "format": " {}"
-  },
-  "custom/home": {
-      "exec": "df -h /dev/nvme0n1p2 | awk 'NR == 2{print $5}'",
-      "interval": 62,
-      "format": "⌂ {}"
-  },
-   "custom/cputemp": {
-      "exec": "sensors | grep 'temp3:' | awk '{print $2}' | sed 's/+//g' | sed 's/.0//g'" ,
-      "interval": 10,
-      "format": " {}"
-  },
- "tray": {
-    "icon-size": 21,
-    "spacing": 5
-  },
-  "custom/pacman": {
-    "format": "  {}",
-    "interval": 60,
-    "exec": "checkupdates-with-aur | wc -l",
-    "on-click": "alacritty -e paru -Syu"
-  },
-  "bluetooth": {
-    "format": "{icon}",
-    "interval": 30,
-    "format-icons": {
-      "enabled": "",
-      "disabled": ""
-    },
-    "on-click": "blueberry",
-    "tooltip-format": "{status}"
-  },
-    "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  },
-  "position": "top"
+    "height": 35,
+    "margin": "5 40 0 40",
+        "modules-left": ["clock", "custom/updates"],
+        "modules-center": ["hyprland/workspaces",],
+        "modules-right": ["pulseaudio", "custom/home", "custom/mem", "cpu", "temperature", "tray"],
+
+        "hyprland/workspaces": {
+            "disable-scroll": true,
+            "persistent-workspaces": {
+                "*": 0,
+            },
+            "active-only": false,
+            "format": " <span font='12'>{name}</span> <span font='15'>{icon}</span>",
+                "format-icons": {
+                "1": " ",
+                "2": "󰨞 ",
+                "3": "󰊻 ",
+                "4": "󰺻 ",
+                "5": "󰆍 "
+            }
+        },
+
+        "custom/updates": {
+            "format": "   {} ",
+            "interval": 7200,
+            "exec": "i=$(xbps-install -SuMn | awk '{print $1}'); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",
+            "exec-if": "exit 0",
+            "on-click": "alacritty -e sudo xbps-install -SMu",
+            "signal": 8
+        },
+
+        "sway/mode": {
+            "format": "<span style=\"italic\">{}</span>"
+        },
+
+        "clock": {
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            "format": "{:%a     <span font='14'>%I:%M </span>%p     %d %b}"
+        },
+
+        "pulseaudio": {
+            "reverse-scrolling": 1,
+            "format": "<span font='10'>{volume}</span> <span font='15'>{icon} {format_source}</span>",
+            "format-bluetooth": "<span font='10'>{volume}</span> {icon} 󰂰 {format_source}",
+            "format-bluetooth-muted": "󰂲 {icon} 󰂰 {format_source}",
+            "format-muted": "  {format_source}",
+            "format-source": "<span font='10'> {volume}</span> ",
+            "format-source-muted": "",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["", "", "", "", ""]
+            },
+            "on-click": "pavucontrol",
+            "min-length": 14,
+        },
+
+        "custom/mem": {
+            "format": " {}<span font='8'>G</span> <span font='15'>󰍛 </span>",
+            "interval": 3,
+            "exec": "free -h | awk '/Mem:/{printf $3}' | sed 's/..$//'",
+            "tooltip": false,
+        },
+
+        "custom/home": {
+            "format": " {} <span font='15'>󰋊 </span>",
+            "interval": 3,
+            "exec": "df -h | awk '/n1p2/{printf $5}'",
+            "tooltip": false,
+        },
+
+        "temperature": {
+            "critical-threshold": 85,
+            "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+            "format": " {temperatureC} <span font='15'>󰈸 </span>",
+            "tooltip": false,
+            "interval": 3,
+        },
+
+        "cpu": {
+            "format": " {usage}% <span font='15'>{icon} </span>",
+            "tooltip": false,
+            "format-icons": ["󰾆", "󰾅", "󰓅"]
+        },
+
+        "backlight": {
+            "format": " {percent}% <span font='15'>{icon} </span>",
+            "format-icons": ["󰃞", "󰃟", "󰃠"],
+            "on-scroll-down": "light -A 1",
+            "on-scroll-up": "light -U 1"
+        },
+
+        "battery": {
+            "states": {
+                "warning": 30,
+                "critical": 10
+            },
+            "format": " {capacity}% <span font='15'>{icon} </span>",
+            "format-charging": "{capacity}󱉸 ",
+            "format-plugged": "{capacity}󱉸 ",
+            "format-alt": "{time} {icon}",
+            "format-icons": ["", "", "", "", ""],
+            "bat": "BAT0"
+        },
+
+         "tray": {
+            "icon-size": 16,
+            "spacing": 4
+        },
+
 }

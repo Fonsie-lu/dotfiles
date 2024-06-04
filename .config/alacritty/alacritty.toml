@@ -1,0 +1,31 @@
+import = ["/home/fonsie/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+
+[font]
+size = 14
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 2
+
+[window]
+opacity = 0.5
+
+[window.dimensions]
+columns = 60
+lines = 15
+
+[window.padding]
+x = 14
+y = 14
