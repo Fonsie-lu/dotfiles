@@ -1,10 +1,12 @@
-sudo xbps-install polkit NetworkManager Waybar alacritty alsa-firmware alsa-pipewire android-file-transfer-linux bat bluetuith bluez btop chromium courier-unicode curl dunst elogind emptty fail2ban fastfetch ffmpeg fzf gcc git gnome-disk-utility grim gtk-engine-murrine gtk2-engines i2c-tools icu imv kvantum libbluetooth libreoffice linux-mainline lm_sensors lsd mesa-dri mpv mtpfs nemo neovim nerd-fonts network-manager-applet nftables nodejs ntfs-3g nwg-look opendoas pa-applet pamixer papirus-folders pavucontrol pipewire qbittorrent qt5-styleplugins qt5ct ranger seatd slurp starship tldr unicode-emoji unzip vscode wget wl-clipboard wlogout wofi xdg-user-dirs xorg-fonts youtube-dl yt-dlp zsh gvfs-mtp
+#!/bin/sh
+
+## Packages
+sudo xbps-install polkit NetworkManager Waybar alacritty alsa-firmware alsa-pipewire android-file-transfer-linux bat bluetuith bluez btop chromium courier-unicode curl dunst elogind emptty fail2ban fastfetch ffmpeg fzf gcc git gnome-disk-utility grim gtk-engine-murrine gtk2-engines i2c-tools icu imv kvantum libbluetooth libreoffice linux-mainline lm_sensors lsd mesa-dri mpv mtpfs nemo neovim nerd-fonts network-manager-applet nftables nodejs ntfs-3g nwg-look opendoas pa-applet pamixer papirus-folders pavucontrol pipewire qbittorrent qt5-styleplugins qt5ct ranger seatd slurp starship tldr unicode-emoji unzip vscode wget wl-clipboard wlogout wofi xdg-user-dirs xorg-fonts youtube-dl yt-dlp zsh gvfs-mtp gstreamer-vaapi mesa-vaapi fd
 
 ## Enable Services
 sudo ln -s /etc/sv/seatd/ /var/service/
 sudo ln -s /etc/sv/elogind// /var/service/
 sudo ln -s /etc/sv/nftables// /var/service/
-sudo ln -s /etc/sv/acpid/ /var/service/
 sudo ln -s /etc/sv/dbus/ /var/service/
 sudo ln -s /etc/sv/fail2ban/ /var/service/
 sudo ln -s /etc/sv/polkitd/ /var/service/
@@ -36,14 +38,16 @@ sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
 sudo rm /usr/sudo
 sudo ln -s $(which doas) /user/bin/sudo
 
-#pipewire
+## Pipewire
 mkdir -p /etc/pipewire/pipewire.conf.d
 ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
-
-mkdir -p /etc/pipewire/pipewire.conf.d
 ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 
-# Fonts
+## Setup Neovim
+exec-once = nvim --headless "+Lazy! sync" +qa
+sudo npm install -g neovim
+
+## Fonts
 mkdir -p ~/.fonts/
 cd ~/.fonts/
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
@@ -54,6 +58,7 @@ cd
 ## misc
 sudo sensors-detect --auto
 xdg-user-dirs-update
+sudo nvim /etc/default/grub
 
 #Set git config
 git config --global user.email "beat.weber.86@gmail.com"
