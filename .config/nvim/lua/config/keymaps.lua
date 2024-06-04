@@ -4,3 +4,4 @@
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>s", ":w<cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "q", ":q<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>a", ":HopWord<cr>", { noremap = true, silent = true })
