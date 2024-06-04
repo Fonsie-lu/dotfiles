@@ -64,7 +64,6 @@ alias cdc="cd ~/.config/"
 alias pa="pamixer"
 alias bt="bluetuith"
 alias gp="git add --all && git commit -m update && git push"
-alias rrec="cd ~/.rec/Recordurbate/recordurbate/"
 
 # Env
 export EDITOR="nvim"
