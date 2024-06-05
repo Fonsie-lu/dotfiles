@@ -10,7 +10,6 @@ sudo ln -s /etc/sv/dbus/ /var/service/
 sudo ln -s /etc/sv/fail2ban/ /var/service/
 sudo ln -s /etc/sv/polkitd/ /var/service/
 sudo ln -s /etc/sv/greetd/ /var/service/
-sudo ln -s /etc/sv/dmeventd/ /var/service/
 
 sudo usermod -aG fonsie _seatd
 sudo cp .config/config.toml /etc/greetd/
@@ -35,6 +34,7 @@ cp -r srcpkgs/* ../void-packages/srcpkgs
 cd ../void-packages
 ./xbps-src pkg hyprland hyprpaper xdg-desktop-portal-hyprland hyprland-protocols
 sudo xbps-install -R hostdir/binpkgs hyprland hyprpaper xdg-desktop-portal-hyprland hyprland-protocols
+cd
 
 ## Use Doas
 sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
@@ -45,6 +45,12 @@ sudo ln -s $(which doas) /user/bin/sudo
 mkdir -p /etc/pipewire/pipewire.conf.d
 ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
 ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
+
+## NPM Modules for work
+mkdir -p ~/doc/sn-sync/
+cd ~/doc/sn-sync/
+npm i -D eslint eslint-plugin-servicenow eslint-plugin-jsdoc eslint-plugin-prettier eslint-config-standard eslint-config-prettier prettier jsdoc
+cd
 
 ## Setup Neovim
 exec-once = nvim --headless "+Lazy! sync" +qa
