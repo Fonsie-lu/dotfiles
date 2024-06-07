@@ -1,0 +1,115 @@
+{
+    "height": 35,
+    "margin": "5 15 0 15",
+    "modules-left": ["clock", "custom/updates"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["pulseaudio", "custom/home", "custom/mem", "cpu", "temperature", "tray"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "persistent-workspaces": {
+            "*": 0
+        },
+        "active-only": false,
+        "format": " <span font='12'>{name}</span> <span font='15'>{icon}</span>",
+        "format-icons": {
+            "1": " ",
+            "2": "󰨞 ",
+            "3": "󰊻 ",
+            "4": "󰺻 ",
+            "5": "󰆍 "
+        }
+    },
+
+    "custom/updates": {
+        "format": "   {} ",
+        "interval": 7200,
+        "exec": "xbps-install -Sun | wc -l",
+        "exec-if": "0",
+        "on-click": "alacritty -e doas xbps-install -Su",
+        "signal": 8
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a     <span font='14'>%I:%M </span>%p     %d %b}"
+    },
+
+    "pulseaudio": {
+        "reverse-scrolling": 1,
+        "format": "<span font='10'>{volume}</span> <span font='15'>{icon} {format_source}</span>",
+        "format-bluetooth": "<span font='10'>{volume}</span> {icon} 󰂰 {format_source}",
+        "format-bluetooth-muted": "󰂲 {icon} 󰂰 {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": "<span font='10'> {volume}</span> ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", "", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "min-length": 14
+    },
+
+    "custom/mem": {
+        "format": " {}<span font='8'>G</span> <span font='15'>󰍛 </span>",
+        "interval": 3,
+        "exec": "free -h | awk '/Mem:/{printf $3}' | sed 's/..$//'",
+        "tooltip": false
+    },
+
+    "custom/home": {
+        "format": " {} <span font='15'>󰋊 </span>",
+        "interval": 3,
+        "exec": "df -h | awk '/n1p2/{printf $5}'",
+        "tooltip": false
+    },
+
+    "temperature": {
+        "critical-threshold": 85,
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "format": " {temperatureC} <span font='15'>󰈸 </span>",
+        "tooltip": false,
+        "interval": 3
+    },
+
+    "cpu": {
+        "format": " {usage}% <span font='15'>{icon} </span>",
+        "tooltip": false,
+        "format-icons": ["󰾆", "󰾅", "󰓅"]
+    },
+
+    "backlight": {
+        "format": " {percent}% <span font='15'>{icon} </span>",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-down": "light -A 1",
+        "on-scroll-up": "light -U 1"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 10
+        },
+        "format": " {capacity}% <span font='15'>{icon} </span>",
+        "format-charging": "{capacity}󱉸 ",
+        "format-plugged": "{capacity}󱉸 ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "bat": "BAT0"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 4
+    }
+}
