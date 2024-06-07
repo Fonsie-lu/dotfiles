@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "swaylock -c 000000F9",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -20,7 +20,7 @@
     "label" : "logout",
     "action" : "hyprctl dispatch exit 0",
     "text" : "Logout",
-    "keybind" : "e"
+    "keybind" : "o"
 }
 {
     "label" : "suspend",
