@@ -45,7 +45,7 @@ exec-once = nvim --headless "+Lazy! sync" +qa
 sudo npm install -g neovim
 
 ## Setup Yazi
-cd ~./local/pkg/
+cd ~/.local/pkg/
 git clone https://github.com/sxyazi/yazi.git
 cd yazi
 rustup-init
