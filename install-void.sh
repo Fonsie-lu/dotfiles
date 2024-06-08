@@ -2,7 +2,7 @@
 
 sudo visudo
 ## Packages
-sudo xbps-install polkit NetworkManager Waybar alsa-firmware alsa-pipewire bat bluetuith bluez btop chromium curl dunst elogind fail2ban fastfetch ffmpeg fzf gcc git gnome-disk-utility grim gtk-engine-murrine gtk2-engines i2c-tools icu imv kvantum libbluetooth libreoffice linux-mainline lm_sensors lsd mesa-dri mpv mtpfs nemo neovim network-manager-applet nftables nodejs ntfs-3g nwg-look opensudo pamixer papirus-folders breeze-blue-cursor-theme pavucontrol pipewire qbittorrent qt5-styleplugins qt5ct seatd slurp starship tldr unicode-emoji unzip vscode wget wl-clipboard wlogout wofi xdg-user-dirs youtube-dl yt-dlp zsh gvfs-mtp gstreamer-vaapi mesa-vaapi fd greetd tuigreet xorg-server-xwayland xz psmisc eject lf noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji rustup make ffmpegthumbnailer jq poppler foot swaylock zoxide zenity
+sudo xbps-install polkit NetworkManager Waybar alsa-firmware alsa-pipewire bat bluetuith bluez btop chromium curl dunst elogind fail2ban fastfetch ffmpeg fzf gcc git gnome-disk-utility grim gtk-engine-murrine gtk2-engines i2c-tools icu imv kvantum libbluetooth libreoffice linux-mainline lm_sensors lsd mesa-dri mpv mtpfs nemo neovim network-manager-applet nftables nodejs ntfs-3g nwg-look opendoas pamixer papirus-folders breeze-blue-cursor-theme pavucontrol pipewire qbittorrent qt5-styleplugins qt5ct seatd slurp starship tldr unicode-emoji unzip vscode wget wl-clipboard wlogout wofi xdg-user-dirs youtube-dl yt-dlp zsh gvfs-mtp gstreamer-vaapi mesa-vaapi fd greetd tuigreet xorg-server-xwayland xz psmisc eject lf noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji rustup make ffmpegthumbnailer jq poppler foot swaylock zoxide zenity
 
 ## Build Hyprland
 mkdir -p ~/.local/pkgs/
@@ -28,7 +28,7 @@ sudo xbps-install -R hostdir/binpkgs hyprland xdg-desktop-portal-hyprland hyprla
 cd
 
 ## Use sudo
-sudo sh -c 'echo "permit persist :wheel" >> /etc/sudo.conf'
+sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
 ## Pipewire
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
 sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
@@ -45,7 +45,7 @@ exec-once = nvim --headless "+Lazy! sync" +qa
 sudo npm install -g neovim
 
 ## Setup Yazi
-cd ~/.local/pkg/
+cd ~/.local/pkgs/
 git clone https://github.com/sxyazi/yazi.git
 cd yazi
 rustup-init
@@ -91,6 +91,6 @@ sudo ln -s /etc/sv/polkitd/ /var/service/
 sudo ln -s /etc/sv/greetd/ /var/service/
 
 sudo rm /usr/bin/sudo
-sudo ln -s /usr/bin/doas /usr/bin/sudo
+doas ln -s /usr/bin/doas /usr/bin/sudo
 
-sudo nvim /etc/default/grub
+doas nvim /etc/default/grub
