@@ -13,7 +13,7 @@ cd ~/dl
 #Packages
 echo "install packages"
 read answer
-paru -S --noconfirm ranger zip unzip qt5ct opendoas fzf discord reflector p7zip
+paru -S --noconfirm ranger zip unzip qt5ct opensudo fzf discord reflector p7zip
 paru -S --noconfirm zsh nemo python-pynvim nodejs npm wget tldr nwg-look
 paru -S --noconfirm alacritty python-requests mpv htop lsd kvantum
 paru -S --noconfirm python-pip qbittorrent checkupdates-with-aur
@@ -78,7 +78,7 @@ git config --global credential.helper store
 #Setup Environement
 echo "Setup Environment"
 read answer
-sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
+sudo sh -c 'echo "permit persist :wheel" >> /etc/sudo.conf'
 
 #Firewall
 sudo ufw limit 22/tcp
