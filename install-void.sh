@@ -2,30 +2,11 @@
 
 sudo visudo
 ## Packages
-sudo xbps-install polkit NetworkManager Waybar alsa-firmware alsa-pipewire bat bluetuith bluez btop chromium curl dunst elogind fail2ban fastfetch ffmpeg fzf gcc git gnome-disk-utility grim gtk-engine-murrine gtk2-engines i2c-tools icu imv kvantum libbluetooth libreoffice linux-mainline lm_sensors lsd mesa-dri mpv mtpfs nemo neovim network-manager-applet nftables nodejs ntfs-3g nwg-look opendoas pamixer papirus-folders breeze-blue-cursor-theme pavucontrol pipewire qbittorrent qt5-styleplugins qt5ct seatd slurp starship tldr unicode-emoji unzip vscode wget wl-clipboard wlogout wofi xdg-user-dirs youtube-dl yt-dlp zsh gvfs-mtp gstreamer-vaapi mesa-vaapi fd greetd tuigreet xorg-server-xwayland xz psmisc eject lf noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji rustup make ffmpegthumbnailer jq poppler foot swaylock zoxide zenity timeshift
+sudo xbps-install polkit NetworkManager Waybar alsa-firmware alsa-pipewire bat bluetuith bluez btop chromium curl mako elogind fail2ban fastfetch ffmpeg fzf gcc git gnome-disk-utility grim gtk-engine-murrine gtk2-engines i2c-tools icu imv kvantum libbluetooth libreoffice linux-mainline lm_sensors lsd mesa-dri mpv mtpfs nemo neovim network-manager-applet nftables nodejs ntfs-3g nwg-look opendoas pamixer papirus-folders breeze-blue-cursor-theme pavucontrol pipewire qbittorrent qt5-styleplugins qt5ct seatd slurp starship tldr unicode-emoji unzip vscode wget wl-clipboard wlogout wofi xdg-user-dirs youtube-dl yt-dlp zsh gvfs-mtp gstreamer-vaapi mesa-vaapi fd greetd tuigreet xorg-server-xwayland xz psmisc eject lf noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji rustup make ffmpegthumbnailer jq poppler foot swaylock zoxide zenity timeshift
 
-## Build Hyprland
-mkdir -p ~/.local/pkgs/
-cd ~/.local/pkgs/
-
-git clone https://github.com/void-linux/void-packages
-cd void-packages
-./xbps-src binary-bootstrap
-cd ..
-
-git clone https://github.com/Makrennel/hyprland-void.git
-cd hyprland-void
-
-cat common/shlibs >>../void-packages/common/shlibs
-cp -r srcpkgs/* ../void-packages/srcpkgs
-
-cd ../void-packages
-./xbps-src pkg hyprland
-./xbps-src pkg xdg-desktop-portal-hyprland
-./xbps-src pkg hyprpaper
-./xbps-src pkg hyprland-protocols
-sudo xbps-install -R hostdir/binpkgs hyprland xdg-desktop-portal-hyprland hyprland-protocols hyprpaper
-cd
+## Hyprland
+sudo cp ~/dl/dotfiles/config/hyprland-void.conf /etc/xbps.d/
+sudo xbps-install -S hyprland xdg-desktop-portal-hyprland hyprpaper hyprland-protocols
 
 ## Use sudo
 sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
@@ -45,11 +26,10 @@ exec-once = nvim --headless "+Lazy! sync" +qa
 sudo npm install -g neovim
 
 ## Setup Yazi
-cd ~/.local/pkgs/
-git clone https://github.com/sxyazi/yazi.git
-cd yazi
 rustup-init
-cargo install --locked yazi-fm yazi-cli
+sudo chsh
+zsh
+cargo install --locked --git https://github.com/sxyazi/yazi.git yazi-fm yazi-cli
 
 ## Fonts
 mkdir -p ~/.fonts/

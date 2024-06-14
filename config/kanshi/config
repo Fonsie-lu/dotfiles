@@ -1,0 +1,8 @@
+profile Laptop {
+    output eDP-1 position 0,0 mode 1920x1080
+}
+
+profile Dock {
+    output HDMI-A-1 position 0,0 mode 2560x1440
+    output eDP-1 disable
+}

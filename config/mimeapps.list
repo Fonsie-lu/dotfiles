@@ -5,6 +5,11 @@ image/png=imv.desktop
 image/jpg=imv.desktop
 image/jpeg=imv.desktop
 image/x-icon=imv.desktop
+image/*=imv.desktop
+application/json=nvim.desktop
+text/plain=nvim.desktop
+text/*=nvim.desktop
+data=nvim.desktop
 
 [Added Associations]
 image/png=imv.desktop;

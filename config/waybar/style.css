@@ -7,32 +7,32 @@
  * =========================================================================== */
 
 /* import css definitions for current theme */
-@import url("mocha.css");
+@import url('mocha.css');
 
 /* -----------------------------------------------------------------------------
  * Keyframes
  * -------------------------------------------------------------------------- */
 
 @keyframes blink-warning {
-  70% {
-    color: @text;
-  }
+    70% {
+        color: @text;
+    }
 
-  to {
-    color: @text;
-    background-color: @base;
-  }
+    to {
+        color: @text;
+        background-color: @base;
+    }
 }
 
 @keyframes blink-critical {
-  70% {
-    color: @red;
-  }
+    70% {
+        color: @red;
+    }
 
-  to {
-    color: @text;
-    background-color: @red;
-  }
+    to {
+        color: @text;
+        background-color: @red;
+    }
 }
 
 /* -----------------------------------------------------------------------------
@@ -41,37 +41,36 @@
 
 /* Reset all styles */
 * {
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-  font-family: "JetBrainsMono Nerd Font", devicons, sans-serif;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrainsMono Nerd Font', devicons, sans-serif;
 }
 
 /* The whole bar */
 #waybar {
-  background: @crust;
-  color: @text;
-  font-size: 14px;
+    background: @crust;
+    color: @text;
+    font-size: 14px;
 }
 
 .modules-left > widget > label,
 .modules-right > widget > label {
-  color: @text;
-  background: @base;
-  margin: 0px 0px 2px 0px;
-  padding: 0px 6px;
-  
+    color: @text;
+    background: @base;
+    margin: 0px 0px 2px 0px;
+    padding: 0px 6px;
 }
 .modules-right > widget:nth-child(2) > label {
-  border-bottom-left-radius: 3px;
-  margin-left: 4px;
+    border-bottom-left-radius: 3px;
+    margin-left: 4px;
 }
 
 .modules-left > widget:last-child > label {
-  border-bottom-right-radius: 3px;
-  margin-right: 4px;
+    border-bottom-right-radius: 3px;
+    margin-right: 4px;
 }
 
 /* Each module */
@@ -94,10 +93,10 @@
 #idle_inhibitor,
 #backlight,
 #tray {
-  padding:  2px 10px;
-  margin: 2px 10px;
-  border-radius: 10px;
-  background: @base
+    padding: 2px 10px;
+    margin: 2px 10px;
+    border-radius: 10px;
+    background: @base;
 }
 
 /* -----------------------------------------------------------------------------
@@ -105,78 +104,78 @@
  * -------------------------------------------------------------------------- */
 
 #battery {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #battery.warning {
-  color: @maroon;
+    color: @maroon;
 }
 
 #battery.critical {
-  color: @red;
+    color: @red;
 }
 
 #battery.warning.discharging {
-  animation-name: blink-warning;
-  animation-duration: 3s;
+    animation-name: blink-warning;
+    animation-duration: 3s;
 }
 
 #battery.critical.discharging {
-  animation-name: blink-critical;
-  animation-duration: 2s;
+    animation-name: blink-critical;
+    animation-duration: 2s;
 }
 
 #clock {
-  font-weight: bold;
-  font-size: 12px;
-  color: @sky;
+    font-weight: bold;
+    font-size: 12px;
+    color: @sky;
 }
 
 #cpu {
-  color: @peach;
+    color: @peach;
 }
 
 #cpu.warning {
-  color: @maroon;
+    color: @maroon;
 }
 
 #cpu.critical {
-  color: @red;
+    color: @red;
 }
 
 #custom-menu {
-  background: @base;
+    background: @base;
 }
 
 #memory {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  color: @mauve;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: @mauve;
 }
 
 #memory.warning {
-  color: @maroon;
+    color: @maroon;
 }
 
 #memory.critical {
-  color: @red;
-  animation-name: blink-critical;
-  animation-duration: 2s;
+    color: @red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
 }
 
 #mode {
-  background: @base;
+    background: @base;
 }
 
 #network {
-   color: @sapphire;
+    color: @sapphire;
 }
 
 #network.disconnected {
-  color: @red;
+    color: @red;
 }
 
 #custom-updates {
@@ -184,45 +183,45 @@
 }
 
 #pulseaudio {
-  color: @green;
+    color: @green;
 }
 
 #pulseaudio.microphone {
-  color: @pink;
+    color: @pink;
 }
 
 #pulseaudio.muted {
-  /* No styles */
-  color: @maroon;
+    /* No styles */
+    color: @maroon;
 }
 
 #custom-home {
-  color: @rosewater;
+    color: @rosewater;
 }
 
 #temperature {
-  /* No styles */
+    /* No styles */
 }
 
 #temperature.critical {
-  color: @red;
+    color: @red;
 }
 
 #tray {
-  /* No styles */
+    /* No styles */
 }
 
 window#waybar {
-  font-weight: bold;
-  margin-right: 25px;
-  color: @text;
+    font-weight: bold;
+    margin-right: 25px;
+    color: @text;
 }
 
 #workspaces button {
-  border-radius: 10px;
-  padding: 2px 10px;
-  color: @text;
-  background: @mantle;
+    border-radius: 10px;
+    padding: 2px 10px;
+    color: @text;
+    background: @mantle;
 }
 
 #workspaces button.active {
@@ -231,20 +230,44 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  color: @treen;
-  background: @base;
-  font-weight: bold;
+    color: @green;
+    background: @base;
+    font-weight: bold;
 }
 
 #workspaces button.urgent {
-  border-color: @red;
-  color: @red;
+    border-color: @red;
+    color: @red;
 }
 
 #custom-updates {
-  color: @maroon;
+    color: @maroon;
 }
 
 #bluetooth.disabled {
-  color: @maroon;
+    color: @maroon;
+}
+
+#tags button {
+    border-radius: 10px;
+    padding: 2px 10px;
+    color: @text;
+    background: @mantle;
+    font-size: 17px;
+}
+
+#tags button.active {
+    color: @green;
+    background: @base;
+}
+
+#tags button.focused {
+    color: @green;
+    background: @base;
+    font-weight: bold;
+}
+
+#tags button.urgent {
+    border-color: @red;
+    color: @red;
 }

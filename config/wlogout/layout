@@ -22,9 +22,4 @@
     "text" : "Logout",
     "keybind" : "o"
 }
-{
-    "label" : "suspend",
-    "action" : "loginctl suspend",
-    "text" : "Suspend",
-    "keybind" : "u"
-}
+

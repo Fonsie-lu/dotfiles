@@ -5,6 +5,11 @@
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "custom/home", "custom/mem", "cpu", "temperature", "tray"],
 
+    "river/tags": {
+        "num-tags": 5,
+        "tag-labels": ["  ", " 󰨞 ", " 󰊻 ", " 󰺻 ", " 󰆍 "]
+    },
+
     "hyprland/workspaces": {
         "disable-scroll": true,
         "persistent-workspaces": {
@@ -23,15 +28,11 @@
 
     "custom/updates": {
         "format": "   {} ",
-        "interval": 7200,
+        "interval": 500,
         "exec": "xbps-install -Sun | wc -l",
         "exec-if": "0",
-        "on-click": "alacritty -e sudo xbps-install -Su",
+        "on-click": "foot -e sudo xbps-install -Su",
         "signal": 8
-    },
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
     },
 
     "clock": {
@@ -61,7 +62,7 @@
     },
 
     "custom/mem": {
-        "format": " {}<span font='8'>G</span> <span font='15'>󰍛 </span>",
+        "format": " {}<span font='8'>G</span> <span font='15'> </span>",
         "interval": 3,
         "exec": "free -h | awk '/Mem:/{printf $3}' | sed 's/..$//'",
         "tooltip": false
@@ -85,7 +86,8 @@
     "cpu": {
         "format": " {usage}% <span font='15'>{icon} </span>",
         "tooltip": false,
-        "format-icons": ["󰾆", "󰾅", "󰓅"]
+        "format-icons": ["󰾆", "󰾅", "󰓅"],
+        "on-click": "sh ~/.config/hypr/gamemode.sh"
     },
 
     "backlight": {
