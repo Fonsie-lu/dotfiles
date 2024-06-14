@@ -6,7 +6,7 @@ sudo xbps-install polkit NetworkManager Waybar alsa-firmware alsa-pipewire bat b
 
 ## Hyprland
 sudo cp ~/dl/dotfiles/config/hyprland-void.conf /etc/xbps.d/
-sudo xbps-install -S hyprland xdg-desktop-portal-hyprland hyprpaper hyprland-protocols
+sudo xbps-install -S hyprland xdg-desktop-portal-hyprland hyprpaper hyprland-protocols hyprcursor
 
 ## Use sudo
 sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
