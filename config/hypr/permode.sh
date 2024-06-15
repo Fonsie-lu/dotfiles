@@ -4,8 +4,8 @@ hyprctl --batch "\
         keyword decoration:drop_shadow 0;\
         keyword decoration:blur:enabled 0;\
         keyword general:gaps_in 10;\
-        keyword general:gaps_out 10;\
-        keyword general:border_size 5;\
+        keyword general:gaps_out 20;\
+        keyword general:border_size 3;\
         keyword decoration:rounding 0;\
         keyword decoration:inactive_opacity 1"
 exit
