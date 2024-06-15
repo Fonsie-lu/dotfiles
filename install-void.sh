@@ -27,9 +27,11 @@ sudo npm install -g neovim
 
 ## Setup Yazi
 rustup-init
-sudo chsh
+sudo chsh fonsie
 zsh
+read "Yazi"
 cargo install --locked --git https://github.com/sxyazi/yazi.git yazi-fm yazi-cli
+read "end Yazi"
 
 ## Fonts
 mkdir -p ~/.fonts/
