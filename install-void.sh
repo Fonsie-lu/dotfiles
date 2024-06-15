@@ -22,7 +22,7 @@ npm i -D eslint eslint-plugin-servicenow eslint-plugin-jsdoc eslint-plugin-prett
 cd
 
 ## Setup Neovim
-exec-once = nvim --headless "+Lazy! sync" +qa
+nvim --headless "+Lazy! sync" +qa
 sudo npm install -g neovim
 
 ## Setup Yazi
@@ -41,7 +41,7 @@ fc-cache -r
 cd
 
 ## Theme
-cd ~/.local/pkgs/
+cd ~/dl/
 curl -LsSO "https://raw.githubusercontent.com/catppuccin/gtk/v1.0.3/install.py"
 python3 install.py mocha blue
 git clone https://github.com/catppuccin/Kvantum.git

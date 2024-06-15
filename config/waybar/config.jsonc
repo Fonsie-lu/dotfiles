@@ -65,7 +65,8 @@
         "format": " {}<span font='8'>G</span> <span font='15'> </span>",
         "interval": 3,
         "exec": "free -h | awk '/Mem:/{printf $3}' | sed 's/..$//'",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "sh ~/.config/hypr/perfmode.sh"
     },
 
     "custom/home": {
