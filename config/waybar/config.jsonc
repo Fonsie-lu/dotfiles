@@ -1,7 +1,7 @@
 {
     "height": 35,
-    "margin": "5 15 0 15",
-    "modules-left": ["clock", "custom/updates"],
+    "margin": "0 0 0 0",
+    "modules-left": ["clock"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "custom/home", "custom/mem", "cpu", "temperature", "tray"],
 
@@ -63,15 +63,15 @@
 
     "custom/mem": {
         "format": " {}<span font='8'>G</span> <span font='15'> </span>",
-        "interval": 3,
+        "interval": 15,
         "exec": "free -h | awk '/Mem:/{printf $3}' | sed 's/..$//'",
         "tooltip": false,
-        "on-click": "sh ~/.config/hypr/perfmode.sh"
+        "on-click": "sh ~/.config/hypr/permode.sh"
     },
 
     "custom/home": {
         "format": " {} <span font='15'>󰋊 </span>",
-        "interval": 3,
+        "interval": 500,
         "exec": "df -h | awk '/n1p2/{printf $5}'",
         "tooltip": false
     },
@@ -81,7 +81,7 @@
         "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
         "format": " {temperatureC} <span font='15'>󰈸 </span>",
         "tooltip": false,
-        "interval": 3
+        "interval": 16
     },
 
     "cpu": {

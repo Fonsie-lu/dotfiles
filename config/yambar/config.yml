@@ -1,0 +1,132 @@
+icon: &icon Material Design Icons:style=Regular:pixelsize=18
+tags: &tags Material Design Icons:style=Regular:pixelsize=23
+bar:
+    height: 35
+    location: top
+    layer: bottom
+    spacing: 5
+    font: JetBrainsMono Nerd Font:size=17:weight=regular
+    left-margin: 16
+    right-margin: 16
+    foreground: cdd6f4ff
+    background: 11111bff
+
+    left:
+        - clock:
+              time-format: '%I:%M'
+              date-format: '%a %d'
+              content:
+                  - string: { text: ' 󰥔  {time}  |    {date} ' }
+    center:
+        - label:
+              content: { string: { text: '[' } }
+        - river:
+              anchors:
+                  - base: &river_base
+                        margin: 6
+                        conditions:
+                            id == 1: { string: { text: 󰎤, font: *tags } }
+                            id == 2: { string: { text: 󰎧, font: *tags } }
+                            id == 3: { string: { text: 󰎪, font: *tags } }
+                            id == 4: { string: { text: 󰎭, font: *tags } }
+                            id == 5: { string: { text: 󰎱, font: *tags } }
+              content:
+                  map:
+                      on-click:
+                          left: sh -c "riverctl set-focused-tags $((1 << ({id} - 1)))"
+                          right: sh -c "riverctl toggle-focused-tags $((1 << ({id} -1)))"
+                          middle: sh -c "riverctl toggle-view-tags $((1 << ({id} -1)))"
+                      conditions:
+                          state == urgent:
+                              map:
+                                  <<: *river_base
+                                  deco: { background: { color: f38ba8ff } }
+                          state == focused:
+                              map:
+                                  <<: *river_base
+                                  foreground: a6e3a1ff
+                          state == visible:
+                              map:
+                                  conditions:
+                                      ~occupied: { map: { <<: *river_base } }
+                                      occupied: { map: { <<: *river_base } }
+                          state == unfocused:
+                              map:
+                                  <<: *river_base
+                          state == invisible:
+                              map:
+                                  conditions:
+                                      ~occupied: { empty: {} }
+                                      occupied: { map: { <<: *river_base } }
+        - label:
+              content: { string: { text: ']' } }
+    right:
+        - cpu:
+              poll-interval: 2500
+              content:
+                  map:
+                      conditions:
+                          id >= 0:
+                              - ramp:
+                                    tag: cpu
+                                    items:
+                                        - string: { text: ▁ }
+                                        - string: { text: ▂ }
+                                        - string: { text: ▃ }
+                                        - string: { text: ▄ }
+                                        - string: { text: ▅ }
+                                        - string: { text: ▆ }
+                                        - string: { text: ▇ }
+                                        - string: { text: █ }
+        - script:
+              path: ~/.config/yambar/scripts/temp.sh
+              content:
+                  string: { text: '|  󰈸 {cpu} ' }
+        - script:
+              path: ~/.config/yambar/scripts/home.sh
+              content:
+                  string: { text: '|  󰋊 {home} ' }
+        - mem:
+              poll-interval: 2500
+              content:
+                  string: { text: '|   {used:mb} ' }
+        - label:
+              content: { string: { text: '|' } }
+        # - battery:
+        #       name: BAT0
+        #       poll-interval: 30000
+        #       content:
+        #           string: { text: '|    {capacity} ' }
+        # - backlight:
+        #       name: intel_backlight
+        #       content:
+        #           string: { text: '|  󰃠 {percent} ' }
+        - pipewire:
+              anchors:
+                  volume: &volume
+                      conditions:
+                          muted: { string: { text: '{linear_volume}', foreground: ff0000ff } }
+                          ~muted: { string: { text: '{linear_volume}' } }
+              content:
+                  list:
+                      items:
+                          - map:
+                                conditions:
+                                    type == "sink":
+                                        map:
+                                            conditions:
+                                                icon == "audio-headset-bluetooth":
+                                                    string: { text: '  ' }
+                                            default:
+                                                - ramp:
+                                                      tag: linear_volume
+                                                      items:
+                                                          - string: { text: '  ' }
+                                                          - string: { text: '  ' }
+                                                          - string: { text: '  ' }
+                                    type == "source":
+                                        - string: { text: '  ' }
+                          - map:
+                                <<: *volume
+        - label:
+              content: { string: { text: ' ' } }
