@@ -39,13 +39,13 @@
 /* The whole bar */
 #waybar {
     background: rgba(26, 27, 38, 0.85);
-    color: @sky;
+    color: @text;
     font-size: 14px;
 }
 
 .modules-left > widget > label,
 .modules-right > widget > label {
-    color: @sky;
+    color: @text;
     background: @base;
     margin: 0px 0px 2px 0px;
     padding: 0px 4px;
@@ -70,14 +70,11 @@
 #battery,
 #clock,
 #cpu,
-#memory,
 #mode,
 #network,
 #pulseaudio,
 #pulseaudio.microphone,
 #temperature,
-#custom-cputemp,
-#idle_inhibitor,
 #backlight,
 #tray {
     padding: 2px 8px;
@@ -96,6 +93,13 @@
     animation-direction: alternate;
 }
 
+#custom-updates {
+    color: @green;
+}
+
+#pulseaudio {
+    color: @sky;
+}
 #battery.warning {
     color: @maroon;
 }
@@ -155,6 +159,9 @@
 #pulseaudio.muted {
     /* No styles */
     color: @maroon;
+}
+#temperature {
+    color: @peach;
 }
 
 #temperature.critical {
