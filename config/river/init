@@ -3,12 +3,14 @@
 #░█▀▀▄░█░▒█░▀█▀░▄▀▀▄░█▀▀░▀█▀░█▀▀▄░█▀▀▄░▀█▀
 #▒█▄▄█░█░▒█░░█░░█░░█░▀▀▄░░█░░█▄▄█░█▄▄▀░░█░
 #▒█░▒█░░▀▀▀░░▀░░░▀▀░░▀▀▀░░▀░░▀░░▀░▀░▀▀░░▀░
-riverctl spawn 'swaybg -m fill -i ~/pic/wallpaper/forest.jpg'
+dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+riverctl spawn 'swaybg -m fill -i ~/pic/wallpaper/dark-hazy-forest.jpg'
 riverctl spawn pipewire
-riverctl spawn yambar
+riverctl spawn waybar
 riverctl spawn mako
 riverctl spawn 'foot --server'
-# riverctl spawn waybar
+# riverctl spawn yambar
+# riverctl spawn kanshi
 riverctl spawn 'nvim --headless "+Lazy! sync" +qa'
 riverctl spawn 'chromium --disable-sync-preferences --no-startup-window'
 
@@ -16,7 +18,7 @@ riverctl spawn 'chromium --disable-sync-preferences --no-startup-window'
 #░▒█░░█░▒█░█▄▄█░█░▒█░░█░
 #░▄█▄░▀░░▀░█░░░░░▀▀▀░░▀░
 riverctl keyboard-layout ch
-riverctl set-repeat 50 300
+riverctl set-repeat 60 350
 
 #░▒█░▄▀░█▀▀░█░░█░█▀▀▄░░▀░░█▀▀▄░█▀▄
 #░▒█▀▄░░█▀▀░█▄▄█░█▀▀▄░░█▀░█░▒█░█░█
@@ -29,6 +31,7 @@ riverctl map normal Super P spawn 'grim -g "$(slurp)"'
 riverctl map normal Super W spawn chromium
 riverctl map normal Super+Shift W spawn 'chromium --incognito'
 riverctl map normal Super F spawn 'foot -e yazi'
+riverctl map normal Super+Shift F spawn 'foot --app-id=foot -e yazi'
 riverctl map normal Super E spawn fuzzel
 riverctl map normal Super Escape spawn 'wlogout --protocol layer-shell -b 4 -T 400 -B 400'
 
@@ -105,14 +108,14 @@ riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 #░▒█░░░░█▄▄█░█▄▄█░█░░█░█░▒█░░█░
 #░▒█▄▄█░▀░░▀░▄▄▄▀░░▀▀░░░▀▀▀░░▀░
 for i in $(seq 1 5); do
-	tags=$((1 << ($i - 1)))
-	riverctl map normal Super $i set-focused-tags $tags
-	# tag focused view with tag [0-8]
-	riverctl map normal Super+Shift $i set-view-tags $tags
-	# toggle focus of tag [0-8]
-	riverctl map normal Super+Control $i toggle-focused-tags $tags
-	# toggle tag [0-8] of focused view
-	riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+  tags=$((1 << ($i - 1)))
+  riverctl map normal Super $i set-focused-tags $tags
+  # tag focused view with tag [0-8]
+  riverctl map normal Super+Shift $i set-view-tags $tags
+  # toggle focus of tag [0-8]
+  riverctl map normal Super+Control $i toggle-focused-tags $tags
+  # toggle tag [0-8] of focused view
+  riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
 done
 
 # focus all tags / tag focused view with all tags
@@ -133,13 +136,15 @@ riverctl map normal Super Down send-layout-cmd rivertile "main-location bottom"
 riverctl map normal Super Left send-layout-cmd rivertile "main-location left"
 
 # Set background and border color
-riverctl background-color 0x#11111b
-riverctl border-color-focused 0x#a6e3a1
-riverctl border-color-unfocused 0x#1e1e2e
+riverctl background-color 0x1a1b26
+riverctl border-color-focused 0xa6e3a1
+riverctl border-color-unfocused 0x1a1b26
 
 # Make all views with an app-id that starts with "float" and title "foo" start floating.
 riverctl rule-add -app-id 'float*' -title 'foo' float
 riverctl rule-add -app-id 'footsmall' float
+riverctl rule-add -app-id 'footsmall' dimensions 1100 800
+riverctl focus-follows-cursor normal
 
 # Make all views with app-id "bar" and any title use client-side decorations
 riverctl rule-add -app-id "bar" csd
@@ -147,4 +152,4 @@ riverctl rule-add -app-id "bar" csd
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -view-padding 10 -outer-padding 10 &
+rivertile -view-padding 8 -outer-padding 8 &

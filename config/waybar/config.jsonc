@@ -2,12 +2,13 @@
     "height": 35,
     "margin": "0 0 0 0",
     "modules-left": ["clock"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "custom/home", "custom/mem", "cpu", "temperature", "tray"],
+    "modules-center": ["river/tags"],
+    "modules-right": ["pulseaudio", "custom/updates", "custom/home", "custom/mem", "cpu", "temperature", "tray"],
 
     "river/tags": {
         "num-tags": 5,
-        "tag-labels": ["  ", " 󰨞 ", " 󰊻 ", " 󰺻 ", " 󰆍 "]
+        // "tag-labels": ["  ", " 󰨞 ", " 󰊻 ", " 󰺻 ", " 󰆍 "]
+        "tag-labels": [" 󰎤 ", " 󰎧 ", " 󰎪 ", " 󰎭 ", " 󰎱 "]
     },
 
     "hyprland/workspaces": {
@@ -18,20 +19,20 @@
         "active-only": false,
         "format": " <span font='12'>{name}</span> <span font='15'>{icon}</span>",
         "format-icons": {
-            "1": " ",
-            "2": "󰨞 ",
-            "3": "󰊻 ",
-            "4": "󰺻 ",
-            "5": "󰆍 "
+            "1": "󰎤 ",
+            "2": "󰎧 ",
+            "3": "󰎪 ",
+            "4": "󰎭 ",
+            "5": "󰎱 "
         }
     },
 
     "custom/updates": {
-        "format": "   {} ",
-        "interval": 500,
-        "exec": "xbps-install -Sun | wc -l",
-        "exec-if": "0",
-        "on-click": "foot -e sudo xbps-install -Su",
+        "format": " {} <span font='15'> </span>",
+        "interval": 3601,
+        "hide-empty-text": true,
+        "exec": "xbps-install --memory-sync --dry-run --update | grep -Fe update -e install | wc -l",
+        "on-click": "foot --app-id=footsmall -e sudo xbps-install -Su",
         "signal": 8
     },
 
@@ -66,14 +67,15 @@
         "interval": 15,
         "exec": "free -h | awk '/Mem:/{printf $3}' | sed 's/..$//'",
         "tooltip": false,
-        "on-click": "sh ~/.config/hypr/permode.sh"
+        "on-click": "foot --app-id=footsmall -e btop"
     },
 
     "custom/home": {
         "format": " {} <span font='15'>󰋊 </span>",
         "interval": 500,
         "exec": "df -h | awk '/n1p2/{printf $5}'",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "foot --app-id=footsmall -e yazi"
     },
 
     "temperature": {
@@ -87,8 +89,7 @@
     "cpu": {
         "format": " {usage}% <span font='15'>{icon} </span>",
         "tooltip": false,
-        "format-icons": ["󰾆", "󰾅", "󰓅"],
-        "on-click": "sh ~/.config/hypr/gamemode.sh"
+        "format-icons": ["󰾆", "󰾅", "󰓅"]
     },
 
     "backlight": {

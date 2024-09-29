@@ -10,6 +10,7 @@ application/json=nvim.desktop
 text/plain=nvim.desktop
 text/*=nvim.desktop
 data=nvim.desktop
+x-scheme-handler/webcal=chromium.desktop
 
 [Added Associations]
 image/png=imv.desktop;

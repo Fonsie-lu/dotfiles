@@ -8,8 +8,8 @@ bar:
     font: JetBrainsMono Nerd Font:size=17:weight=regular
     left-margin: 16
     right-margin: 16
-    foreground: cdd6f4ff
-    background: 11111bff
+    foreground: c0caf5ff
+    background: 1a1b26ff
 
     left:
         - clock:
@@ -61,6 +61,8 @@ bar:
         - label:
               content: { string: { text: ']' } }
     right:
+        - label:
+              content: { string: { text: '|' } }
         - cpu:
               poll-interval: 2500
               content:
@@ -92,15 +94,15 @@ bar:
                   string: { text: '|   {used:mb} ' }
         - label:
               content: { string: { text: '|' } }
-        # - battery:
-        #       name: BAT0
-        #       poll-interval: 30000
-        #       content:
-        #           string: { text: '|    {capacity} ' }
-        # - backlight:
-        #       name: intel_backlight
-        #       content:
-        #           string: { text: '|  󰃠 {percent} ' }
+          # - battery:
+          #       name: BAT0
+          #       poll-interval: 30000
+          #       content:
+          #           string: { text: '|    {capacity} ' }
+          # - backlight:
+          #       name: intel_backlight
+          #       content:
+          #           string: { text: '|  󰃠 {percent} ' }
         - pipewire:
               anchors:
                   volume: &volume
@@ -129,4 +131,4 @@ bar:
                           - map:
                                 <<: *volume
         - label:
-              content: { string: { text: ' ' } }
+              content: { string: { text: '| ' } }
