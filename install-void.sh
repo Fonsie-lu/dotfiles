@@ -6,6 +6,8 @@ sudo xbps-install polkit NetworkManager Waybar alsa-firmware alsa-pipewire bat b
 
 ## Use sudo
 sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
+sudo sh -c 'echo "#\!/bin/sh \n\nfstrim /" >> /etc/cron.weekly/fstrim'
+sudo chmod u+x /etc/cron.weekly/fstrim
 ## Pipewire
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
 sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
@@ -67,3 +69,4 @@ sudo rm /usr/bin/sudo
 doas ln -s /usr/bin/doas /usr/bin/sudo
 
 doas nvim /etc/default/grub
+doas nvim /etc/fstab
