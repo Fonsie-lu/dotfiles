@@ -5,10 +5,6 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # : Flavor {{{
-
-[flavor]
-use = "tokyo-night"
-
 # : }}}
 
 # : Manager {{{
@@ -766,21 +762,6 @@ exts = [
 	{ name = "zip", text = "", fg_dark = "#eca517", fg_light = "#76520c" },
 	{ name = "zsh", text = "", fg_dark = "#89e051", fg_light = "#447028" },
 	{ name = "zst", text = "", fg_dark = "#eca517", fg_light = "#76520c" },
-]
-conds = [
-	# Special files
-	{ cond = "orphan", text = "" },
-	{ cond = "link"  , text = "" },
-	{ cond = "block" , text = "" },
-	{ cond = "char"  , text = "" },
-	{ cond = "fifo"  , text = "" },
-	{ cond = "sock"  , text = "" },
-	{ cond = "sticky", text = "" },
-
-	# Fallback
-	{ cond = "dir", text = "" },
-	{ cond = "exec", text = "" },
-	{ cond = "!dir", text = "" },
 ]
 
 # : }}}
