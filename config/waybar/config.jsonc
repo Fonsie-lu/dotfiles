@@ -2,7 +2,7 @@
     "height": 35,
     "margin": "0 0 0 0",
     "modules-left": ["clock"],
-    "modules-center": ["river/tags"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "custom/updates", "custom/home", "custom/mem", "cpu", "temperature", "tray"],
 
     "river/tags": {
@@ -12,18 +12,16 @@
     },
 
     "hyprland/workspaces": {
-        "disable-scroll": true,
-        "persistent-workspaces": {
-            "*": 0
-        },
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
         "active-only": false,
-        "format": " <span font='12'>{name}</span> <span font='15'>{icon}</span>",
         "format-icons": {
-            "1": "󰎤 ",
-            "2": "󰎧 ",
-            "3": "󰎪 ",
-            "4": "󰎭 ",
-            "5": "󰎱 "
+            "1": "󰎤",
+            "2": "󰎧",
+            "3": "󰎪",
+            "4": "󰎭",
+            "5": "󰎱"
         }
     },
 
@@ -37,6 +35,7 @@
     },
 
     "clock": {
+        "timezone": "CEST",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a     <span font='14'>%I:%M </span>%p     %d %b}"
     },

@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Tokyo Night",
+    "editor.fontSize": 18,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

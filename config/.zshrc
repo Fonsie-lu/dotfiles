@@ -1,6 +1,6 @@
 # start hyprland
 if [ "$(tty)" = "/dev/tty1" ]; then
-	exec Hyprland
+	exec sway
 fi
 
 # Set the directory we want to store zinit and plugins
@@ -32,6 +32,7 @@ zinit cdreplay -q
 
 #source
 source /usr/share/fzf/key-bindings.zsh
+export PATH="$HOME/.cargo/bin:$PATH"
 
 #prompt
 bindkey -s "^H" 'cd^M'
@@ -43,18 +44,16 @@ alias xq="xbps-query -Rs"
 alias xr="sudo xbps-remove"
 alias xu="sudo xbps-install -Su"
 
-alias mnt1="udisksctl mount -b /dev/sda1"
-alias umnt1="udisksctl unmount -b /dev/sda1"
-alias mnt2="udisksctl mount -b /dev/sdb1"
-alias umnt2="udisksctl unmount -b /dev/sdb1"
+alias mnt1="udisksctl mount -b /dev/sda2"
+alias umnt1="udisksctl unmount -b /dev/sda2"
+alias mnt2="udisksctl mount -b /dev/sdb2"
+alias umnt2="udisksctl unmount -b /dev/sdb2"
 alias mntp="gio mount mtp://Xiaomi_Mi_9T_da92a6ca/"
 alias umntp="gio mount -u mtp://Xiaomi_Mi_9T_da92a6ca/"
 alias listp="gio mount -li | grep activation_root"
 alias zconf="nvim ~/.zshrc"
 alias hconf="nvim ~/.config/hypr/hyprland.conf"
 alias nconf="nvim ~/.config/nvim/init.vim"
-# alias rconf="nvim ~/.config/ranger/rc.conf"
-# alias aconf="nvim ~/.config/alacritty/alacritty.toml"
 alias kconf="nvim ~/.config/kitty/kitty.conf"
 alias wconf="nvim ~/.config/waybar/config.jsonc"
 alias fconf="nvim ~/.config/fastfetch/config.jsonc"
@@ -77,7 +76,9 @@ alias emptytrash="rm -rf ~/.local/share/Trash/*"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
-# export RANGER_DEVICONS_SEPARATOR=" "
+export XDG_CURRENT_DESKTOP="hyprland"
+export QT_QPA_PLATFORM="wayland-egl"
+export ELM_DISPLAY="wl"
 
 # Rebind Home Del 
 bindkey  "^[[H"   beginning-of-line

@@ -1,0 +1,44 @@
+# Set inner/outer gaps
+gaps inner 25
+gaps outer 0
+
+# Hide titlebar on windows:
+default_border pixel 5
+
+# Default Font
+# font pango:Noto Sans Regular 10
+font pango:JetBrainsMono Regular 11
+# font pango:Hack Medium 11
+
+# Thin borders:
+smart_borders on
+smart_gaps off
+
+## Window decoration
+#class                  border    backgr    text      indicator child_border
+client.focused          #333845   #333845   #ffffff   #2e9ef4   #8fbcbb
+client.focused_inactive #333333   #5f676a   #ffffff   #484e50   #5f676a
+client.unfocused        #2f343a   #222222   #888888   #333845   #333845
+client.urgent           #2f343a   #900000   #ffffff   #900000   #900000
+client.placeholder      #000000   #0c0c0c   #ffffff   #000000   #333845
+client.background       #ffffff
+
+#Window rules
+for_window [app_id="foot"] blur enable, blur_xray disable, blur_passes 5, blur_radius 5
+
+# waybar blur
+layer_effects "waybar" blur enable; shadows disable;
+layer_effects "gtk-layer-shell" blur enable; shadows enable; corner_radius 13
+layer_effects "fuzzel" blur enable; shadows enable; corner_radius 13
+
+smart_corner_radius enable
+corner_radius 15
+shadows enable
+shadows_on_csd enable
+shadow_blur_radius 20
+
+## blur
+blur enable
+blur_xray disable
+blur_passes 4
+blur_radius 4

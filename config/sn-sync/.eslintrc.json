@@ -6,7 +6,7 @@
     "plugins": ["servicenow", "jsdoc", "prettier"],
     "overrides": [],
     "parserOptions": {
-        "ecmaVersion": 5,
+        "ecmaVersion": 12,
         "sourceType": "script",
         "ecmaFeatures": {}
     },

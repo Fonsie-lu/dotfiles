@@ -179,11 +179,13 @@ window#waybar {
     padding: 2px 10px;
     color: @text;
     background: @base;
+    font-size: 16px;
 }
 
 #workspaces button.active {
     color: @green;
     background: @base;
+    font-size: 20px;
 }
 
 #workspaces button.focused {
@@ -206,7 +208,7 @@ window#waybar {
     padding: 0px 0px;
     color: @text;
     background: @base;
-    font-size: 20;
+    font-size: 20px;
 }
 
 #tags button:not(.occupied) {

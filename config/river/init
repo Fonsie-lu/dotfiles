@@ -17,7 +17,7 @@ riverctl spawn 'chromium --disable-sync-preferences --no-startup-window'
 #░▀█▀░█▀▀▄░▄▀▀▄░█░▒█░▀█▀
 #░▒█░░█░▒█░█▄▄█░█░▒█░░█░
 #░▄█▄░▀░░▀░█░░░░░▀▀▀░░▀░
-riverctl keyboard-layout ch
+riverctl keyboard-layout ch,us
 riverctl set-repeat 60 350
 
 #░▒█░▄▀░█▀▀░█░░█░█▀▀▄░░▀░░█▀▀▄░█▀▄
