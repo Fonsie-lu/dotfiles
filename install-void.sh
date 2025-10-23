@@ -2,7 +2,7 @@
 
 sudo visudo
 ## Packages
-sudo xbps-install polkit NetworkManager Waybar alsa-firmware alsa-pipewire bat bluetuith bluez bottom chromium curl fail2ban fastfetch ffmpeg fzf gcc git gnome-disk-utility grim gtk-engine-murrine gtk2-engines i2c-tools icu imv kvantum libbluetooth libreoffice linux-mainline lm_sensors lsd mesa-dri mpv mtpfs nemo neovim nftables nodejs ntfs-3g nwg-look opendoas pulsemixer papirus-folders pavucontrol pipewire qbittorrent qt5-styleplugins qt5ct seatd slurp starship tldr unicode-emoji unzip vscode wget wl-clipboard wlogout xdg-user-dirs youtube-dl yt-dlp zsh gvfs-mtp gstreamer-vaapi mesa-vaapi fd greetd tuigreet xorg-server-xwayland xz psmisc eject lf noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji make ffmpegthumbnailer jq poppler foot swaylock zoxide zenity wlr-randr elogind dbus-elogind vscode rtkit libva-glx libva-vdpau-driver SwayNotificationCenter ntp cronie upower ryzen-stabilizator xdg-desktop-portal-wlr xdg-desktop-portal xdg-desktop-portal-gtk libspa-vulkan mesa-vulkan-radeon vulkan-loader libreoffice libva mesa-vaapi kanshi
+sudo xbps-install polkit NetworkManager Waybar alsa-firmware alsa-pipewire bat bluetuith bluez bottom chromium curl fail2ban fastfetch ffmpeg fzf gcc git gnome-disk-utility grim gtk-engine-murrine gtk2-engines i2c-tools icu imv kvantum libbluetooth libreoffice linux-mainline lm_sensors lsd mesa-dri mpv mtpfs nemo neovim nftables nodejs ntfs-3g nwg-look opendoas pulsemixer papirus-folders pavucontrol pipewire qbittorrent qt5-styleplugins qt5ct seatd slurp starship tldr unicode-emoji unzip vscode wget wl-clipboard wlogout xdg-user-dirs youtube-dl yt-dlp zsh gvfs-mtp gstreamer-vaapi mesa-vaapi fd greetd tuigreet xorg-server-xwayland xz psmisc eject lf noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji make ffmpegthumbnailer jq poppler foot swaylock zoxide zenity wlr-randr elogind dbus-elogind vscode rtkit libva-glx libva-vdpau-driver SwayNotificationCenter ntp cronie upower ryzen-stabilizator xdg-desktop-portal-wlr xdg-desktop-portal xdg-desktop-portal-gtk libspa-vulkan mesa-vulkan-radeon vulkan-loader libreoffice libva mesa-vaapi kanshi ufw
 
 ## Use sudo
 sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
@@ -70,14 +70,25 @@ sudo ln -s /etc/sv/rtkit /var/service/
 sudo ln -s /etc/sv/fail2ban/ /var/service/
 sudo ln -s /etc/sv/polkitd/ /var/service/
 sudo ln -s /etc/sv/greetd/ /var/service/
+sudo ln -s /etc/sv/ufw/ /var/service/
 
+## Remove old Network services
 sudo rm /var/service/iptables
 sudo rm /var/service/ip6tables
 sudo rm /var/service/wpa_supplicant
 sudo rm /var/service/dhcpcd
 
+#Firewall
+sudo ufw limit 22/tcp
+sudo ufw limit 2222/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw enable
+
 sudo rm /usr/bin/sudo
 doas ln -s /usr/bin/doas /usr/bin/sudo
 
 doas nvim /etc/default/grub
-doas nvim /etc/fstab
+doas nvim /etc/fstab #add ,noatime,discard to xfs

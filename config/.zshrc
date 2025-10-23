@@ -1,8 +1,3 @@
-# start hyprland
-if [ "$(tty)" = "/dev/tty1" ]; then
-	exec sway
-fi
-
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -69,6 +64,7 @@ alias cat='bat'
 alias cdd="cd ~/dl/"
 alias cdc="cd ~/.config/"
 alias bt="bluetuith"
+alias pm="pulsemixer"
 alias gp="git add --all && git commit -m update && git push"
 alias emptytrash="rm -rf ~/.local/share/Trash/*"
 
