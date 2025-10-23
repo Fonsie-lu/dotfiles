@@ -6,8 +6,10 @@ sudo xbps-install polkit NetworkManager Waybar alsa-firmware alsa-pipewire bat b
 
 ## Use sudo
 sudo sh -c 'echo "permit persist :wheel" >> /etc/doas.conf'
-sudo sh -c 'echo "#\!/bin/sh \n\nfstrim /" >> /etc/cron.weekly/fstrim'
+sudo cp ~/dl/dotfiles/config/fstrim /etc/cron.weekly/
+sudo cp ~/dl/dotfiles/config/archivedl /etc/cron.daily/
 sudo chmod u+x /etc/cron.weekly/fstrim
+sudo chmod u+x /etc/cron.daily/archivedl
 ## Pipewire
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
 sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
@@ -20,6 +22,7 @@ npm i -D eslint eslint-plugin-servicenow eslint-plugin-jsdoc eslint-plugin-prett
 cd
 mkdir ~/pic
 mkdir ~/vid
+mkdir ~/dl/archive/
 ln -s ~/dl ~/Downloads
 
 ## Setup Neovim
