@@ -3,7 +3,17 @@
     "margin": "0 0 0 0",
     "modules-left": ["clock"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["pulseaudio", "custom/updates", "custom/home", "custom/mem", "cpu", "temperature", "tray"],
+    "modules-right": [
+        "pulseaudio",
+        "custom/updates",
+        "battery",
+        "backlight",
+        "custom/home",
+        "custom/mem",
+        "cpu",
+        "temperature",
+        "tray"
+    ],
 
     "river/tags": {
         "num-tags": 5,
@@ -57,7 +67,7 @@
             "car": "",
             "default": ["", "", "", "", ""]
         },
-        "on-click": "pavucontrol",
+        "on-click": "foot --app-id=footsmall -e pulsemixer",
         "min-length": 14
     },
 
@@ -66,7 +76,7 @@
         "interval": 15,
         "exec": "free -h | awk '/Mem:/{printf $3}' | sed 's/..$//'",
         "tooltip": false,
-        "on-click": "foot --app-id=footsmall -e btop"
+        "on-click": "foot --app-id=footsmall -e btm"
     },
 
     "custom/home": {

@@ -38,7 +38,7 @@
 
 /* The whole bar */
 #waybar {
-    background: rgba(26, 27, 38, 0.85);
+    background: rgba(17, 17, 27, 0.5);
     color: @text;
     font-size: 14px;
 }
@@ -46,8 +46,8 @@
 .modules-left > widget > label,
 .modules-right > widget > label {
     color: @text;
-    background: @base;
-    margin: 0px 0px 2px 0px;
+    background: #313244;
+    margin: 0px 0px 3px 0px;
     padding: 0px 4px;
 }
 .modules-right > widget:nth-child(2) > label {
@@ -178,19 +178,21 @@ window#waybar {
     border-radius: 10px;
     padding: 2px 10px;
     color: @text;
-    background: @base;
+    background: #313244;
     font-size: 16px;
+    margin: 2px 3px;
 }
 
 #workspaces button.active {
     color: @green;
-    background: @base;
+    background: #313244;
     font-size: 20px;
+    padding: 2px 20px;
 }
 
 #workspaces button.focused {
     color: @green;
-    background: @base;
+    background: #313244;
     font-weight: bold;
 }
 
