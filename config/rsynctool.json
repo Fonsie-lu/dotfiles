@@ -1,0 +1,32 @@
+{
+  "rsync_path": "rsync",
+  "source_root": "/home/fonsie",
+  "target": "fonsie@192.168.0.23",
+  "dest_root": "/home/fonsie",
+  "entries": [
+    {
+      "source": "/dl/rsync/movies/",
+      "target": "/vid/transfer/"
+    },
+    {
+      "source": "/tools/rsynctool/rsynctool",
+      "target": "/tools/"
+    },
+    {
+      "source": "/tools/mediaplayer/mediaplayer",
+      "target": "/tools/"
+    },
+    {
+      "source": "/tools/urlchecker/urlchecker",
+      "target": "/tools/"
+    },
+    {
+      "source": "/dl/rsync/cfg/",
+      "target": "/.config/"
+    },
+    {
+      "source": "/dl/rsync/backup/",
+      "target": "/backup/"
+    }
+  ]
+}

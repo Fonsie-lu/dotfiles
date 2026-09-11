@@ -1,0 +1,14 @@
+[StreamInputs]
+inputDevice=alsa_input.usb-046d_081b_10D14620-02.mono-fallback
+
+[StreamOutputs]
+mostUsedPresets=HIFIMAN Arya Organic (Harman)
+outputDevice=alsa_output.usb-Topping_D70s_MQA-00.HiFi__Headphones__sink
+plugins=equalizer#0
+usedPresets=HIFIMAN Arya Organic (Harman):3
+visiblePage=pluginsPage
+visiblePlugin=equalizer#0
+
+[Window]
+height=1369
+width=2524

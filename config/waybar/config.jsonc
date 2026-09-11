@@ -1,128 +1,116 @@
 {
-    "height": 35,
-    "margin": "0 0 0 0",
-    "modules-left": ["clock"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": [
-        "pulseaudio",
-        "custom/updates",
-        "battery",
-        "backlight",
-        "custom/home",
-        "custom/mem",
-        "cpu",
-        "temperature",
-        "tray"
-    ],
+  "height": 35,
+  "margin": "0 0 0 0",
+  "modules-left": ["clock"],
+  "modules-center": ["river/tags"],
+  "modules-right": [
+    "pulseaudio",
+    "custom/updates",
+    "disk",
+    "memory",
+    "cpu",
+    "temperature",
+    "tray",
+  ],
 
-    "river/tags": {
-        "num-tags": 5,
-        // "tag-labels": ["  ", " 󰨞 ", " 󰊻 ", " 󰺻 ", " 󰆍 "]
-        "tag-labels": [" 󰎤 ", " 󰎧 ", " 󰎪 ", " 󰎭 ", " 󰎱 "]
+  "river/tags": {
+    "num-tags": 5,
+    // "tag-labels": ["  ", " 󰨞 ", " 󰊻 ", " 󰺻 ", " 󰆍 "]
+    "tag-labels": [" 󰎤 ", " 󰎧 ", " 󰎪 ", " 󰎭 ", " 󰎱 "],
+  },
+
+  "custom/updates": {
+    "format": " {} <span font='15'>󰣇 </span>",
+    "interval": 3601,
+    "hide-empty-text": true,
+    "exec": "(pacman -Qu; paru -Qua) 2>/dev/null | wc -l",
+    "on-click": "footclient -a footsmall -- paru -Syu",
+    "signal": 8,
+  },
+
+  "clock": {
+    "timezone": "Europe/Zurich",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a     <span font='14'>%I:%M </span>%p     %d %b}",
+  },
+
+  "pulseaudio": {
+    "reverse-scrolling": 1,
+    "format": "<span font='10'>{volume}</span> <span font='15'>{icon} {format_source}</span>",
+    "format-bluetooth": "<span font='10'>{volume}</span> {icon} 󰂰 {format_source}",
+    "format-bluetooth-muted": "󰂲 {icon} 󰂰 {format_source}",
+    "format-muted": "  {format_source}",
+    "format-source": "<span font='10'> {volume}</span> ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", "", "", ""],
     },
+    "on-click": "footclient -a footsmall -- pulsemixer",
+    "min-length": 14,
+  },
 
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "active-only": false,
-        "format-icons": {
-            "1": "󰎤",
-            "2": "󰎧",
-            "3": "󰎪",
-            "4": "󰎭",
-            "5": "󰎱"
-        }
+  "memory": {
+    "format": " {used:0.1f}<span font='8'>G</span> <span font='15'> </span>",
+    "interval": 15,
+    "states": {
+      "warning": 75,
+      "critical": 90,
     },
+    "tooltip": false,
+    "on-click": "footclient -a footsmall -- btm",
+  },
 
-    "custom/updates": {
-        "format": " {} <span font='15'> </span>",
-        "interval": 3601,
-        "hide-empty-text": true,
-        "exec": "xbps-install --memory-sync --dry-run --update | grep -Fe update -e install | wc -l",
-        "on-click": "foot --app-id=footsmall -e sudo xbps-install -Su",
-        "signal": 8
+  "disk": {
+    "format": " {percentage_used}% <span font='15'>󰋊 </span>",
+    "interval": 500,
+    "path": "/home",
+    "tooltip": false,
+    "on-click": "footclient -a footsmall -- yazi",
+  },
+
+  "temperature": {
+    "critical-threshold": 85,
+    "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:18.3/hwmon",
+    "input-filename": "temp1_input",
+    "format": " {temperatureC} <span font='15'>󰈸 </span>",
+    "tooltip": false,
+    "interval": 16,
+  },
+
+  "cpu": {
+    "format": " {usage}% <span font='15'>{icon} </span>",
+    "tooltip": false,
+    "format-icons": ["󰾆", "󰾅", "󰓅"],
+  },
+
+  "backlight": {
+    "format": " {percent}% <span font='15'>{icon} </span>",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-down": "light -U 1",
+    "on-scroll-up": "light -A 1",
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 10,
     },
+    "format": " {capacity}% <span font='15'>{icon} </span>",
+    "format-charging": "{capacity}󱉸 ",
+    "format-plugged": "{capacity}󱉸 ",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "bat": "BAT0",
+  },
 
-    "clock": {
-        "timezone": "CEST",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a     <span font='14'>%I:%M </span>%p     %d %b}"
-    },
-
-    "pulseaudio": {
-        "reverse-scrolling": 1,
-        "format": "<span font='10'>{volume}</span> <span font='15'>{icon} {format_source}</span>",
-        "format-bluetooth": "<span font='10'>{volume}</span> {icon} 󰂰 {format_source}",
-        "format-bluetooth-muted": "󰂲 {icon} 󰂰 {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": "<span font='10'> {volume}</span> ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", "", "", ""]
-        },
-        "on-click": "foot --app-id=footsmall -e pulsemixer",
-        "min-length": 14
-    },
-
-    "custom/mem": {
-        "format": " {}<span font='8'>G</span> <span font='15'> </span>",
-        "interval": 15,
-        "exec": "free -h | awk '/Mem:/{printf $3}' | sed 's/..$//'",
-        "tooltip": false,
-        "on-click": "foot --app-id=footsmall -e btm"
-    },
-
-    "custom/home": {
-        "format": " {} <span font='15'>󰋊 </span>",
-        "interval": 500,
-        "exec": "df -h | awk '/n1p2/{printf $5}'",
-        "tooltip": false,
-        "on-click": "foot --app-id=footsmall -e yazi"
-    },
-
-    "temperature": {
-        "critical-threshold": 85,
-        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
-        "format": " {temperatureC} <span font='15'>󰈸 </span>",
-        "tooltip": false,
-        "interval": 16
-    },
-
-    "cpu": {
-        "format": " {usage}% <span font='15'>{icon} </span>",
-        "tooltip": false,
-        "format-icons": ["󰾆", "󰾅", "󰓅"]
-    },
-
-    "backlight": {
-        "format": " {percent}% <span font='15'>{icon} </span>",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "on-scroll-down": "light -A 1",
-        "on-scroll-up": "light -U 1"
-    },
-
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 10
-        },
-        "format": " {capacity}% <span font='15'>{icon} </span>",
-        "format-charging": "{capacity}󱉸 ",
-        "format-plugged": "{capacity}󱉸 ",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""],
-        "bat": "BAT0"
-    },
-
-    "tray": {
-        "icon-size": 16,
-        "spacing": 4
-    }
+  "tray": {
+    "icon-size": 16,
+    "spacing": 4,
+  },
 }

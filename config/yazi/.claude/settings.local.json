@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(gh api *)",
+      "Bash(command -v curl)",
+      "Bash(curl -sL \"https://api.github.com/repos/sxyazi/yazi/contents/yazi-config/preset\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/sxyazi/yazi/main/yazi-config/preset/yazi-default.toml\" -o /tmp/yazi-default.toml)",
+      "Read(//tmp/**)"
+    ]
+  }
+}

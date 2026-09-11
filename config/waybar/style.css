@@ -46,7 +46,7 @@
 .modules-left > widget > label,
 .modules-right > widget > label {
     color: @text;
-    background: #313244;
+    background: @surface0;
     margin: 0px 0px 3px 0px;
     padding: 0px 4px;
 }
@@ -63,8 +63,8 @@
 /* Each module */
 #custom-updates,
 #custom-menu,
-#custom-home,
-#custom-mem,
+#disk,
+#memory,
 #custom-notification,
 #bluetooth,
 #battery,
@@ -132,17 +132,17 @@
     color: @red;
 }
 
-#custom-mem {
+#memory {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-#custom-mem.warning {
+#memory.warning {
     color: @maroon;
 }
 
-#custom-mem.critical {
+#memory.critical {
     color: @red;
     animation-name: blink-critical;
     animation-duration: 2s;
@@ -172,33 +172,6 @@ window#waybar {
     font-weight: bold;
     margin-right: 25px;
     color: @text;
-}
-
-#workspaces button {
-    border-radius: 10px;
-    padding: 2px 10px;
-    color: @text;
-    background: #313244;
-    font-size: 16px;
-    margin: 2px 3px;
-}
-
-#workspaces button.active {
-    color: @green;
-    background: #313244;
-    font-size: 20px;
-    padding: 2px 20px;
-}
-
-#workspaces button.focused {
-    color: @green;
-    background: #313244;
-    font-weight: bold;
-}
-
-#workspaces button.urgent {
-    border-color: @red;
-    color: @red;
 }
 
 #bluetooth.disabled {

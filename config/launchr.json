@@ -1,0 +1,15 @@
+{
+  "colors": {
+    "background": "#10111e",
+    "panel": "#1a1b26",
+    "foreground": "#c0caf5",
+    "selection": "#283457",
+    "accent": "#7aa2f7",
+    "muted": "#565f89"
+  },
+  "font_size": 20,
+  "lines": 8,
+  "dim": 0.9,
+  "blur": 1,
+  "appimages": [{ "name": "WowUp", "path": "~/tools/WowUp.AppImage" }]
+}
