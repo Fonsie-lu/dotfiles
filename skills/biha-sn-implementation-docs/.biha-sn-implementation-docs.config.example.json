@@ -1,0 +1,14 @@
+{
+  "language": "de",
+  "output_folder": "docs",
+  "images_folder": "docs/images",
+  "filename_suffix": "-implementation",
+  "audience": ["process-owners", "technicians"],
+  "mermaid": {
+    "render": "code-only"
+  },
+  "diagrams": {
+    "default_direction": "LR"
+  },
+  "servicenow_mcp_available": null
+}

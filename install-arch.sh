@@ -18,11 +18,11 @@ paru -S --noconfirm nemo python-pynvim nodejs npm wget tldr nwg-look
 paru -S --noconfirm mpv htop lsd kvantum bottom
 paru -S --noconfirm python-pip qbittorrent ufw
 paru -S --noconfirm python-pyqt5 python-pyqt6 starship pamixer pavucontrol
-paru -S --noconfirm yt-dlp ntfs-3g blkmenu
-paru -S --noconfirm vscode pacman-contrib
+paru -S --noconfirm yt-dlp ntfs-3g blkmenu yazi foot
+paru -S --noconfirm vscode pacman-contrib ttf-jetbrains-mono-nerd
 paru -S --noconfirm mtpfs zathura android-file-transfer xdg-user-dirs
-paru -S --noconfirm android-tools fail2ban
-paru -S --noconfirm gvfs-mtp
+paru -S --noconfirm android-tools fail2ban zoxide zinit
+paru -S --noconfirm gvfs-mtp rsync swaybg swaync wlogout wlr-randr
 
 paru -S #Create Directories
 echo "Setup Directories"
@@ -36,6 +36,10 @@ mkdir ~/vid/rec
 mkdir ~/doc
 mkdir ~/doc/sn-sync
 mkdir -f ~/.config
+
+cd ~/doc/sn-sync/
+npm i -D eslint eslint-plugin-servicenow eslint-plugin-jsdoc eslint-plugin-prettier eslint-config-standard eslint-config-prettier prettier jsdoc
+cd ~
 
 #Copy configs
 sudo cp -f ~/dl/dotfiles/.config/pacman.conf /etc/pacman.conf
